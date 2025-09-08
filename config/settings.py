@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     # Third-party
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
+    'corsheaders',
     'channels',
     # Local apps
     'apps.users',
@@ -37,9 +39,14 @@ INSTALLED_APPS = [
     'apps.financial',
     'apps.attendance',
     'apps.research',
+    'apps.announcements',
+    'apps.assignments',
+    'apps.authentication',
+    'apps.reports',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -115,6 +122,11 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ],
 }
 
 # Logging
@@ -168,3 +180,12 @@ CELERY_RESULT_BACKEND = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
 
 # Custom user model
 AUTH_USER_MODEL = 'users.User'
+
+# CORS settings for Flutter/Web
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React dev server
+    "http://127.0.0.1:3000",
+    "http://localhost:8080",  # Flutter web
+]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Only for development - set to False in production

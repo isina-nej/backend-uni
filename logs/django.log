@@ -14,3 +14,20 @@ INFO 2025-09-09 00:23:57,856 autoreload 10992 7152 Watching for file changes wit
 INFO 2025-09-09 00:23:59,091 autoreload 10992 7152 D:\project\uni\backend\apps\attendance\serializers.py changed, reloading.
 INFO 2025-09-09 00:23:59,561 autoreload 23420 9896 Watching for file changes with StatReloader
 INFO 2025-09-09 00:27:56,728 autoreload 16276 21648 Watching for file changes with StatReloader
+INFO 2025-09-09 00:29:25,310 autoreload 16276 21648 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:29:25,749 autoreload 24068 2720 Watching for file changes with StatReloader
+INFO 2025-09-09 00:32:05,654 autoreload 24068 2720 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:32:06,258 autoreload 1388 12372 Watching for file changes with StatReloader
+INFO 2025-09-09 00:32:07,483 autoreload 1388 12372 D:\project\uni\backend\config\api_urls.py changed, reloading.
+INFO 2025-09-09 00:32:07,957 autoreload 17524 10620 Watching for file changes with StatReloader
+INFO 2025-09-09 00:32:11,157 autoreload 17524 10620 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:32:11,615 autoreload 11540 9360 Watching for file changes with StatReloader
+INFO 2025-09-09 00:32:15,864 autoreload 11540 9360 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:32:16,277 autoreload 15444 23652 Watching for file changes with StatReloader
+INFO 2025-09-09 00:32:17,441 autoreload 15444 23652 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:32:17,822 autoreload 11520 27288 Watching for file changes with StatReloader
+INFO 2025-09-09 00:32:20,007 autoreload 11520 27288 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:32:20,373 autoreload 16712 8328 Watching for file changes with StatReloader
+INFO 2025-09-09 00:33:18,424 autoreload 27564 17412 Watching for file changes with StatReloader
+INFO 2025-09-09 00:39:37,789 autoreload 27328 26432 Watching for file changes with StatReloader
+INFO 2025-09-09 00:40:52,277 autoreload 25988 7224 Watching for file changes with StatReloader
