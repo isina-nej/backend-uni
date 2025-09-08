@@ -7,3 +7,10 @@ INFO 2025-09-09 00:14:21,079 autoreload 12212 18652 D:\project\uni\backend\confi
 INFO 2025-09-09 00:14:21,506 autoreload 8284 4068 Watching for file changes with StatReloader
 INFO 2025-09-09 00:14:22,705 autoreload 8284 4068 D:\project\uni\backend\apps\courses\serializers.py changed, reloading.
 INFO 2025-09-09 00:14:23,131 autoreload 22468 11540 Watching for file changes with StatReloader
+INFO 2025-09-09 00:20:38,968 autoreload 22468 11540 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:23:23,234 autoreload 2608 26540 Watching for file changes with StatReloader
+INFO 2025-09-09 00:23:57,417 autoreload 2608 26540 D:\project\uni\backend\apps\grades\models.py changed, reloading.
+INFO 2025-09-09 00:23:57,856 autoreload 10992 7152 Watching for file changes with StatReloader
+INFO 2025-09-09 00:23:59,091 autoreload 10992 7152 D:\project\uni\backend\apps\attendance\serializers.py changed, reloading.
+INFO 2025-09-09 00:23:59,561 autoreload 23420 9896 Watching for file changes with StatReloader
+INFO 2025-09-09 00:27:56,728 autoreload 16276 21648 Watching for file changes with StatReloader

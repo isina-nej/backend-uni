@@ -30,6 +30,13 @@ INSTALLED_APPS = [
     'apps.courses',
     'apps.notifications',
     'apps.common',
+    'apps.grades',
+    'apps.schedules',
+    'apps.exams',
+    'apps.library',
+    'apps.financial',
+    'apps.attendance',
+    'apps.research',
 ]
 
 MIDDLEWARE = [
@@ -61,11 +68,18 @@ TEMPLATES = [
     },
 ]
 
-# Database
+# Database - Neon PostgreSQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_gDbsPZxln7I5',
+        'HOST': 'ep-shy-hat-a9wddu9f-pooler.gwc.azure.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
