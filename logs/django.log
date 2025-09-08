@@ -1,0 +1,9 @@
+INFO 2025-09-09 00:11:21,923 autoreload 15700 14468 Watching for file changes with StatReloader
+INFO 2025-09-09 00:11:45,586 autoreload 16968 23048 Watching for file changes with StatReloader
+INFO 2025-09-09 00:12:35,221 autoreload 7732 12492 Watching for file changes with StatReloader
+INFO 2025-09-09 00:13:06,861 autoreload 5576 15768 Watching for file changes with StatReloader
+INFO 2025-09-09 00:13:40,834 autoreload 12212 18652 Watching for file changes with StatReloader
+INFO 2025-09-09 00:14:21,079 autoreload 12212 18652 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-09 00:14:21,506 autoreload 8284 4068 Watching for file changes with StatReloader
+INFO 2025-09-09 00:14:22,705 autoreload 8284 4068 D:\project\uni\backend\apps\courses\serializers.py changed, reloading.
+INFO 2025-09-09 00:14:23,131 autoreload 22468 11540 Watching for file changes with StatReloader
