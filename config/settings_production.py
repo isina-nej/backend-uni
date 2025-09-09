@@ -13,7 +13,7 @@ env = environ.Env(
 )
 
 # Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR.parent, '.env'))
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Production-specific settings
 DEBUG = env('DEBUG')
