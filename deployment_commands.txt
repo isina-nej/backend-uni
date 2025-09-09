@@ -1,0 +1,35 @@
+# Commands to run in PythonAnywhere Bash Console
+
+# 1. Clone the repository
+cd ~
+git clone https://github.com/isina-nej/backend-uni.git
+
+# 2. Create virtual environment
+python3.10 -m venv venv
+
+# 3. Activate virtual environment
+source venv/bin/activate
+
+# 4. Install requirements
+cd backend-uni
+pip install -r requirements.txt
+
+# 5. Generate secret key
+python generate_secret_key.py
+
+# 6. Set up environment variables (create .env file)
+echo "SECRET_KEY=your-generated-secret-key-here" > .env
+echo "DEBUG=False" >> .env
+echo "DB_NAME=sinanej2\$default" >> .env
+echo "DB_USER=sinanej2" >> .env
+echo "DB_PASSWORD=your-db-password" >> .env
+echo "DB_HOST=sinanej2.mysql.pythonanywhere-services.com" >> .env
+
+# 7. Run migrations
+python manage.py migrate --settings=config.settings_production
+
+# 8. Create superuser
+python manage.py createsuperuser --settings=config.settings_production
+
+# 9. Collect static files
+python manage.py collectstatic --noinput --settings=config.settings_production
