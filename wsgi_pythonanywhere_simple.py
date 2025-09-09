@@ -1,13 +1,13 @@
 """
-WSGI config for PythonAnywhere deployment - FIXED VERSION
-This fixes the path conflicts and properly configures the environment.
+WSGI config for PythonAnywhere deployment - SIMPLE VERSION
+This uses simple environment variables without django-environ
 """
 
 import os
 import sys
 
-# Set the Django settings module FIRST
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_production')
+# Set the Django settings module to use simple production settings
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_production_simple')
 
 # Clean sys.path to prevent conflicts
 project_home = '/home/sinanej2/backend-uni'
