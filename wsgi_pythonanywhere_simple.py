@@ -1,32 +1,32 @@
 """
-WSGI config for PythonAnywhere deployment - SIMPLE VERSION
-This uses simple environment variables without django-environ
+WSGI config for PythonAnywhere deployment - FINAL FIXED VERSION
+Based on PythonAnywhere debugging guidelines
 """
 
 import os
 import sys
 
-# Set the Django settings module to use simple production settings
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_production_simple')
-
-# Clean sys.path to prevent conflicts
+# Set the working directory to the project root
 project_home = '/home/sinanej2/backend-uni'
-
-# Remove all existing project-related paths to prevent conflicts
-paths_to_remove = []
-for path in list(sys.path):
-    if 'backend-uni' in path:
-        paths_to_remove.append(path)
-
-for path in paths_to_remove:
-    if path in sys.path:
-        sys.path.remove(path)
-
-# Add clean project path
-sys.path.insert(0, project_home)
-
-# Ensure we're using the correct working directory
 os.chdir(project_home)
 
+# Clean sys.path completely to avoid multiple filesystem locations error
+# Remove all paths that might cause conflicts
+new_sys_path = []
+for path in sys.path:
+    # Keep only essential Python paths, exclude project-related duplicates
+    if not any(x in path for x in ['backend-uni', './apps', '/.']):
+        new_sys_path.append(path)
+
+# Set clean sys.path
+sys.path = new_sys_path
+
+# Add project directory as the FIRST path
+sys.path.insert(0, project_home)
+
+# Set Django settings module
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_production_simple')
+
+# Import Django WSGI application
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()

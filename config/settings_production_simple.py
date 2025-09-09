@@ -28,7 +28,7 @@ DATABASES = {
 }
 
 # Security settings
-SECRET_KEY = os.environ.get('SECRET_KEY', 'your-production-secret-key-here')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production-123456')
 
 # Allow PythonAnywhere hosts
 ALLOWED_HOSTS = [
@@ -36,15 +36,26 @@ ALLOWED_HOSTS = [
     'www.sinanej2.pythonanywhere.com',
     'localhost',
     '127.0.0.1',
+    '*',  # Remove this in production and specify exact domains
 ]
 
 # Static files settings for production
-STATIC_ROOT = '/home/sinanej2/backend-uni/static'
+STATIC_ROOT = '/home/sinanej2/backend-uni/staticfiles'
 STATIC_URL = '/static/'
+
+# Additional static files directories
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Media files settings
 MEDIA_ROOT = '/home/sinanej2/backend-uni/media'
 MEDIA_URL = '/media/'
+
+# Ensure logs directory exists
+LOGS_DIR = BASE_DIR / 'logs'
+if not LOGS_DIR.exists():
+    LOGS_DIR.mkdir(exist_ok=True)
 
 # Logging configuration
 LOGGING = {
@@ -64,7 +75,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': '/home/sinanej2/backend-uni/logs/django.log',
+            'filename': str(LOGS_DIR / 'django.log'),
             'formatter': 'verbose',
         },
         'console': {
@@ -74,7 +85,7 @@ LOGGING = {
         },
     },
     'root': {
-        'handlers': ['file', 'console'],
+        'handlers': ['console'],
         'level': 'INFO',
     },
     'loggers': {
