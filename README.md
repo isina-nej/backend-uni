@@ -50,6 +50,7 @@
 - Virtual Environment
 
 > 📖 **راهنمای کامل تنظیم MySQL**: [MYSQL_SETUP.md](MYSQL_SETUP.md)
+> 🪟 **راهنمای سریع Windows**: [MYSQL_WINDOWS_SETUP.md](MYSQL_WINDOWS_SETUP.md)
 > 🌐 **راهنمای MySQL در PythonAnywhere**: [MYSQL_PYTHONANYWHERE.md](MYSQL_PYTHONANYWHERE.md)
 
 ### مراحل نصب
