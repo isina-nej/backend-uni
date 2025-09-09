@@ -1,6 +1,7 @@
 from django.urls import path, include
 
 urlpatterns = [
+    path('', include('apps.common.urls')),  # Health check and API info
     path('users/', include('apps.users.urls')),
     path('courses/', include('apps.courses.urls')),
     path('notifications/', include('apps.notifications.urls')),

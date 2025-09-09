@@ -1,170 +1,117 @@
-# راهنمای کامل دیپلوی Django روی PythonAnywhere
+# PythonAnywhere Deployment Guide
 
-## مرحله 1: آماده‌سازی کد (در کامپیوتر شما)
+Complete guide for deploying Django application on PythonAnywhere.
 
-1. تغییرات را commit و push کنید:
+## Prerequisites
+- GitHub repository with your Django project
+- PythonAnywhere account
+- MySQL database (provided by PythonAnywhere)
+
+## Step 1: Prepare Code
+1. Commit and push all changes:
 ```bash
 git add .
 git commit -m "Prepare for PythonAnywhere deployment"
 git push origin main
 ```
 
-## مرحله 2: تنظیم PythonAnywhere
+## Step 2: PythonAnywhere Setup
 
-### 2.1: ایجاد دیتابیس MySQL
-1. وارد PythonAnywhere شوید
-2. برو به تب "Databases"
-3. یک دیتابیس MySQL جدید بساز
-4. نام دیتابیس: `sinanej2$default` (خودکار ایجاد می‌شود)
-5. رمز دیتابیس را یادداشت کن
+### 2.1 Create MySQL Database
+1. Go to "Databases" tab
+2. Create a new MySQL database
+3. Note your database name: `username$default`
+4. Set a strong password
 
-### 2.2: کلون کردن پروژه
-1. برو به تب "Consoles"
-2. یک "Bash" کنسول جدید باز کن
-3. دستورات زیر را اجرا کن:
-
+### 2.2 Clone Project
+1. Open "Consoles" tab
+2. Start a new Bash console
+3. Run these commands:
 ```bash
-# کلون کردن پروژه
 cd ~
 git clone https://github.com/isina-nej/backend-uni.git
-
-# ایجاد virtual environment
 python3.10 -m venv venv
-
-# فعال کردن virtual environment
 source venv/bin/activate
-
-# نصب requirements
 cd backend-uni
-pip install --upgrade pip
 pip install -r requirements.txt
+```
 
-# ایجاد secret key
-SECRET_KEY=$(python generate_secret_key.py)
-echo "Your secret key: $SECRET_KEY"
+### 2.3 Environment Configuration
+Create `.env` file:
+```bash
+# Generate secret key
+python generate_secret_key.py
 
-# ایجاد فایل .env
+# Create .env file
 cat > .env << EOF
-SECRET_KEY=$SECRET_KEY
+SECRET_KEY=your-generated-secret-key
 DEBUG=False
-DB_NAME=sinanej2\$default
-DB_USER=sinanej2
-DB_PASSWORD=YOUR_MYSQL_PASSWORD_HERE
-DB_HOST=sinanej2.mysql.pythonanywhere-services.com
+DB_NAME=username\$default
+DB_USER=username
+DB_PASSWORD=your-mysql-password
+DB_HOST=username.mysql.pythonanywhere-services.com
 DB_PORT=3306
 EOF
+```
 
-# ویرایش فایل .env و جایگذاری رمز واقعی دیتابیس
-nano .env
-# جایگزین کن: YOUR_MYSQL_PASSWORD_HERE با رمز واقعی MySQL
-
-# تست تنظیمات
-python manage.py check --settings=config.settings_production
-
-# اجرای migration ها
+### 2.4 Database Migration
+```bash
 python manage.py migrate --settings=config.settings_production
-
-# ایجاد superuser
 python manage.py createsuperuser --settings=config.settings_production
-
-# جمع‌آوری فایل‌های static
 python manage.py collectstatic --noinput --settings=config.settings_production
 ```
 
-## مرحله 3: تنظیم Web App
+## Step 3: Web App Configuration
 
-### 3.1: ایجاد Web App
-1. برو به تب "Web"
-2. کلیک کن روی "Add a new web app"
-3. Django را انتخاب کن
-4. Python 3.10 را انتخاب کن
-5. مسیر پروژه: `/home/sinanej2/backend-uni`
+### 3.1 Create Web App
+1. Go to "Web" tab
+2. Click "Add a new web app"
+3. Choose Django
+4. Select Python 3.10
+5. Set project path: `/home/username/backend-uni`
 
-### 3.2: تنظیم WSGI File
-1. در تب "Web"، روی لینک WSGI file کلیک کن
-2. محتوای فایل را پاک کن و این کد را جایگذاری کن:
+### 3.2 Configure WSGI
+1. Click on WSGI file link in Web tab
+2. Replace content with the code from `wsgi_pythonanywhere.py`
+3. Update the paths with your username
 
-```python
-import os
-import sys
+### 3.3 Static Files
+In Web tab, configure:
+- **Static files URL**: `/static/`
+- **Static files directory**: `/home/username/static/`
 
-# Add your project directory to sys.path
-project_home = '/home/sinanej2/backend-uni'
-if project_home not in sys.path:
-    sys.path.insert(0, project_home)
+### 3.4 Reload Web App
+Click "Reload" button in Web tab
 
-# Activate virtual environment
-activate_this = '/home/sinanej2/venv/bin/activate_this.py'
-exec(open(activate_this).read(), {'__file__': activate_this})
+## Step 4: Testing
+- Visit your website: `https://username.pythonanywhere.com`
+- Test API endpoints: `https://username.pythonanywhere.com/api/health/`
+- Access admin: `https://username.pythonanywhere.com/admin/`
 
-# Set Django settings
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_production')
+## Troubleshooting
 
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
-```
+### Common Issues
+1. **Import Errors**: Check WSGI file paths
+2. **Database Connection**: Verify .env file settings
+3. **Static Files**: Run `collectstatic` command
+4. **Permissions**: Check file permissions
 
-### 3.3: تنظیم Static و Media Files
-در تب "Web"، بخش "Static files":
+### Logs
+- Check error logs in Web tab
+- Use `print()` statements in WSGI for debugging
+- Monitor console output
 
-1. **Static files**:
-   - URL: `/static/`
-   - Directory: `/home/sinanej2/static/`
-
-2. **Media files** (اختیاری):
-   - URL: `/media/`
-   - Directory: `/home/sinanej2/media/`
-
-## مرحله 4: راه‌اندازی نهایی
-
-1. در تب "Web"، روی "Reload" کلیک کن
-2. منتظر بمان تا وب‌اپ reload شود
-3. برو به آدرس: https://sinanej2.pythonanywhere.com
-4. باید صفحه Django را ببینی
-
-## مرحله 5: تست API
-
-برای تست API:
-- Admin panel: https://sinanej2.pythonanywhere.com/admin/
-- API root: https://sinanej2.pythonanywhere.com/api/
-
-## رفع مشکلات رایج
-
-### مشکل 1: ImportError
-اگر خطای ImportError دیدی:
-1. برو به Error logs در تب "Web"
-2. بررسی کن که تمام packages نصب شده باشند
-3. virtual environment درست فعال شده باشد
-
-### مشکل 2: Database Connection Error
-1. بررسی کن رمز MySQL در فایل .env درست باشد
-2. نام دیتابیس باید `sinanej2$default` باشد
-3. HOST باید `sinanej2.mysql.pythonanywhere-services.com` باشد
-
-### مشکل 3: Static Files
-اگر CSS/JS load نمی‌شود:
-1. دوباره collectstatic اجرا کن:
+## Updates
+To update your deployment:
 ```bash
 cd ~/backend-uni
+git pull origin main
 source ~/venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate --settings=config.settings_production
 python manage.py collectstatic --noinput --settings=config.settings_production
 ```
+Then reload the web app.
 
-## بروزرسانی پروژه
-
-برای بروزرسانی‌های آینده:
-```bash
-cd ~/backend-uni
-source ~/venv/bin/activate
-bash deploy.sh
-```
-
-سپس در تب "Web" روی "Reload" کلیک کن.
-
-## نکات مهم
-
-1. **همیشه** از `config.settings_production` استفاده کن
-2. **هرگز** DEBUG=True در production قرار نده
-3. رمز SECRET_KEY و دیتابیس را ایمن نگهدار
-4. Log files در `/var/log/` قابل مشاهده هستند
-5. برای troubleshooting از Error logs در تب "Web" استفاده کن
+---
+**Note**: Replace `username` with your actual PythonAnywhere username throughout this guide.

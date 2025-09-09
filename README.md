@@ -1,250 +1,252 @@
-# 🎓 University Management System Backend
+# University Management System - Backend
 
-یک سیستم مدیریت دانشگاهی جامع و قدرتمند که با Django و Django REST Framework ساخته شده است.
+A comprehensive Django REST API backend for university management system with support for multiple platforms including web, Flutter app, and various bots.
 
-## ✨ ویژگی‌های کلیدی
+## 🚀 Features
 
-### 🏗️ آرکیتکچر مدولار
-- **ساختار مدولار**: هر بخش به صورت جداگانه پیاده‌سازی شده
-- **قابلیت توسعه**: آسان برای اضافه کردن ماژول‌های جدید
-- **نگهداری آسان**: کد تمیز و قابل فهم
+### Core Modules
+- **User Management**: Students, professors, staff, and admin roles
+- **Course Management**: Course creation, enrollment, and management
+- **Academic Records**: Grades, assignments, and exams
+- **Attendance Tracking**: Student attendance monitoring
+- **Financial Management**: Fee payments and financial records
+- **Library System**: Book management and lending
+- **Research Projects**: Research project tracking and collaboration
+- **Notifications**: Multi-platform notification system
+- **Reports & Analytics**: Academic reports and dashboard
 
-### 👥 مدیریت کاربران
-- **نقش‌های مختلف**: دانشجو، استاد، کارمند، ادمین
-- **احراز هویت قوی**: Token-based authentication
-- **پروفایل کاربری**: مدیریت اطلاعات شخصی
+### Technical Features
+- **REST API**: Comprehensive API endpoints for all operations
+- **Multi-platform Support**: Web, Flutter app, Telegram bot, Discord bot
+- **Role-based Access Control**: Secure access based on user roles
+- **Real-time Notifications**: WebSocket support for real-time updates
+- **Database**: MySQL for production, SQLite for development
+- **Logging**: Comprehensive error tracking and monitoring
+- **Fault Tolerance**: Isolated app architecture prevents cascading failures
 
-### 📚 ماژول‌های اصلی
+## 📋 Prerequisites
 
-#### 🎯 هسته سیستم
-- **کاربران** (Users): مدیریت دانشجویان، اساتید و کارمندان
-- **درس‌ها** (Courses): مدیریت دروس و ثبت‌نام
-- **اطلاع‌رسانی** (Notifications): سیستم اطلاع‌رسانی داخلی
+- Python 3.10+
+- MySQL 8.0+ (for production)
+- Redis (for caching and real-time features)
+- Git
 
-#### 📊 آموزشی
-- **نمرات** (Grades): مدیریت نمرات و ارزیابی
-- **برنامه‌ریزی** (Schedules): برنامه کلاس‌ها و جلسات
-- **امتحانات** (Exams): برنامه‌ریزی و مدیریت امتحانات
-- **تکالیف** (Assignments): مدیریت تکالیف و پروژه‌ها
+## 🛠 Installation & Setup
 
-#### 🏛️ خدمات دانشگاه
-- **کتابخانه** (Library): مدیریت کتاب‌ها و امانت
-- **مالی** (Financial): مدیریت شهریه و پرداخت‌ها
-- **حضور غیاب** (Attendance): ثبت حضور و غیاب
-- **پژوهش** (Research): مدیریت پروژه‌های تحقیقاتی
-
-#### 📢 ارتباطات
-- **اعلان‌ها** (Announcements): اعلان‌های عمومی و اخبار
-- **احراز هویت** (Authentication): ورود/خروج و مدیریت جلسات
-
-#### 📈 گزارش‌گیری
-- **داشبورد** (Dashboard): آمار کلی سیستم
-- **گزارش دانشجو**: گزارش عملکرد فردی
-- **گزارش درس**: تحلیل عملکرد کلاس
-
-## 🚀 نصب و راه‌اندازی
-
-### پیش‌نیازها
-- Python 3.9+
-- **MySQL 8.0+** یا **MariaDB 10.5+**
-- Virtual Environment
-
-> 📖 **راهنمای کامل تنظیم MySQL**: [MYSQL_SETUP.md](MYSQL_SETUP.md)
-> 🪟 **راهنمای سریع Windows**: [MYSQL_WINDOWS_SETUP.md](MYSQL_WINDOWS_SETUP.md)
-> 🌐 **راهنمای MySQL در PythonAnywhere**: [MYSQL_PYTHONANYWHERE.md](MYSQL_PYTHONANYWHERE.md)
-
-### مراحل نصب
-
-1. **کلون کردن پروژه**
+### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd backend
+git clone https://github.com/isina-nej/backend-uni.git
+cd backend-uni
 ```
 
-2. **ایجاد Virtual Environment**
+### 2. Create Virtual Environment
 ```bash
 python -m venv venv
-venv\\Scripts\\activate  # Windows
-# source venv/bin/activate  # Linux/Mac
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
 ```
 
-3. **نصب کتابخانه‌ها**
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **تنظیمات دیتابیس**
-- فایل `config/settings.py` را برای اتصال به PostgreSQL تنظیم کنید
-
-5. **اجرای Migration ها**
-```bash
-python manage.py makemigrations
-python manage.py migrate
+### 4. Environment Configuration
+Create a `.env` file in the root directory:
+```env
+SECRET_KEY=your-secret-key-here
+DEBUG=True
+DB_NAME=backend_uni_db
+DB_USER=root
+DB_PASSWORD=your-password
+DB_HOST=localhost
+DB_PORT=3306
 ```
 
-6. **ایجاد Super User**
+### 5. Database Setup
 ```bash
+# Create MySQL database
+mysql -u root -p
+CREATE DATABASE backend_uni_db;
+
+# Run migrations
+python manage.py migrate
+
+# Create superuser
 python manage.py createsuperuser
 ```
 
-7. **راه‌اندازی سرور**
+### 6. Run Development Server
 ```bash
 python manage.py runserver
 ```
 
-## 🌐 API Endpoints
+## 🏗 Project Structure
 
-### احراز هویت
-- `POST /api/auth/login/` - ورود به سیستم
-- `POST /api/auth/logout/` - خروج از سیستم
-- `GET /api/auth/profile/` - نمایش پروفایل
-- `PUT /api/auth/profile/update/` - بروزرسانی پروفایل
-
-### کاربران
-- `GET/POST /api/users/users/` - لیست/ایجاد کاربران
-- `GET/PUT/DELETE /api/users/users/{id}/` - عملیات روی کاربر
-
-### دروس
-- `GET/POST /api/courses/courses/` - لیست/ایجاد دروس
-- `GET/PUT/DELETE /api/courses/courses/{id}/` - عملیات روی درس
-
-### اعلان‌ها
-- `GET/POST /api/announcements/announcements/` - لیست/ایجاد اعلان
-- `GET/PUT/DELETE /api/announcements/announcements/{id}/` - عملیات روی اعلان
-
-### تکالیف
-- `GET/POST /api/assignments/assignments/` - لیست/ایجاد تکلیف
-- `GET/POST /api/assignments/submissions/` - ارسال/نمایش پاسخ
-
-### گزارش‌ها
-- `GET /api/reports/dashboard/` - آمار کلی (فقط ادمین)
-- `GET /api/reports/student/` - گزارش دانشجو
-- `GET /api/reports/course/{id}/` - گزارش درس
-
-## 🛠️ تکنولوژی‌های استفاده شده
-
-### Backend Framework
-- **Django 5.1**: فریمورک اصلی
-- **Django REST Framework**: برای API
-- **MySQL 8.0+**: دیتابیس production
-
-### کتابخانه‌های اضافی
-- **django-filter**: فیلترینگ پیشرفته
-- **django-cors-headers**: پشتیبانی از CORS
-- **mysqlclient**: اتصال به MySQL
-- **loguru**: لاگ‌گیری پیشرفته
-- **channels**: WebSocket support
-- **pillow**: پردازش تصاویر
-
-## 📱 سازگاری با پلتفرم‌ها
-
-این API طراحی شده برای پشتیبانی از:
-- **وب اپلیکیشن‌ها** (React, Vue, Angular)
-- **موبایل اپ‌های فلاتر** (Flutter)
-- **ربات‌ها** (Telegram, Discord)
-- **اپلیکیشن‌های دسکتاپ**
-
-## 🔐 امنیت
-
-- **Token Authentication**: احراز هویت مبتنی بر توکن
-- **Permission System**: کنترل دسترسی پیشرفته
-- **CORS Protection**: محافظت در برابر Cross-Origin attacks
-- **Data Validation**: اعتبارسنجی کامل داده‌ها
-
-## 🎯 Admin Panel
-
-دسترسی به پنل ادمین:
-- URL: `http://127.0.0.1:8000/admin/`
-- با حساب superuser وارد شوید
-
-## 📊 مثال‌های استفاده
-
-### ورود به سیستم
-```bash
-curl -X POST http://127.0.0.1:8000/api/auth/login/ \\
-  -H "Content-Type: application/json" \\
-  -d '{"username": "admin", "password": "your_password"}'
+```
+backend/
+├── apps/                           # Django applications
+│   ├── announcements/             # University announcements
+│   ├── assignments/               # Course assignments
+│   ├── attendance/                # Attendance tracking
+│   ├── authentication/            # User authentication
+│   ├── common/                    # Common utilities
+│   ├── courses/                   # Course management
+│   ├── exams/                     # Exam management
+│   ├── financial/                 # Financial records
+│   ├── grades/                    # Grade management
+│   ├── library/                   # Library system
+│   ├── notifications/             # Notification system
+│   ├── reports/                   # Reports and analytics
+│   ├── research/                  # Research projects
+│   ├── schedules/                 # Class schedules
+│   └── users/                     # User management
+├── config/                        # Django configuration
+│   ├── settings.py               # Main settings
+│   ├── settings_local.py         # Development settings
+│   ├── settings_production.py    # Production settings
+│   ├── urls.py                   # Main URL configuration
+│   └── api_urls.py               # API URL configuration
+├── docs/                          # Documentation
+├── logs/                          # Log files
+├── manage.py                      # Django management script
+├── requirements.txt               # Python dependencies
+└── wsgi_pythonanywhere.py        # WSGI configuration for deployment
 ```
 
-### دریافت لیست اعلان‌ها
+## 🔗 API Endpoints
+
+### Authentication
+- `POST /api/auth/login/` - User login
+- `POST /api/auth/logout/` - User logout
+- `GET /api/auth/profile/` - Get user profile
+- `PUT /api/auth/profile/update/` - Update user profile
+
+### Core Resources
+- `/api/users/` - User management
+- `/api/courses/` - Course operations
+- `/api/assignments/` - Assignment management
+- `/api/grades/` - Grade management
+- `/api/attendance/` - Attendance tracking
+- `/api/exams/` - Exam management
+- `/api/library/` - Library operations
+- `/api/financial/` - Financial records
+- `/api/research/` - Research projects
+- `/api/notifications/` - Notifications
+- `/api/reports/` - Reports and analytics
+
+### Utility Endpoints
+- `GET /api/health/` - Health check
+- `GET /api/info/` - API information
+
+## 🚀 Deployment
+
+### PythonAnywhere Deployment
+
+1. **Upload Code**:
+   ```bash
+   git push origin main
+   ```
+
+2. **On PythonAnywhere**:
+   ```bash
+   cd ~
+   git clone https://github.com/isina-nej/backend-uni.git
+   python3.10 -m venv venv
+   source venv/bin/activate
+   cd backend-uni
+   pip install -r requirements.txt
+   ```
+
+3. **Configure Database**: Create MySQL database and update `.env` file
+
+4. **Run Migrations**:
+   ```bash
+   python manage.py migrate --settings=config.settings_production
+   python manage.py collectstatic --noinput --settings=config.settings_production
+   ```
+
+5. **Configure WSGI**: Use content from `wsgi_pythonanywhere.py`
+
+## 🧪 Testing
+
 ```bash
-curl -X GET http://127.0.0.1:8000/api/announcements/announcements/ \\
-  -H "Authorization: Token your_token_here"
+# Run all tests
+python manage.py test
+
+# Run specific app tests
+python manage.py test apps.users
+
+# Run with coverage
+coverage run --source='.' manage.py test
+coverage report
 ```
 
-### ایجاد اعلان جدید
+## 📚 Documentation
+
+- API documentation is available at `/api/` when running in development mode
+- Each app contains its own models, views, and serializers documentation
+- Database schema documentation in `docs/` directory
+
+## 🔧 Development
+
+### Adding New Apps
 ```bash
-curl -X POST http://127.0.0.1:8000/api/announcements/announcements/ \\
-  -H "Authorization: Token your_token_here" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "title": "اطلاعیه مهم",
-    "content": "محتوای اطلاعیه",
-    "target_audience": "students",
-    "priority": "high"
-  }'
+python manage.py startapp new_app_name apps/new_app_name
 ```
 
-## 🔄 توسعه و نگهداری
-
-### اضافه کردن ماژول جدید
-1. در پوشه `apps` یک اپلیکیشن جدید بسازید
-2. مدل‌ها، سریالایزرها و ویوها را تعریف کنید
-3. URL ها را به `config/api_urls.py` اضافه کنید
-4. اپلیکیشن را به `INSTALLED_APPS` اضافه کنید
-
-### Migration ها
+### Database Migrations
 ```bash
-python manage.py makemigrations app_name
+# Create migrations
+python manage.py makemigrations
+
+# Apply migrations
 python manage.py migrate
 ```
 
-## 📞 پشتیبانی
+### Static Files
+```bash
+# Collect static files for production
+python manage.py collectstatic
+```
 
-برای سوالات و مشکلات:
-- مستندات API: `/api/` endpoint
-- Admin Panel: `/admin/`
-- مشاهده لاگ‌ها در کنسول
+## 🛡 Security Features
 
-## 🌟 ویژگی‌های آینده
+- JWT token authentication
+- Role-based permissions
+- CORS configuration for web clients
+- SQL injection protection
+- XSS protection
+- CSRF protection
 
-- [ ] سیستم چت آنلاین
-- [ ] پشتیبانی از فایل‌های چندرسانه‌ای
-- [ ] ربات تلگرام
-- [ ] اپلیکیشن موبایل
-- [ ] Dashboard تحلیلی پیشرفته
+## 📊 Monitoring & Logging
+
+- Comprehensive logging with different levels
+- Error tracking and monitoring
+- Performance monitoring capabilities
+- Health check endpoints
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👥 Support
+
+For support and questions:
+- Create an issue on GitHub
+- Contact the development team
+- Check the documentation
 
 ---
 
-**نوشته شده با ❤️ برای جامعه آکادمیک**
-1. Create virtual environment: `python -m venv venv`
-2. Activate: `venv\Scripts\activate` (Windows)
-3. Install dependencies: `pip install -r requirements.txt`
-4. Set environment variables (SECRET_KEY, DB credentials, etc.)
-5. Run migrations: `python manage.py migrate`
-6. Create superuser: `python manage.py createsuperuser`
-7. Run server: `python manage.py runserver`
-
-## Structure
-- apps/: Modular Django apps (users, courses, notifications)
-- config/: Settings and URL configurations
-- logs/: Log files
-- tests/: Unit and integration tests
-- docs/: Documentation
-
-## APIs
-- /api/users/: User management
-- /api/courses/: Course operations
-- /api/notifications/: Notifications for bots/web
-
-## Fault Tolerance
-- Isolated apps prevent cascading failures.
-- Logging captures errors without stopping the system.
-- Use Celery for async tasks to avoid blocking.
-
-## Updates
-- Modular design allows easy addition of new apps.
-- Version APIs for backward compatibility.
-#   b a c k e n d - u n i 
- 
- 
+**Built with ❤️ for the academic community**
