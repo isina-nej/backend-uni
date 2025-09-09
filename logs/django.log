@@ -31,3 +31,5 @@ INFO 2025-09-09 00:32:20,373 autoreload 16712 8328 Watching for file changes wit
 INFO 2025-09-09 00:33:18,424 autoreload 27564 17412 Watching for file changes with StatReloader
 INFO 2025-09-09 00:39:37,789 autoreload 27328 26432 Watching for file changes with StatReloader
 INFO 2025-09-09 00:40:52,277 autoreload 25988 7224 Watching for file changes with StatReloader
+INFO 2025-09-09 00:44:50,186 autoreload 25988 7224 D:\project\uni\backend\apps\announcements\serializers.py changed, reloading.
+INFO 2025-09-09 00:44:50,786 autoreload 25960 3504 Watching for file changes with StatReloader
