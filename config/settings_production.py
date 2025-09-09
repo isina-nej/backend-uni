@@ -43,10 +43,10 @@ DATABASES = {
 
 # Static files configuration for PythonAnywhere
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR.parent, 'static')
+STATIC_ROOT = '/home/sinanej2/static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR.parent, 'media')
+MEDIA_ROOT = '/home/sinanej2/media'
 
 # CORS settings for production
 CORS_ALLOWED_ORIGINS = [

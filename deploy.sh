@@ -31,10 +31,10 @@ if [ ! -f ".env" ]; then
     cat > .env << EOF
 SECRET_KEY=$SECRET_KEY
 DEBUG=False
-DB_NAME=isinanej2\$default
-DB_USER=isinanej2
+DB_NAME=sinanej2\$default
+DB_USER=sinanej2
 DB_PASSWORD=YOUR_MYSQL_PASSWORD_HERE
-DB_HOST=isinanej2.mysql.pythonanywhere-services.com
+DB_HOST=sinanej2.mysql.pythonanywhere-services.com
 DB_PORT=3306
 EOF
     echo "⚠️  IMPORTANT: Edit the .env file and replace YOUR_MYSQL_PASSWORD_HERE with your actual MySQL password!"
@@ -64,8 +64,8 @@ echo "=== Deployment Complete! ==="
 echo ""
 echo "Next steps:"
 echo "1. Go to PythonAnywhere Web tab and reload your web app"
-echo "2. Your Django app should be available at: https://isinanej2.pythonanywhere.com"
-echo "3. Test API endpoints: https://isinanej2.pythonanywhere.com/api/health/"
-echo "4. Access admin: https://isinanej2.pythonanywhere.com/admin/"
+echo "2. Your Django app should be available at: https://sinanej2.pythonanywhere.com"
+echo "3. Test API endpoints: https://sinanej2.pythonanywhere.com/api/health/"
+echo "4. Access admin: https://sinanej2.pythonanywhere.com/admin/"
 echo ""
-echo "Remember to replace 'isinanej2' with your actual PythonAnywhere username!"
+echo "Remember to replace 'sinanej2' with your actual PythonAnywhere username!"
