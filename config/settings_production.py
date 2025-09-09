@@ -53,6 +53,11 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Logging for production
 import logging.config
+import os
+
+# Ensure logs directory exists
+LOGS_DIR = os.path.join(BASE_DIR.parent, 'logs')
+os.makedirs(LOGS_DIR, exist_ok=True)
 
 LOGGING = {
     'version': 1,
@@ -68,38 +73,38 @@ LOGGING = {
         },
     },
     'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR.parent, 'logs', 'django.log'),
+            'filename': os.path.join(LOGS_DIR, 'django.log'),
             'formatter': 'verbose',
         },
         'error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR.parent, 'logs', 'error.log'),
+            'filename': os.path.join(LOGS_DIR, 'error.log'),
             'formatter': 'verbose',
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
         },
     },
     'root': {
-        'handlers': ['console', 'file'],
+        'handlers': ['console'],
         'level': 'INFO',
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'handlers': ['console', 'file'],
             'level': 'INFO',
             'propagate': False,
         },
         'django.request': {
-            'handlers': ['error_file'],
+            'handlers': ['console', 'error_file'],
             'level': 'ERROR',
-            'propagate': True,
+            'propagate': False,
         },
     },
 }
