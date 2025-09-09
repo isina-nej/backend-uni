@@ -1,0 +1,1157 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "🎓 University Management System API",
+    "description": "سیستم جامع مدیریت دانشگاهی با پشتیبانی از وب، موبایل و ربات‌ها\n\n## ویژگی‌های کلیدی:\n- 🔐 احراز هویت مبتنی بر Token\n- 👥 مدیریت نقش‌های مختلف کاربری\n- 📚 مدیریت کامل دروس و نمرات\n- 📢 سیستم اعلان‌ها و گزارش‌گیری\n- 🏛️ خدمات دانشگاهی شامل کتابخانه، امور مالی و...\n\n## نقش‌های کاربری:\n- **Student**: دانشجو\n- **Professor**: استاد\n- **Staff**: کارمند\n- **Admin**: مدیر سیستم",
+    "version": "1.0.0",
+    "contact": {
+      "name": "University IT Department",
+      "email": "support@university.edu"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000",
+      "description": "Development Server"
+    },
+    {
+      "url": "https://api.university.edu",
+      "description": "Production Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "🔐 Authentication",
+      "description": "احراز هویت و مدیریت جلسات کاربری"
+    },
+    {
+      "name": "👥 User Management",
+      "description": "مدیریت کاربران، پروفایل‌ها و نقش‌ها"
+    },
+    {
+      "name": "📚 Academic - Courses",
+      "description": "مدیریت دروس، ثبت‌نام و برنامه‌ریزی"
+    },
+    {
+      "name": "📊 Academic - Grades",
+      "description": "مدیریت نمرات و ارزیابی عملکرد"
+    },
+    {
+      "name": "📅 Academic - Schedules",
+      "description": "برنامه‌ریزی کلاس‌ها و جلسات درسی"
+    },
+    {
+      "name": "📝 Academic - Exams",
+      "description": "برنامه‌ریزی و مدیریت امتحانات"
+    },
+    {
+      "name": "📋 Academic - Assignments",
+      "description": "مدیریت تکالیف و پروژه‌های درسی"
+    },
+    {
+      "name": "🏛️ Services - Library",
+      "description": "مدیریت کتابخانه و منابع علمی"
+    },
+    {
+      "name": "💰 Services - Financial",
+      "description": "مدیریت امور مالی و پرداخت‌ها"
+    },
+    {
+      "name": "✅ Services - Attendance",
+      "description": "سیستم حضور و غیاب"
+    },
+    {
+      "name": "🔬 Services - Research",
+      "description": "مدیریت پروژه‌های تحقیقاتی"
+    },
+    {
+      "name": "📢 Communication - Announcements",
+      "description": "اعلان‌ها و اخبار دانشگاه"
+    },
+    {
+      "name": "🔔 Communication - Notifications",
+      "description": "سیستم اطلاع‌رسانی داخلی"
+    },
+    {
+      "name": "📈 Reports & Analytics",
+      "description": "گزارش‌گیری و تحلیل داده‌ها"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "TokenAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "Token authentication format: 'Token your_token_here'"
+      }
+    },
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "integer", "example": 1},
+          "username": {"type": "string", "example": "john_doe"},
+          "email": {"type": "string", "format": "email", "example": "john@university.edu"},
+          "first_name": {"type": "string", "example": "John"},
+          "last_name": {"type": "string", "example": "Doe"},
+          "role": {"type": "string", "enum": ["student", "professor", "staff", "admin"], "example": "student"},
+          "student_id": {"type": "string", "example": "20250001"},
+          "department": {"type": "string", "example": "Computer Science"},
+          "date_joined": {"type": "string", "format": "date-time"},
+          "is_active": {"type": "boolean", "example": true}
+        }
+      },
+      "Course": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "integer", "example": 1},
+          "title": {"type": "string", "example": "Introduction to Programming"},
+          "code": {"type": "string", "example": "CS101"},
+          "description": {"type": "string", "example": "Basic programming concepts and algorithms"},
+          "professor": {"type": "integer", "example": 1},
+          "professor_name": {"type": "string", "example": "Dr. Smith"},
+          "credits": {"type": "integer", "example": 3},
+          "created_at": {"type": "string", "format": "date-time"}
+        }
+      },
+      "Grade": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "integer", "example": 1},
+          "student": {"type": "integer", "example": 1},
+          "student_name": {"type": "string", "example": "John Doe"},
+          "course": {"type": "integer", "example": 1},
+          "course_title": {"type": "string", "example": "Introduction to Programming"},
+          "score": {"type": "number", "format": "decimal", "example": 85.5},
+          "grade_letter": {"type": "string", "example": "B"},
+          "date_assigned": {"type": "string", "format": "date-time"}
+        }
+      },
+      "Announcement": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "integer", "example": 1},
+          "title": {"type": "string", "example": "Important Notice"},
+          "content": {"type": "string", "example": "This is an important announcement for all students"},
+          "author": {"type": "integer", "example": 1},
+          "author_name": {"type": "string", "example": "Admin"},
+          "target_audience": {"type": "string", "enum": ["all", "students", "professors", "staff", "admins"], "example": "students"},
+          "priority": {"type": "string", "enum": ["low", "medium", "high", "urgent"], "example": "high"},
+          "is_published": {"type": "boolean", "example": true},
+          "created_at": {"type": "string", "format": "date-time"},
+          "expires_at": {"type": "string", "format": "date-time", "nullable": true}
+        }
+      },
+      "Assignment": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "integer", "example": 1},
+          "title": {"type": "string", "example": "Homework 1"},
+          "description": {"type": "string", "example": "Complete exercises 1-10 from chapter 3"},
+          "course": {"type": "integer", "example": 1},
+          "course_title": {"type": "string", "example": "Introduction to Programming"},
+          "professor": {"type": "integer", "example": 1},
+          "professor_name": {"type": "string", "example": "Dr. Smith"},
+          "due_date": {"type": "string", "format": "date-time"},
+          "max_score": {"type": "number", "format": "decimal", "example": 100.0},
+          "created_at": {"type": "string", "format": "date-time"}
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {"type": "string", "example": "Invalid credentials"},
+          "details": {"type": "object"}
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "required": ["username", "password"],
+        "properties": {
+          "username": {"type": "string", "example": "admin"},
+          "password": {"type": "string", "format": "password", "example": "your_password"}
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "token": {"type": "string", "example": "9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b"},
+          "user": {"$ref": "#/components/schemas/User"},
+          "message": {"type": "string", "example": "Login successful"}
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "TokenAuth": []
+    }
+  ],
+  "paths": {
+    "/api/auth/login/": {
+      "post": {
+        "tags": ["🔐 Authentication"],
+        "summary": "ورود به سیستم",
+        "description": "احراز هویت کاربر و دریافت توکن دسترسی",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/LoginRequest"},
+              "examples": {
+                "admin": {
+                  "summary": "ورود مدیر",
+                  "value": {"username": "admin", "password": "admin123"}
+                },
+                "student": {
+                  "summary": "ورود دانشجو",
+                  "value": {"username": "student1", "password": "student123"}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ورود موفقیت‌آمیز",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/LoginResponse"}
+              }
+            }
+          },
+          "400": {
+            "description": "اطلاعات نامعتبر",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/ErrorResponse"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/logout/": {
+      "post": {
+        "tags": ["🔐 Authentication"],
+        "summary": "خروج از سیستم",
+        "description": "انصراف توکن و خروج کاربر از سیستم",
+        "responses": {
+          "200": {
+            "description": "خروج موفقیت‌آمیز",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {"type": "string", "example": "Logout successful"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/profile/": {
+      "get": {
+        "tags": ["🔐 Authentication"],
+        "summary": "نمایش پروفایل کاربر",
+        "description": "دریافت اطلاعات پروفایل کاربر فعلی",
+        "responses": {
+          "200": {
+            "description": "اطلاعات پروفایل",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/User"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/profile/update/": {
+      "put": {
+        "tags": ["🔐 Authentication"],
+        "summary": "بروزرسانی پروفایل",
+        "description": "ویرایش اطلاعات پروفایل کاربر",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "first_name": {"type": "string", "example": "احمد"},
+                  "last_name": {"type": "string", "example": "محمدی"},
+                  "email": {"type": "string", "format": "email", "example": "ahmad@university.edu"}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "بروزرسانی موفق",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/User"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/users/": {
+      "get": {
+        "tags": ["👥 User Management"],
+        "summary": "لیست کاربران",
+        "description": "دریافت لیست تمام کاربران (فقط ادمین)",
+        "parameters": [
+          {
+            "name": "role",
+            "in": "query",
+            "description": "فیلتر بر اساس نقش",
+            "schema": {
+              "type": "string",
+              "enum": ["student", "professor", "staff", "admin"]
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "جستجو در نام کاربری، نام و نام خانوادگی",
+            "schema": {"type": "string"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "لیست کاربران",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {"type": "integer", "example": 150},
+                    "next": {"type": "string", "nullable": true},
+                    "previous": {"type": "string", "nullable": true},
+                    "results": {
+                      "type": "array",
+                      "items": {"$ref": "#/components/schemas/User"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["👥 User Management"],
+        "summary": "ایجاد کاربر جدید",
+        "description": "افزودن کاربر جدید به سیستم (فقط ادمین)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["username", "email", "role"],
+                "properties": {
+                  "username": {"type": "string", "example": "new_student"},
+                  "email": {"type": "string", "format": "email", "example": "student@university.edu"},
+                  "first_name": {"type": "string", "example": "علی"},
+                  "last_name": {"type": "string", "example": "احمدی"},
+                  "role": {"type": "string", "enum": ["student", "professor", "staff"], "example": "student"},
+                  "student_id": {"type": "string", "example": "20250002"},
+                  "department": {"type": "string", "example": "Computer Science"}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "کاربر ایجاد شد",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/User"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/courses/courses/": {
+      "get": {
+        "tags": ["📚 Academic - Courses"],
+        "summary": "لیست دروس",
+        "description": "دریافت لیست دروس بر اساس نقش کاربر",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "جستجو در عنوان و کد درس",
+            "schema": {"type": "string"}
+          },
+          {
+            "name": "professor",
+            "in": "query",
+            "description": "فیلتر بر اساس استاد",
+            "schema": {"type": "integer"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "لیست دروس",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {"type": "integer"},
+                    "results": {
+                      "type": "array",
+                      "items": {"$ref": "#/components/schemas/Course"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["📚 Academic - Courses"],
+        "summary": "ایجاد درس جدید",
+        "description": "افزودن درس جدید (فقط ادمین یا استاد)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["title", "code", "professor"],
+                "properties": {
+                  "title": {"type": "string", "example": "ساختمان داده‌ها"},
+                  "code": {"type": "string", "example": "CS201"},
+                  "description": {"type": "string", "example": "مفاهیم پایه ساختمان داده‌ها و الگوریتم‌ها"},
+                  "professor": {"type": "integer", "example": 1},
+                  "credits": {"type": "integer", "example": 3}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "درس ایجاد شد",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Course"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/grades/grades/": {
+      "get": {
+        "tags": ["📊 Academic - Grades"],
+        "summary": "لیست نمرات",
+        "description": "دریافت نمرات بر اساس نقش کاربر",
+        "parameters": [
+          {
+            "name": "course",
+            "in": "query",
+            "description": "فیلتر بر اساس درس",
+            "schema": {"type": "integer"}
+          },
+          {
+            "name": "student",
+            "in": "query",
+            "description": "فیلتر بر اساس دانشجو",
+            "schema": {"type": "integer"}
+          },
+          {
+            "name": "grade_letter",
+            "in": "query",
+            "description": "فیلتر بر اساس نمره حرفی",
+            "schema": {"type": "string", "enum": ["A", "B", "C", "D", "F"]}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "لیست نمرات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {"$ref": "#/components/schemas/Grade"}
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["📊 Academic - Grades"],
+        "summary": "ثبت نمره جدید",
+        "description": "افزودن نمره برای دانشجو (فقط استاد یا ادمین)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["student", "course", "score"],
+                "properties": {
+                  "student": {"type": "integer", "example": 1},
+                  "course": {"type": "integer", "example": 1},
+                  "score": {"type": "number", "format": "decimal", "example": 85.5},
+                  "grade_letter": {"type": "string", "example": "B"}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "نمره ثبت شد",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Grade"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/announcements/announcements/": {
+      "get": {
+        "tags": ["📢 Communication - Announcements"],
+        "summary": "لیست اعلان‌ها",
+        "description": "دریافت اعلان‌ها بر اساس مخاطب هدف",
+        "parameters": [
+          {
+            "name": "priority",
+            "in": "query",
+            "description": "فیلتر بر اساس اولویت",
+            "schema": {"type": "string", "enum": ["low", "medium", "high", "urgent"]}
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "جستجو در عنوان و محتوا",
+            "schema": {"type": "string"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "لیست اعلان‌ها",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {"$ref": "#/components/schemas/Announcement"}
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["📢 Communication - Announcements"],
+        "summary": "ایجاد اعلان جدید",
+        "description": "انتشار اعلان جدید (فقط ادمین یا کارمند)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["title", "content", "target_audience"],
+                "properties": {
+                  "title": {"type": "string", "example": "شروع ترم جدید"},
+                  "content": {"type": "string", "example": "ترم جدید از تاریخ 1 مهر آغاز می‌شود"},
+                  "target_audience": {"type": "string", "enum": ["all", "students", "professors", "staff"], "example": "students"},
+                  "priority": {"type": "string", "enum": ["low", "medium", "high", "urgent"], "example": "high"},
+                  "expires_at": {"type": "string", "format": "date-time", "nullable": true}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "اعلان ایجاد شد",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Announcement"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/assignments/assignments/": {
+      "get": {
+        "tags": ["📋 Academic - Assignments"],
+        "summary": "لیست تکالیف",
+        "description": "دریافت تکالیف بر اساس نقش کاربر",
+        "parameters": [
+          {
+            "name": "course",
+            "in": "query",
+            "description": "فیلتر بر اساس درس",
+            "schema": {"type": "integer"}
+          },
+          {
+            "name": "search",
+            "in": "query", 
+            "description": "جستجو در عنوان تکلیف",
+            "schema": {"type": "string"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "لیست تکالیف",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {"$ref": "#/components/schemas/Assignment"}
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["📋 Academic - Assignments"],
+        "summary": "ایجاد تکلیف جدید",
+        "description": "افزودن تکلیف جدید (فقط استاد)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["title", "description", "course", "due_date"],
+                "properties": {
+                  "title": {"type": "string", "example": "تمرین شماره 1"},
+                  "description": {"type": "string", "example": "حل مسائل 1 تا 10 از فصل سوم"},
+                  "course": {"type": "integer", "example": 1},
+                  "due_date": {"type": "string", "format": "date-time", "example": "2025-09-15T23:59:59Z"},
+                  "max_score": {"type": "number", "format": "decimal", "example": 100.0}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "تکلیف ایجاد شد",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Assignment"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/assignments/submissions/": {
+      "get": {
+        "tags": ["📋 Academic - Assignments"],
+        "summary": "لیست پاسخ‌های ارسالی",
+        "description": "نمایش پاسخ‌های ارسال شده توسط دانشجویان",
+        "responses": {
+          "200": {
+            "description": "لیست پاسخ‌ها",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "integer"},
+                      "assignment": {"type": "integer"},
+                      "assignment_title": {"type": "string"},
+                      "student": {"type": "integer"},
+                      "student_name": {"type": "string"},
+                      "submitted_at": {"type": "string", "format": "date-time"},
+                      "content": {"type": "string"},
+                      "file_url": {"type": "string"},
+                      "score": {"type": "number", "nullable": true},
+                      "feedback": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["📋 Academic - Assignments"],
+        "summary": "ارسال پاسخ تکلیف",
+        "description": "ارسال پاسخ تکلیف توسط دانشجو",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["assignment", "content"],
+                "properties": {
+                  "assignment": {"type": "integer", "example": 1},
+                  "content": {"type": "string", "example": "پاسخ تمرین..."},
+                  "file_url": {"type": "string", "example": "https://example.com/file.pdf"}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "پاسخ ارسال شد"
+          }
+        }
+      }
+    },
+    "/api/schedules/schedules/": {
+      "get": {
+        "tags": ["📅 Academic - Schedules"],
+        "summary": "برنامه کلاس‌ها",
+        "description": "نمایش برنامه زمانی کلاس‌ها",
+        "parameters": [
+          {
+            "name": "course",
+            "in": "query",
+            "description": "فیلتر بر اساس درس",
+            "schema": {"type": "integer"}
+          },
+          {
+            "name": "day_of_week",
+            "in": "query", 
+            "description": "فیلتر بر اساس روز هفته",
+            "schema": {"type": "string", "enum": ["saturday", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday"]}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "برنامه کلاس‌ها",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "integer"},
+                      "course": {"type": "integer"},
+                      "course_title": {"type": "string"},
+                      "day_of_week": {"type": "string"},
+                      "start_time": {"type": "string", "format": "time"},
+                      "end_time": {"type": "string", "format": "time"},
+                      "classroom": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/exams/exams/": {
+      "get": {
+        "tags": ["📝 Academic - Exams"],
+        "summary": "لیست امتحانات",
+        "description": "نمایش برنامه امتحانات",
+        "responses": {
+          "200": {
+            "description": "لیست امتحانات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "integer"},
+                      "course": {"type": "integer"},
+                      "course_title": {"type": "string"},
+                      "exam_type": {"type": "string", "enum": ["midterm", "final", "quiz"]},
+                      "exam_date": {"type": "string", "format": "date-time"},
+                      "duration": {"type": "integer", "description": "مدت امتحان به دقیقه"},
+                      "location": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library/books/": {
+      "get": {
+        "tags": ["🏛️ Services - Library"],
+        "summary": "لیست کتاب‌ها",
+        "description": "جستجو و مشاهده کتاب‌های کتابخانه",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "جستجو در عنوان، نویسنده یا ISBN",
+            "schema": {"type": "string"}
+          },
+          {
+            "name": "available",
+            "in": "query",
+            "description": "فیلتر کتاب‌های موجود",
+            "schema": {"type": "boolean"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "لیست کتاب‌ها",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "integer"},
+                      "title": {"type": "string"},
+                      "author": {"type": "string"}, 
+                      "isbn": {"type": "string"},
+                      "publisher": {"type": "string"},
+                      "publication_year": {"type": "integer"},
+                      "available_copies": {"type": "integer"},
+                      "total_copies": {"type": "integer"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library/borrowings/": {
+      "get": {
+        "tags": ["🏛️ Services - Library"],
+        "summary": "تاریخچه امانت",
+        "description": "نمایش کتاب‌های امانت گرفته شده",
+        "responses": {
+          "200": {
+            "description": "لیست امانت‌ها"
+          }
+        }
+      },
+      "post": {
+        "tags": ["🏛️ Services - Library"],
+        "summary": "امانت کتاب",
+        "description": "امانت گرفتن کتاب از کتابخانه",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["book"],
+                "properties": {
+                  "book": {"type": "integer", "example": 1}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "کتاب امانت داده شد"
+          }
+        }
+      }
+    },
+    "/api/financial/payments/": {
+      "get": {
+        "tags": ["💰 Services - Financial"],
+        "summary": "تاریخچه پرداخت‌ها",
+        "description": "نمایش پرداخت‌های انجام شده",
+        "responses": {
+          "200": {
+            "description": "لیست پرداخت‌ها",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "integer"},
+                      "student": {"type": "integer"},
+                      "amount": {"type": "number", "format": "decimal"},
+                      "payment_type": {"type": "string", "enum": ["tuition", "library_fine", "lab_fee"]},
+                      "status": {"type": "string", "enum": ["pending", "completed", "failed"]},
+                      "payment_date": {"type": "string", "format": "date-time"},
+                      "description": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/attendance/records/": {
+      "get": {
+        "tags": ["✅ Services - Attendance"],
+        "summary": "گزارش حضور و غیاب",
+        "description": "نمایش وضعیت حضور و غیاب",
+        "parameters": [
+          {
+            "name": "course",
+            "in": "query",
+            "description": "فیلتر بر اساس درس",
+            "schema": {"type": "integer"}
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "فیلتر بر اساس تاریخ",
+            "schema": {"type": "string", "format": "date"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "گزارش حضور و غیاب"
+          }
+        }
+      }
+    },
+    "/api/research/projects/": {
+      "get": {
+        "tags": ["🔬 Services - Research"],
+        "summary": "پروژه‌های تحقیقاتی",
+        "description": "نمایش پروژه‌های تحقیقاتی دانشگاه",
+        "responses": {
+          "200": {
+            "description": "لیست پروژه‌های تحقیقاتی",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "integer"},
+                      "title": {"type": "string"},
+                      "description": {"type": "string"},
+                      "principal_investigator": {"type": "integer"},
+                      "status": {"type": "string", "enum": ["planning", "active", "completed", "cancelled"]},
+                      "start_date": {"type": "string", "format": "date"},
+                      "end_date": {"type": "string", "format": "date"},
+                      "budget": {"type": "number", "format": "decimal"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/notifications/notifications/": {
+      "get": {
+        "tags": ["🔔 Communication - Notifications"],
+        "summary": "اطلاعیه‌های شخصی",
+        "description": "نمایش اطلاعیه‌های ارسالی به کاربر",
+        "parameters": [
+          {
+            "name": "is_read",
+            "in": "query",
+            "description": "فیلتر پیام‌های خوانده شده",
+            "schema": {"type": "boolean"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "لیست اطلاعیه‌ها",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "integer"},
+                      "title": {"type": "string"},
+                      "message": {"type": "string"},
+                      "is_read": {"type": "boolean"},
+                      "created_at": {"type": "string", "format": "date-time"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reports/dashboard/": {
+      "get": {
+        "tags": ["📈 Reports & Analytics"],
+        "summary": "داشبورد مدیریت",
+        "description": "آمار کلی سیستم (فقط ادمین)",
+        "responses": {
+          "200": {
+            "description": "آمار کلی",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "total_students": {"type": "integer", "example": 1250},
+                    "total_professors": {"type": "integer", "example": 85},
+                    "total_courses": {"type": "integer", "example": 120},
+                    "total_grades": {"type": "integer", "example": 5800},
+                    "average_grade": {"type": "number", "format": "decimal", "example": 16.5}
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "عدم دسترسی",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/ErrorResponse"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reports/student/": {
+      "get": {
+        "tags": ["📈 Reports & Analytics"],
+        "summary": "گزارش عملکرد دانشجو",
+        "description": "گزارش کامل عملکرد تحصیلی دانشجو",
+        "responses": {
+          "200": {
+            "description": "گزارش دانشجو",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "student_info": {
+                      "type": "object",
+                      "properties": {
+                        "name": {"type": "string"},
+                        "student_id": {"type": "string"},
+                        "department": {"type": "string"}
+                      }
+                    },
+                    "academic_summary": {
+                      "type": "object",
+                      "properties": {
+                        "total_courses": {"type": "integer"},
+                        "total_grades": {"type": "integer"},
+                        "average_grade": {"type": "number", "format": "decimal"},
+                        "attendance_rate": {"type": "number", "format": "decimal"}
+                      }
+                    },
+                    "recent_grades": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "course": {"type": "string"},
+                          "score": {"type": "number"},
+                          "date": {"type": "string", "format": "date"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reports/course/{course_id}/": {
+      "get": {
+        "tags": ["📈 Reports & Analytics"],
+        "summary": "گزارش عملکرد درس",
+        "description": "تحلیل عملکرد کلاس (فقط استاد یا ادمین)",
+        "parameters": [
+          {
+            "name": "course_id",
+            "in": "path",
+            "required": true,
+            "description": "شناسه درس",
+            "schema": {"type": "integer"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "گزارش درس",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "course_info": {
+                      "type": "object",
+                      "properties": {
+                        "title": {"type": "string"},
+                        "code": {"type": "string"},
+                        "professor": {"type": "string"},
+                        "total_students": {"type": "integer"}
+                      }
+                    },
+                    "performance_stats": {
+                      "type": "object",
+                      "properties": {
+                        "total_grades": {"type": "integer"},
+                        "average_grade": {"type": "number"},
+                        "highest_grade": {"type": "number"},
+                        "lowest_grade": {"type": "number"},
+                        "attendance_rate": {"type": "number"}
+                      }
+                    },
+                    "grade_distribution": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "range": {"type": "string"},
+                          "count": {"type": "integer"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
