@@ -1,0 +1,290 @@
+[
+  {
+    "endpoint": "/api/health/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:05"
+  },
+  {
+    "endpoint": "/api/info/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:05"
+  },
+  {
+    "endpoint": "/admin/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "Response: <!DOCTYPE html>\n\n<html lang=\"en-us\" dir=\"ltr\">\n<head>\n<title>Log in | Django site admin</title>\n<lin",
+    "timestamp": "2025-09-10 01:25:06"
+  },
+  {
+    "endpoint": "/api/auth/login/",
+    "method": "POST",
+    "status_code": 200,
+    "success": true,
+    "message": "Response: {'token': '3bb4c0219e30b519edb07d47f5341456f161ee3a', 'user': {'id': 2, 'username': 'sina', 'email': 'sina4501@gmail.com', 'first_name': '', 'last_name': '', 'role': 'student', 'student_id': '', 'department': ''}, 'message': 'Login successful'}",
+    "timestamp": "2025-09-10 01:25:07"
+  },
+  {
+    "endpoint": "/api/auth/login/",
+    "method": "POST",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'CSRF Failed: Referer checking failed - no Referer.'}",
+    "timestamp": "2025-09-10 01:25:08"
+  },
+  {
+    "endpoint": "/api/auth/profile/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "Response: {'id': 2, 'username': 'sina', 'email': 'sina4501@gmail.com', 'first_name': '', 'last_name': '', 'role': 'student', 'student_id': '', 'department': ''}",
+    "timestamp": "2025-09-10 01:25:08"
+  },
+  {
+    "endpoint": "/api/auth/logout/",
+    "method": "POST",
+    "status_code": 200,
+    "success": true,
+    "message": "Response: {'message': 'Logout successful'}",
+    "timestamp": "2025-09-10 01:25:08"
+  },
+  {
+    "endpoint": "/api/users/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:09"
+  },
+  {
+    "endpoint": "/api/users/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:09"
+  },
+  {
+    "endpoint": "/api/courses/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:09"
+  },
+  {
+    "endpoint": "/api/courses/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:10"
+  },
+  {
+    "endpoint": "/api/notifications/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:10"
+  },
+  {
+    "endpoint": "/api/notifications/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:10"
+  },
+  {
+    "endpoint": "/api/grades/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:10"
+  },
+  {
+    "endpoint": "/api/grades/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:11"
+  },
+  {
+    "endpoint": "/api/schedules/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:11"
+  },
+  {
+    "endpoint": "/api/schedules/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:11"
+  },
+  {
+    "endpoint": "/api/exams/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:12"
+  },
+  {
+    "endpoint": "/api/exams/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:12"
+  },
+  {
+    "endpoint": "/api/library/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:12"
+  },
+  {
+    "endpoint": "/api/library/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:13"
+  },
+  {
+    "endpoint": "/api/financial/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:13"
+  },
+  {
+    "endpoint": "/api/financial/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:13"
+  },
+  {
+    "endpoint": "/api/attendance/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:14"
+  },
+  {
+    "endpoint": "/api/attendance/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:14"
+  },
+  {
+    "endpoint": "/api/research/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:14"
+  },
+  {
+    "endpoint": "/api/research/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:15"
+  },
+  {
+    "endpoint": "/api/announcements/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:15"
+  },
+  {
+    "endpoint": "/api/announcements/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:15"
+  },
+  {
+    "endpoint": "/api/assignments/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "Response: {'detail': 'Authentication credentials were not provided.'}",
+    "timestamp": "2025-09-10 01:25:16"
+  },
+  {
+    "endpoint": "/api/assignments/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:16"
+  },
+  {
+    "endpoint": "/api/reports/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: \n<!doctype html>\n<html lang=\"en\">\n<head>\n  <title>Not Found</title>\n</head>\n<body>\n  <h1>Not Found</",
+    "timestamp": "2025-09-10 01:25:16"
+  },
+  {
+    "endpoint": "/api/reports/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: \n<!doctype html>\n<html lang=\"en\">\n<head>\n  <title>Not Found</title>\n</head>\n<body>\n  <h1>Not Found</",
+    "timestamp": "2025-09-10 01:25:17"
+  },
+  {
+    "endpoint": "/api/reports/dashboard-stats/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: \n<!doctype html>\n<html lang=\"en\">\n<head>\n  <title>Not Found</title>\n</head>\n<body>\n  <h1>Not Found</",
+    "timestamp": "2025-09-10 01:25:17"
+  },
+  {
+    "endpoint": "/api/reports/student-report/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: \n<!doctype html>\n<html lang=\"en\">\n<head>\n  <title>Not Found</title>\n</head>\n<body>\n  <h1>Not Found</",
+    "timestamp": "2025-09-10 01:25:17"
+  },
+  {
+    "endpoint": "/api/courses/",
+    "method": "POST",
+    "status_code": 0,
+    "success": false,
+    "message": "Response: {'detail': 'Invalid token.'}",
+    "timestamp": "2025-09-10 01:25:18"
+  }
+]
