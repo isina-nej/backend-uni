@@ -15,27 +15,17 @@ source ~/.virtualenvs/backend-uni-env/bin/activate
 echo "📦 Installing requirements..."
 pip install -r requirements.txt
 
-# Step 4: Create necessary directories
-echo "📁 Creating necessary directories..."
-mkdir -p /home/sinanej2/backend-uni/logs
-mkdir -p /home/sinanej2/backend-uni/static
-mkdir -p /home/sinanej2/backend-uni/media
-
-# Step 5: Test database connection
-echo "🔍 Testing database connection..."
-chmod +x test_neon_connection.sh
-./test_neon_connection.sh
-
-# Step 6: Collect static files
+# Step 4: Collect static files
 echo "📁 Collecting static files..."
 python manage.py collectstatic --noinput --settings=config.settings_production
 
-# Step 7: Run migrations (only if database connection works)
+# Step 5: Run migrations
 echo "🗄️ Running database migrations..."
-echo "⚠️  Attempting migrations (may fail if database is sleeping)..."
-python manage.py migrate --settings=config.settings_production || echo "❌ Migration failed - check database connection"
+python manage.py migrate --settings=config.settings_production
 
-echo "✅ Deployment completed!"
+# Step 6: Create logs directory if it doesn't exist
+echo "📝 Setting up logs directory..."
+mkdir -p /home/sinanej2/backend-uni/logs
+
+echo "✅ Deployment completed successfully!"
 echo "🔄 Don't forget to reload your web app in PythonAnywhere!"
-echo "💡 If migrations failed, wake up your Neon database and run:"
-echo "   python manage.py migrate --settings=config.settings_production"

@@ -15,17 +15,17 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-# Database - keep your existing Neon PostgreSQL
+# Database - MySQL for Production
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'neondb'),
-        'USER': os.getenv('DB_USER', 'neondb_owner'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'npg_gDbsPZxln7I5'),
-        'HOST': os.getenv('DB_HOST', 'ep-shy-hat-a9wddu9f-pooler.gwc.azure.neon.tech'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME', 'backend_uni_db'),
+        'USER': os.getenv('DB_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '3306'),
         'OPTIONS': {
-            'sslmode': 'require',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
@@ -53,11 +53,6 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Logging for production
 import logging.config
-import os
-
-# Ensure logs directory exists
-LOGS_DIR = os.path.join(BASE_DIR.parent, 'logs')
-os.makedirs(LOGS_DIR, exist_ok=True)
 
 LOGGING = {
     'version': 1,
@@ -73,38 +68,38 @@ LOGGING = {
         },
     },
     'handlers': {
-        'console': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
-        },
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(LOGS_DIR, 'django.log'),
+            'filename': os.path.join(BASE_DIR.parent, 'logs', 'django.log'),
             'formatter': 'verbose',
         },
         'error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(LOGS_DIR, 'error.log'),
+            'filename': os.path.join(BASE_DIR.parent, 'logs', 'error.log'),
             'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
         },
     },
     'root': {
-        'handlers': ['console'],
+        'handlers': ['console', 'file'],
         'level': 'INFO',
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
+            'handlers': ['file', 'console'],
             'level': 'INFO',
             'propagate': False,
         },
         'django.request': {
-            'handlers': ['console', 'error_file'],
+            'handlers': ['error_file'],
             'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
     },
 }

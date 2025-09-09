@@ -75,17 +75,17 @@ TEMPLATES = [
     },
 ]
 
-# Database - Neon PostgreSQL
+# Database - MySQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neondb',
-        'USER': 'neondb_owner',
-        'PASSWORD': 'npg_gDbsPZxln7I5',
-        'HOST': 'ep-shy-hat-a9wddu9f-pooler.gwc.azure.neon.tech',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'backend_uni_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
         'OPTIONS': {
-            'sslmode': 'require',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }

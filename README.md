@@ -46,8 +46,11 @@
 
 ### پیش‌نیازها
 - Python 3.9+
-- PostgreSQL (Neon Database)
+- **MySQL 8.0+** یا **MariaDB 10.5+**
 - Virtual Environment
+
+> 📖 **راهنمای کامل تنظیم MySQL**: [MYSQL_SETUP.md](MYSQL_SETUP.md)
+> 🌐 **راهنمای MySQL در PythonAnywhere**: [MYSQL_PYTHONANYWHERE.md](MYSQL_PYTHONANYWHERE.md)
 
 ### مراحل نصب
 
@@ -122,12 +125,12 @@ python manage.py runserver
 ### Backend Framework
 - **Django 5.1**: فریمورک اصلی
 - **Django REST Framework**: برای API
-- **PostgreSQL**: دیتابیس production
+- **MySQL 8.0+**: دیتابیس production
 
 ### کتابخانه‌های اضافی
 - **django-filter**: فیلترینگ پیشرفته
 - **django-cors-headers**: پشتیبانی از CORS
-- **psycopg2-binary**: اتصال به PostgreSQL
+- **mysqlclient**: اتصال به MySQL
 - **loguru**: لاگ‌گیری پیشرفته
 - **channels**: WebSocket support
 - **pillow**: پردازش تصاویر
