@@ -115,3 +115,6 @@ Then reload the web app.
 
 ---
 **Note**: Replace `username` with your actual PythonAnywhere username throughout this guide.
+
+
+cd ~/backend-uni && chmod +x update_deployment.sh && ./update_deployment.sh
