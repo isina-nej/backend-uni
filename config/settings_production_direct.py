@@ -1,36 +1,23 @@
 """
-Simple production settings for PythonAnywhere deployment
-This version loads settings from .env.production file
+Direct production settings for PythonAnywhere deployment
+No environment variables needed - all settings are hardcoded
 """
 import os
 from .settings import *
 
-# Load environment variables from .env.production file
-def load_env_file():
-    env_path = BASE_DIR / '.env.production'
-    if env_path.exists():
-        with open(env_path, 'r') as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith('#'):
-                    key, value = line.split('=', 1)
-                    os.environ.setdefault(key, value)
-
-# Load environment variables
-load_env_file()
-
 # Production-specific settings
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+DEBUG = False
 
 # Database configuration for PythonAnywhere MySQL
+# توجه: باید پسورد دیتابیس رو از تب Databases بگیری
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME', 'sinanej2$backend_uni_db'),
-        'USER': os.environ.get('DB_USER', 'sinanej2'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-        'HOST': os.environ.get('DB_HOST', 'sinanej2.mysql.pythonanywhere-services.com'),
-        'PORT': os.environ.get('DB_PORT', '3306'),
+        'NAME': 'sinanej2$backend_uni_db',  # نام دیتابیس از تب Databases
+        'USER': 'sinanej2',
+        'PASSWORD': '',  # اینجا پسورد دیتابیست رو بنویس
+        'HOST': 'sinanej2.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
@@ -38,7 +25,7 @@ DATABASES = {
 }
 
 # Security settings
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production-123456')
+SECRET_KEY = 'django-insecure-production-key-change-this-123456789'
 
 # Allow PythonAnywhere hosts
 ALLOWED_HOSTS = [
@@ -46,7 +33,7 @@ ALLOWED_HOSTS = [
     'www.sinanej2.pythonanywhere.com',
     'localhost',
     '127.0.0.1',
-    '*',  # Remove this in production and specify exact domains
+    '*',  # برای تست - بعداً حذفش کن
 ]
 
 # Static files settings for production
@@ -64,8 +51,6 @@ MEDIA_URL = '/media/'
 
 # Ensure logs directory exists
 LOGS_DIR = BASE_DIR / 'logs'
-if not LOGS_DIR.exists():
-    LOGS_DIR.mkdir(exist_ok=True)
 
 # Logging configuration
 LOGGING = {
@@ -73,7 +58,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'format': '{levelname} {asctime} {module} {message}',
             'style': '{',
         },
         'simple': {
@@ -82,12 +67,6 @@ LOGGING = {
         },
     },
     'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': str(LOGS_DIR / 'django.log'),
-            'formatter': 'verbose',
-        },
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
@@ -100,7 +79,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': False,
         },
@@ -110,8 +89,12 @@ LOGGING = {
 # CORS settings for production
 CORS_ALLOWED_ORIGINS = [
     "https://sinanej2.pythonanywhere.com",
-    "http://localhost:3000",  # For Flutter web development
-    "http://127.0.0.1:3000",
+    "http://localhost:3000",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# Disable migrations for problematic apps if needed
+# MIGRATION_MODULES = {
+#     'problematic_app': None,
+# }
