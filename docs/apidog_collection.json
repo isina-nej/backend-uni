@@ -5,8 +5,9 @@
     "description": "سیستم جامع مدیریت دانشگاهی با پشتیبانی از وب، موبایل و ربات‌ها\n\n## ویژگی‌های کلیدی:\n- 🔐 احراز هویت مبتنی بر Token\n- 👥 مدیریت نقش‌های مختلف کاربری\n- 📚 مدیریت کامل دروس و نمرات\n- 📢 سیستم اعلان‌ها و گزارش‌گیری\n- 🏛️ خدمات دانشگاهی شامل کتابخانه، امور مالی و...\n\n## نقش‌های کاربری:\n- **Student**: دانشجو\n- **Professor**: استاد\n- **Staff**: کارمند\n- **Admin**: مدیر سیستم",
     "version": "1.0.0",
     "contact": {
-      "name": "University IT Department",
-      "email": "support@university.edu"
+      "name": "University Backend Team",
+      "email": "sina4501ail.com",
+      "url": "https://github.com/isina-nej/backend-uni"
     },
     "license": {
       "name": "MIT",
@@ -19,11 +20,15 @@
       "description": "Development Server"
     },
     {
-      "url": "https://api.university.edu",
-      "description": "Production Server"
+      "url": "https://sinanej2.pythonanywhere.com",
+      "description": "Production Server (PythonAnywhere)"
     }
   ],
   "tags": [
+    {
+      "name": "🌐 Public Endpoints",
+      "description": "آدرس‌های عمومی بدون نیاز به احراز هویت"
+    },
     {
       "name": "🔐 Authentication",
       "description": "احراز هویت و مدیریت جلسات کاربری"
@@ -193,6 +198,57 @@
     }
   ],
   "paths": {
+    "/api/health/": {
+      "get": {
+        "tags": ["🌐 Public Endpoints"],
+        "summary": "بررسی سلامت سیستم",
+        "description": "بررسی وضعیت عملکرد API",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "سیستم سالم است",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {"type": "string", "example": "healthy"},
+                    "timestamp": {"type": "string", "format": "date-time"},
+                    "version": {"type": "string", "example": "1.0.0"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/info/": {
+      "get": {
+        "tags": ["🌐 Public Endpoints"],
+        "summary": "اطلاعات API",
+        "description": "دریافت اطلاعات عمومی API",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "اطلاعات API",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {"type": "string", "example": "University Management System API"},
+                    "version": {"type": "string", "example": "1.0.0"},
+                    "description": {"type": "string", "example": "سیستم جامع مدیریت دانشگاهی"},
+                    "environment": {"type": "string", "example": "production"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/auth/login/": {
       "post": {
         "tags": ["🔐 Authentication"],
@@ -210,8 +266,8 @@
                   "value": {"username": "admin", "password": "admin123"}
                 },
                 "student": {
-                  "summary": "ورود دانشجو",
-                  "value": {"username": "student1", "password": "student123"}
+                  "summary": "ورود دانشجو",  
+                  "value": {"username": "student", "password": "password123"}
                 }
               }
             }
@@ -308,7 +364,7 @@
         }
       }
     },
-    "/api/users/users/": {
+    "/api/users/": {
       "get": {
         "tags": ["👥 User Management"],
         "summary": "لیست کاربران",
@@ -388,7 +444,24 @@
         }
       }
     },
-    "/api/courses/courses/": {
+    "/api/users/me/": {
+      "get": {
+        "tags": ["👥 User Management"],
+        "summary": "اطلاعات کاربر فعلی",
+        "description": "دریافت اطلاعات کاربر وارد شده",
+        "responses": {
+          "200": {
+            "description": "اطلاعات کاربر",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/User"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/courses/": {
       "get": {
         "tags": ["📚 Academic - Courses"],
         "summary": "لیست دروس",
@@ -461,7 +534,7 @@
         }
       }
     },
-    "/api/grades/grades/": {
+    "/api/grades/": {
       "get": {
         "tags": ["📊 Academic - Grades"],
         "summary": "لیست نمرات",
@@ -533,7 +606,7 @@
         }
       }
     },
-    "/api/announcements/announcements/": {
+    "/api/announcements/": {
       "get": {
         "tags": ["📢 Communication - Announcements"],
         "summary": "لیست اعلان‌ها",
@@ -600,7 +673,7 @@
         }
       }
     },
-    "/api/assignments/assignments/": {
+    "/api/assignments/": {
       "get": {
         "tags": ["📋 Academic - Assignments"],
         "summary": "لیست تکالیف",
@@ -727,7 +800,7 @@
         }
       }
     },
-    "/api/schedules/schedules/": {
+    "/api/schedules/": {
       "get": {
         "tags": ["📅 Academic - Schedules"],
         "summary": "برنامه کلاس‌ها",
@@ -772,7 +845,7 @@
         }
       }
     },
-    "/api/exams/exams/": {
+    "/api/exams/": {
       "get": {
         "tags": ["📝 Academic - Exams"],
         "summary": "لیست امتحانات",
@@ -803,7 +876,7 @@
         }
       }
     },
-    "/api/library/books/": {
+    "/api/library/": {
       "get": {
         "tags": ["🏛️ Services - Library"],
         "summary": "لیست کتاب‌ها",
@@ -885,7 +958,7 @@
         }
       }
     },
-    "/api/financial/payments/": {
+    "/api/financial/": {
       "get": {
         "tags": ["💰 Services - Financial"],
         "summary": "تاریخچه پرداخت‌ها",
@@ -916,7 +989,7 @@
         }
       }
     },
-    "/api/attendance/records/": {
+    "/api/attendance/": {
       "get": {
         "tags": ["✅ Services - Attendance"],
         "summary": "گزارش حضور و غیاب",
@@ -942,7 +1015,7 @@
         }
       }
     },
-    "/api/research/projects/": {
+    "/api/research/": {
       "get": {
         "tags": ["🔬 Services - Research"],
         "summary": "پروژه‌های تحقیقاتی",
@@ -974,7 +1047,7 @@
         }
       }
     },
-    "/api/notifications/notifications/": {
+    "/api/notifications/": {
       "get": {
         "tags": ["🔔 Communication - Notifications"],
         "summary": "اطلاعیه‌های شخصی",
