@@ -1,26 +1,31 @@
 #!/bin/bash
-# PythonAnywhere Deployment Script
 
+# Deployment script for PythonAnywhere
 echo "🚀 Starting deployment to PythonAnywhere..."
 
-# Install/Update dependencies
-echo "📦 Installing dependencies..."
-pip3.10 install --user -r requirements_production.txt
+# Step 1: Pull latest changes from git
+echo "📥 Pulling latest changes from git..."
+git pull origin main
 
-# Collect static files
+# Step 2: Activate virtual environment
+echo "🔄 Activating virtual environment..."
+source ~/.virtualenvs/backend-uni-env/bin/activate
+
+# Step 3: Install/update requirements
+echo "📦 Installing requirements..."
+pip install -r requirements.txt
+
+# Step 4: Collect static files
 echo "📁 Collecting static files..."
-python3.10 manage.py collectstatic --noinput --settings=config.settings_production
+python manage.py collectstatic --noinput --settings=config.settings_production
 
-# Run migrations
-echo "🗃️ Running database migrations..."
-python3.10 manage.py migrate --settings=config.settings_production
+# Step 5: Run migrations
+echo "🗄️ Running database migrations..."
+python manage.py migrate --settings=config.settings_production
 
-# Create superuser (optional - uncomment if needed)
-# echo "👤 Creating superuser..."
-# python3.10 manage.py createsuperuser --settings=config.settings_production
+# Step 6: Create logs directory if it doesn't exist
+echo "📝 Setting up logs directory..."
+mkdir -p /home/sinanej2/backend-uni/logs
 
-echo "✅ Deployment completed!"
-echo "Don't forget to:"
-echo "1. Update your WSGI file in PythonAnywhere dashboard"
-echo "2. Set environment variables"
-echo "3. Reload your web app"
+echo "✅ Deployment completed successfully!"
+echo "🔄 Don't forget to reload your web app in PythonAnywhere!"
