@@ -1,0 +1,162 @@
+[
+  {
+    "endpoint": "/api/health/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:13"
+  },
+  {
+    "endpoint": "/api/info/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:13"
+  },
+  {
+    "endpoint": "/admin/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:14"
+  },
+  {
+    "endpoint": "/api/auth/login/",
+    "method": "POST",
+    "status_code": 200,
+    "success": true,
+    "message": "Login successful",
+    "timestamp": "2025-09-10 01:36:15"
+  },
+  {
+    "endpoint": "/api/auth/profile/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:16"
+  },
+  {
+    "endpoint": "/api/users/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:16"
+  },
+  {
+    "endpoint": "/api/courses/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:16"
+  },
+  {
+    "endpoint": "/api/notifications/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:17"
+  },
+  {
+    "endpoint": "/api/grades/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:17"
+  },
+  {
+    "endpoint": "/api/schedules/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:17"
+  },
+  {
+    "endpoint": "/api/exams/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:18"
+  },
+  {
+    "endpoint": "/api/library/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:18"
+  },
+  {
+    "endpoint": "/api/financial/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:18"
+  },
+  {
+    "endpoint": "/api/attendance/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:19"
+  },
+  {
+    "endpoint": "/api/research/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:19"
+  },
+  {
+    "endpoint": "/api/announcements/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:19"
+  },
+  {
+    "endpoint": "/api/assignments/",
+    "method": "GET",
+    "status_code": 200,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:20"
+  },
+  {
+    "endpoint": "/api/reports/dashboard/",
+    "method": "GET",
+    "status_code": 0,
+    "success": true,
+    "message": "OK",
+    "timestamp": "2025-09-10 01:36:20"
+  },
+  {
+    "endpoint": "/api/reports/student/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Status: 500, Content: \n<!doctype html>\n<html lang=\"en\">\n<head>\n  <title>Server Error (500)</title>\n</head>\n<body>\n  <h1>Se",
+    "timestamp": "2025-09-10 01:36:20"
+  },
+  {
+    "endpoint": "/api/users/me/",
+    "method": "GET",
+    "status_code": 0,
+    "success": false,
+    "message": "Status: 404, Content: \n<!doctype html>\n<html lang=\"en\">\n<head>\n  <title>Not Found</title>\n</head>\n<body>\n  <h1>Not Found</",
+    "timestamp": "2025-09-10 01:36:21"
+  }
+]
