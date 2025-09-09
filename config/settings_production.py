@@ -32,10 +32,10 @@ DATABASES = {
 
 # Static files configuration for PythonAnywhere
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/sinanej2/backend-uni/static'
+STATIC_ROOT = os.path.join(BASE_DIR.parent, 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/sinanej2/backend-uni/media'
+MEDIA_ROOT = os.path.join(BASE_DIR.parent, 'media')
 
 # CORS settings for production
 CORS_ALLOWED_ORIGINS = [
@@ -45,33 +45,56 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_ALL_ORIGINS = False
 
-# Security settings
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Security settings (تنها برای HTTPS فعال کن)
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Logging for production
+import logging.config
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': '/home/sinanej2/backend-uni/logs/django.log',
+            'filename': os.path.join(BASE_DIR.parent, 'logs', 'django.log'),
+            'formatter': 'verbose',
         },
         'error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': '/home/sinanej2/backend-uni/logs/error.log',
+            'filename': os.path.join(BASE_DIR.parent, 'logs', 'error.log'),
+            'formatter': 'verbose',
         },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file'],
+        'level': 'INFO',
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
+            'handlers': ['file', 'console'],
             'level': 'INFO',
-            'propagate': True,
+            'propagate': False,
         },
         'django.request': {
             'handlers': ['error_file'],
