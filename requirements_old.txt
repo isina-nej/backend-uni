@@ -1,0 +1,107 @@
+Django==5.1
+djangorestframework==3.15.2
+django-filter==24.3  # For advanced filtering
+psycopg2-binary==2.9.9  # For PostgreSQL/CockroachDB
+redis==5.0.8  # For caching and session
+celery==5.4.0  # For async tasks
+channels==4.1.0  # For WebSockets/async
+sentry-sdk==2.13.0  # For logging/error tracking
+loguru==0.7.2  # For advanced logging
+django-cors-headers==4.3.1  # For CORS (Flutter/Web)
+pillow==10.4.0  # For image handling
+django-environ==0.11.2  # For environment variables
+django-extensions==3.2.3  # For management commands and debugging
+
+# Modern async web framework
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+
+# Database and ORM
+sqlalchemy==2.0.35
+alembic==1.13.2
+
+# Message brokers and streaming
+confluent-kafka==2.6.0
+kafka-python==2.0.2
+
+# OLAP and Analytics
+clickhouse-driver==0.2.7
+clickhouse-connect==0.8.0
+pyarrow==17.0.0
+pandas==2.2.2
+
+# Object storage
+boto3==1.35.0
+minio==7.2.7
+
+# Search and indexing
+elasticsearch==8.15.0
+elasticsearch-dsl==8.15.0
+
+# Caching and performance
+django-redis==5.4.0
+hiredis==3.0.0
+
+# Authentication and security
+PyJWT==2.9.0
+python-jose[cryptography]==3.3.0
+bcrypt==4.2.0
+passlib==1.7.4
+
+# Monitoring and metrics
+prometheus-client==0.20.0
+django-prometheus==2.3.1
+
+# Workflow orchestration
+apache-airflow==2.10.0
+apache-airflow-providers-postgres==5.10.2
+apache-airflow-providers-redis==3.6.1
+
+# Data validation and serialization
+pydantic==2.9.0
+pydantic-settings==2.4.0
+
+# HTTP client for external APIs
+httpx==0.27.0
+aiohttp==3.10.0
+
+# Background tasks and job queues
+rq==1.16.2
+django-rq==2.10.2
+
+# File processing and data formats
+openpyxl==3.1.5
+xlrd==2.0.1
+python-docx==1.1.2
+reportlab==4.2.2
+
+# Email and notifications
+django-anymail==11.0.0
+sendgrid==6.11.0
+
+# Testing and development
+pytest==8.3.0
+pytest-django==4.8.0
+pytest-asyncio==0.23.0
+faker==26.0.0
+
+# Code quality and linting
+black==24.8.0
+isort==5.13.2
+flake8==7.1.0
+mypy==1.11.0
+
+# Documentation
+sphinx==7.4.7
+sphinx-rtd-theme==2.0.0
+
+# Containerization and deployment
+docker==7.1.0
+kubernetes==30.1.0
+
+# Additional utilities
+python-multipart==0.0.9
+python-dateutil==2.9.0
+pytz==2024.1
+requests==2.32.3
+gunicorn==22.0.0
