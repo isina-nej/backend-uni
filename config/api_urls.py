@@ -1,4 +1,5 @@
 from django.urls import path, include
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('', include('apps.common.urls')),  # Health check and API info
@@ -15,5 +16,6 @@ urlpatterns = [
     path('announcements/', include('apps.announcements.urls')),
     path('assignments/', include('apps.assignments.urls')),
     path('auth/', include('apps.authentication.urls')),
+    path('auth/token/', obtain_auth_token, name='api_token_auth'),
     path('reports/', include('apps.reports.urls')),
 ]
