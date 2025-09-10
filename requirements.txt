@@ -1,7 +1,7 @@
 Django==5.1
 djangorestframework==3.15.2
 django-filter==24.3  # For advanced filtering
-mysqlclient==2.2.4  # For MySQL - replacing PostgreSQL
+PyMySQL==1.1.1  # For MySQL - replacing mysqlclient
 redis==5.0.8  # For caching
 celery==5.4.0  # For async tasks
 # django-allauth==0.63.3  # For authentication - removed for simplicity
@@ -12,3 +12,24 @@ django-cors-headers==4.3.1  # For CORS (Flutter/Web)
 pillow==10.4.0  # For image handling
 django-environ==0.11.2  # For environment variables
 django-extensions==3.2.3  # For management commands and debugging
+
+# FastAPI and related
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+sqlalchemy==2.0.23
+# psycopg2-binary==2.9.9  # Removed due to compilation issues
+pydantic==2.5.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+confluent-kafka==2.3.0
+minio==7.2.0
+alembic==1.13.1
+slowapi==0.1.9
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
+python-dotenv==1.0.0
+aiofiles==23.2.1
+jinja2==3.1.2
+cryptography==41.0.7
