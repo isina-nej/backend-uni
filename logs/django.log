@@ -2194,3 +2194,214 @@ INFO 2025-09-10 17:29:24,251 autoreload 21768 22400 D:\project\uni\backend\apps\
 INFO 2025-09-10 17:29:24,969 autoreload 15092 6540 Watching for file changes with StatReloader
 INFO 2025-09-10 17:35:23,654 autoreload 15092 6540 D:\project\uni\backend\apps\notifications\urls.py changed, reloading.
 INFO 2025-09-10 17:35:24,458 autoreload 20932 4136 Watching for file changes with StatReloader
+INFO 2025-09-10 17:40:32,476 autoreload 20932 4136 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-10 17:40:33,243 autoreload 9028 21856 Watching for file changes with StatReloader
+INFO 2025-09-10 17:48:57,495 autoreload 9028 21856 D:\project\uni\backend\config\api_urls.py changed, reloading.
+INFO 2025-09-10 17:48:58,190 autoreload 22344 15724 Watching for file changes with StatReloader
+INFO 2025-09-10 17:54:05,522 autoreload 22344 15724 D:\project\uni\backend\apps\analytics\services.py changed, reloading.
+INFO 2025-09-10 17:54:06,320 autoreload 20520 16588 Watching for file changes with StatReloader
+INFO 2025-09-10 17:55:32,921 autoreload 18920 4976 Watching for file changes with StatReloader
+INFO 2025-09-10 17:57:11,980 security_middleware 20520 19496 REQUEST - GET /api/v1/analytics/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:11,980 security_middleware 20520 19496 API_REQUEST [b46172bb] - GET /api/v1/analytics/ - User: Anonymous
+INFO 2025-09-10 17:57:12,167 security_middleware 20520 19496 API_RESPONSE [b46172bb] - GET /api/v1/analytics/ - Status: 404
+WARNING 2025-09-10 17:57:12,167 security_middleware 20520 19496 RESPONSE - GET /api/v1/analytics/ - Status: 404 - Duration: 0.187s
+WARNING 2025-09-10 17:57:12,167 log 20520 19496 Not Found: /api/v1/analytics/
+WARNING 2025-09-10 17:57:12,168 basehttp 20520 19496 "GET /api/v1/analytics/ HTTP/1.1" 404 6059
+INFO 2025-09-10 17:57:12,176 security_middleware 20520 15508 REQUEST - GET /api/v1/analytics/dashboards/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,176 security_middleware 20520 15508 API_REQUEST [0332b8eb] - GET /api/v1/analytics/dashboards/ - User: Anonymous
+INFO 2025-09-10 17:57:12,180 security_middleware 20520 15508 API_RESPONSE [0332b8eb] - GET /api/v1/analytics/dashboards/ - Status: 404
+WARNING 2025-09-10 17:57:12,180 security_middleware 20520 15508 RESPONSE - GET /api/v1/analytics/dashboards/ - Status: 404 - Duration: 0.004s
+WARNING 2025-09-10 17:57:12,180 log 20520 15508 Not Found: /api/v1/analytics/dashboards/
+WARNING 2025-09-10 17:57:12,181 basehttp 20520 15508 "GET /api/v1/analytics/dashboards/ HTTP/1.1" 404 6092
+INFO 2025-09-10 17:57:12,191 security_middleware 20520 19772 REQUEST - GET /api/v1/analytics/dashboards/1/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,191 security_middleware 20520 19772 API_REQUEST [79c224d0] - GET /api/v1/analytics/dashboards/1/ - User: Anonymous
+INFO 2025-09-10 17:57:12,196 security_middleware 20520 19772 API_RESPONSE [79c224d0] - GET /api/v1/analytics/dashboards/1/ - Status: 404
+WARNING 2025-09-10 17:57:12,196 security_middleware 20520 19772 RESPONSE - GET /api/v1/analytics/dashboards/1/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,196 log 20520 19772 Not Found: /api/v1/analytics/dashboards/1/
+WARNING 2025-09-10 17:57:12,197 basehttp 20520 19772 "GET /api/v1/analytics/dashboards/1/ HTTP/1.1" 404 6098
+INFO 2025-09-10 17:57:12,206 security_middleware 20520 22680 REQUEST - GET /api/v1/analytics/widgets/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,206 security_middleware 20520 22680 API_REQUEST [797d27f7] - GET /api/v1/analytics/widgets/ - User: Anonymous
+INFO 2025-09-10 17:57:12,210 security_middleware 20520 22680 API_RESPONSE [797d27f7] - GET /api/v1/analytics/widgets/ - Status: 404
+WARNING 2025-09-10 17:57:12,210 security_middleware 20520 22680 RESPONSE - GET /api/v1/analytics/widgets/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,211 log 20520 22680 Not Found: /api/v1/analytics/widgets/
+WARNING 2025-09-10 17:57:12,211 basehttp 20520 22680 "GET /api/v1/analytics/widgets/ HTTP/1.1" 404 6083
+INFO 2025-09-10 17:57:12,219 security_middleware 20520 19396 REQUEST - GET /api/v1/analytics/widgets/1/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,220 security_middleware 20520 19396 API_REQUEST [87954377] - GET /api/v1/analytics/widgets/1/data/ - User: Anonymous
+INFO 2025-09-10 17:57:12,224 security_middleware 20520 19396 API_RESPONSE [87954377] - GET /api/v1/analytics/widgets/1/data/ - Status: 404
+WARNING 2025-09-10 17:57:12,224 security_middleware 20520 19396 RESPONSE - GET /api/v1/analytics/widgets/1/data/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,224 log 20520 19396 Not Found: /api/v1/analytics/widgets/1/data/
+WARNING 2025-09-10 17:57:12,225 basehttp 20520 19396 "GET /api/v1/analytics/widgets/1/data/ HTTP/1.1" 404 6104
+INFO 2025-09-10 17:57:12,234 security_middleware 20520 15996 REQUEST - GET /api/v1/analytics/data-sources/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,234 security_middleware 20520 15996 API_REQUEST [b8366231] - GET /api/v1/analytics/data-sources/ - User: Anonymous
+INFO 2025-09-10 17:57:12,239 security_middleware 20520 15996 API_RESPONSE [b8366231] - GET /api/v1/analytics/data-sources/ - Status: 404
+WARNING 2025-09-10 17:57:12,239 security_middleware 20520 15996 RESPONSE - GET /api/v1/analytics/data-sources/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,239 log 20520 15996 Not Found: /api/v1/analytics/data-sources/
+WARNING 2025-09-10 17:57:12,240 basehttp 20520 15996 "GET /api/v1/analytics/data-sources/ HTTP/1.1" 404 6098
+INFO 2025-09-10 17:57:12,248 security_middleware 20520 19304 REQUEST - GET /api/v1/analytics/data-sources/student_count/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,249 security_middleware 20520 19304 API_REQUEST [2e08d2a9] - GET /api/v1/analytics/data-sources/student_count/data/ - User: Anonymous
+INFO 2025-09-10 17:57:12,253 security_middleware 20520 19304 API_RESPONSE [2e08d2a9] - GET /api/v1/analytics/data-sources/student_count/data/ - Status: 404
+WARNING 2025-09-10 17:57:12,253 security_middleware 20520 19304 RESPONSE - GET /api/v1/analytics/data-sources/student_count/data/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,254 log 20520 19304 Not Found: /api/v1/analytics/data-sources/student_count/data/
+WARNING 2025-09-10 17:57:12,254 basehttp 20520 19304 "GET /api/v1/analytics/data-sources/student_count/data/ HTTP/1.1" 404 6155
+INFO 2025-09-10 17:57:12,278 security_middleware 20520 23388 REQUEST - GET /api/v1/analytics/data-sources/student_by_status/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,278 security_middleware 20520 23388 API_REQUEST [502791c2] - GET /api/v1/analytics/data-sources/student_by_status/data/ - User: Anonymous
+INFO 2025-09-10 17:57:12,282 security_middleware 20520 23388 API_RESPONSE [502791c2] - GET /api/v1/analytics/data-sources/student_by_status/data/ - Status: 404
+WARNING 2025-09-10 17:57:12,283 security_middleware 20520 23388 RESPONSE - GET /api/v1/analytics/data-sources/student_by_status/data/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,283 log 20520 23388 Not Found: /api/v1/analytics/data-sources/student_by_status/data/
+WARNING 2025-09-10 17:57:12,283 basehttp 20520 23388 "GET /api/v1/analytics/data-sources/student_by_status/data/ HTTP/1.1" 404 6167
+INFO 2025-09-10 17:57:12,309 security_middleware 20520 21780 REQUEST - GET /api/v1/analytics/data-sources/grade_distribution/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,310 security_middleware 20520 21780 API_REQUEST [f70b2ff7] - GET /api/v1/analytics/data-sources/grade_distribution/data/ - User: Anonymous
+INFO 2025-09-10 17:57:12,314 security_middleware 20520 21780 API_RESPONSE [f70b2ff7] - GET /api/v1/analytics/data-sources/grade_distribution/data/ - Status: 404
+WARNING 2025-09-10 17:57:12,314 security_middleware 20520 21780 RESPONSE - GET /api/v1/analytics/data-sources/grade_distribution/data/ - Status: 404 - Duration: 0.006s
+WARNING 2025-09-10 17:57:12,315 log 20520 21780 Not Found: /api/v1/analytics/data-sources/grade_distribution/data/
+WARNING 2025-09-10 17:57:12,315 basehttp 20520 21780 "GET /api/v1/analytics/data-sources/grade_distribution/data/ HTTP/1.1" 404 6170
+INFO 2025-09-10 17:57:12,323 security_middleware 20520 23200 REQUEST - GET /api/v1/analytics/reports/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,324 security_middleware 20520 23200 API_REQUEST [00aacfba] - GET /api/v1/analytics/reports/ - User: Anonymous
+INFO 2025-09-10 17:57:12,328 security_middleware 20520 23200 API_RESPONSE [00aacfba] - GET /api/v1/analytics/reports/ - Status: 404
+WARNING 2025-09-10 17:57:12,328 security_middleware 20520 23200 RESPONSE - GET /api/v1/analytics/reports/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,329 log 20520 23200 Not Found: /api/v1/analytics/reports/
+WARNING 2025-09-10 17:57:12,329 basehttp 20520 23200 "GET /api/v1/analytics/reports/ HTTP/1.1" 404 6083
+INFO 2025-09-10 17:57:12,355 security_middleware 20520 23344 REQUEST - POST /api/v1/analytics/reports/1/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,355 security_middleware 20520 23344 API_REQUEST [42878813] - POST /api/v1/analytics/reports/1/execute/ - User: Anonymous
+INFO 2025-09-10 17:57:12,360 security_middleware 20520 23344 API_RESPONSE [42878813] - POST /api/v1/analytics/reports/1/execute/ - Status: 404
+WARNING 2025-09-10 17:57:12,361 security_middleware 20520 23344 RESPONSE - POST /api/v1/analytics/reports/1/execute/ - Status: 404 - Duration: 0.006s
+WARNING 2025-09-10 17:57:12,361 log 20520 23344 Not Found: /api/v1/analytics/reports/1/execute/
+WARNING 2025-09-10 17:57:12,362 basehttp 20520 23344 "POST /api/v1/analytics/reports/1/execute/ HTTP/1.1" 404 6114
+INFO 2025-09-10 17:57:12,379 security_middleware 20520 23224 REQUEST - GET /api/v1/analytics/analytics/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,379 security_middleware 20520 23224 API_REQUEST [fa3791d0] - GET /api/v1/analytics/analytics/ - User: Anonymous
+INFO 2025-09-10 17:57:12,388 security_middleware 20520 23224 API_RESPONSE [fa3791d0] - GET /api/v1/analytics/analytics/ - Status: 404
+WARNING 2025-09-10 17:57:12,389 security_middleware 20520 23224 RESPONSE - GET /api/v1/analytics/analytics/ - Status: 404 - Duration: 0.010s
+WARNING 2025-09-10 17:57:12,389 log 20520 23224 Not Found: /api/v1/analytics/analytics/
+WARNING 2025-09-10 17:57:12,390 basehttp 20520 23224 "GET /api/v1/analytics/analytics/ HTTP/1.1" 404 6089
+INFO 2025-09-10 17:57:12,401 security_middleware 20520 23332 REQUEST - GET /api/v1/analytics/analytics/system_stats/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,402 security_middleware 20520 23332 API_REQUEST [7aad5a97] - GET /api/v1/analytics/analytics/system_stats/ - User: Anonymous
+INFO 2025-09-10 17:57:12,406 security_middleware 20520 23332 API_RESPONSE [7aad5a97] - GET /api/v1/analytics/analytics/system_stats/ - Status: 404
+WARNING 2025-09-10 17:57:12,407 security_middleware 20520 23332 RESPONSE - GET /api/v1/analytics/analytics/system_stats/ - Status: 404 - Duration: 0.006s
+WARNING 2025-09-10 17:57:12,407 log 20520 23332 Not Found: /api/v1/analytics/analytics/system_stats/
+WARNING 2025-09-10 17:57:12,408 basehttp 20520 23332 "GET /api/v1/analytics/analytics/system_stats/ HTTP/1.1" 404 6128
+INFO 2025-09-10 17:57:12,432 security_middleware 20520 18376 REQUEST - GET /api/v1/schema/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:12,433 security_middleware 20520 18376 API_REQUEST [d3d17bc5] - GET /api/v1/schema/ - User: Anonymous
+INFO 2025-09-10 17:57:12,437 security_middleware 20520 18376 API_RESPONSE [d3d17bc5] - GET /api/v1/schema/ - Status: 404
+WARNING 2025-09-10 17:57:12,437 security_middleware 20520 18376 RESPONSE - GET /api/v1/schema/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:12,437 log 20520 18376 Not Found: /api/v1/schema/
+WARNING 2025-09-10 17:57:12,438 basehttp 20520 18376 "GET /api/v1/schema/ HTTP/1.1" 404 6050
+INFO 2025-09-10 17:57:30,511 security_middleware 20520 23508 REQUEST - GET /api/analytics/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,512 security_middleware 20520 23508 API_REQUEST [24ce30ad] - GET /api/analytics/ - User: Anonymous
+INFO 2025-09-10 17:57:30,516 security_middleware 20520 23508 API_RESPONSE [24ce30ad] - GET /api/analytics/ - Status: 404
+WARNING 2025-09-10 17:57:30,516 security_middleware 20520 23508 RESPONSE - GET /api/analytics/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,516 log 20520 23508 Not Found: /api/analytics/
+WARNING 2025-09-10 17:57:30,517 basehttp 20520 23508 "GET /api/analytics/ HTTP/1.1" 404 6101
+INFO 2025-09-10 17:57:30,526 security_middleware 20520 22916 REQUEST - GET /api/analytics/dashboards/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,526 security_middleware 20520 22916 API_REQUEST [d0ec2905] - GET /api/analytics/dashboards/ - User: Anonymous
+INFO 2025-09-10 17:57:30,531 security_middleware 20520 22916 API_RESPONSE [d0ec2905] - GET /api/analytics/dashboards/ - Status: 404
+WARNING 2025-09-10 17:57:30,532 security_middleware 20520 22916 RESPONSE - GET /api/analytics/dashboards/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,532 log 20520 22916 Not Found: /api/analytics/dashboards/
+WARNING 2025-09-10 17:57:30,532 basehttp 20520 22916 "GET /api/analytics/dashboards/ HTTP/1.1" 404 6134
+INFO 2025-09-10 17:57:30,541 security_middleware 20520 20716 REQUEST - GET /api/analytics/dashboards/1/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,541 security_middleware 20520 20716 API_REQUEST [23cd943e] - GET /api/analytics/dashboards/1/ - User: Anonymous
+INFO 2025-09-10 17:57:30,546 security_middleware 20520 20716 API_RESPONSE [23cd943e] - GET /api/analytics/dashboards/1/ - Status: 404
+WARNING 2025-09-10 17:57:30,546 security_middleware 20520 20716 RESPONSE - GET /api/analytics/dashboards/1/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,547 log 20520 20716 Not Found: /api/analytics/dashboards/1/
+WARNING 2025-09-10 17:57:30,547 basehttp 20520 20716 "GET /api/analytics/dashboards/1/ HTTP/1.1" 404 6140
+INFO 2025-09-10 17:57:30,560 security_middleware 20520 22584 REQUEST - GET /api/analytics/widgets/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,561 security_middleware 20520 22584 API_REQUEST [e4727728] - GET /api/analytics/widgets/ - User: Anonymous
+INFO 2025-09-10 17:57:30,568 security_middleware 20520 22584 API_RESPONSE [e4727728] - GET /api/analytics/widgets/ - Status: 404
+WARNING 2025-09-10 17:57:30,569 security_middleware 20520 22584 RESPONSE - GET /api/analytics/widgets/ - Status: 404 - Duration: 0.008s
+WARNING 2025-09-10 17:57:30,569 log 20520 22584 Not Found: /api/analytics/widgets/
+WARNING 2025-09-10 17:57:30,570 basehttp 20520 22584 "GET /api/analytics/widgets/ HTTP/1.1" 404 6125
+INFO 2025-09-10 17:57:30,596 security_middleware 20520 6316 REQUEST - GET /api/analytics/widgets/1/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,597 security_middleware 20520 6316 API_REQUEST [d48bcfd2] - GET /api/analytics/widgets/1/data/ - User: Anonymous
+INFO 2025-09-10 17:57:30,601 security_middleware 20520 6316 API_RESPONSE [d48bcfd2] - GET /api/analytics/widgets/1/data/ - Status: 404
+WARNING 2025-09-10 17:57:30,601 security_middleware 20520 6316 RESPONSE - GET /api/analytics/widgets/1/data/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,601 log 20520 6316 Not Found: /api/analytics/widgets/1/data/
+WARNING 2025-09-10 17:57:30,601 basehttp 20520 6316 "GET /api/analytics/widgets/1/data/ HTTP/1.1" 404 6146
+INFO 2025-09-10 17:57:30,627 security_middleware 20520 16104 REQUEST - GET /api/analytics/data-sources/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,628 security_middleware 20520 16104 API_REQUEST [95de61ea] - GET /api/analytics/data-sources/ - User: Anonymous
+INFO 2025-09-10 17:57:30,631 security_middleware 20520 16104 API_RESPONSE [95de61ea] - GET /api/analytics/data-sources/ - Status: 404
+WARNING 2025-09-10 17:57:30,632 security_middleware 20520 16104 RESPONSE - GET /api/analytics/data-sources/ - Status: 404 - Duration: 0.004s
+WARNING 2025-09-10 17:57:30,632 log 20520 16104 Not Found: /api/analytics/data-sources/
+WARNING 2025-09-10 17:57:30,632 basehttp 20520 16104 "GET /api/analytics/data-sources/ HTTP/1.1" 404 6140
+INFO 2025-09-10 17:57:30,639 security_middleware 20520 19772 REQUEST - GET /api/analytics/data-sources/student_count/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,640 security_middleware 20520 19772 API_REQUEST [29b6f564] - GET /api/analytics/data-sources/student_count/data/ - User: Anonymous
+INFO 2025-09-10 17:57:30,644 security_middleware 20520 19772 API_RESPONSE [29b6f564] - GET /api/analytics/data-sources/student_count/data/ - Status: 404
+WARNING 2025-09-10 17:57:30,644 security_middleware 20520 19772 RESPONSE - GET /api/analytics/data-sources/student_count/data/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,645 log 20520 19772 Not Found: /api/analytics/data-sources/student_count/data/
+WARNING 2025-09-10 17:57:30,645 basehttp 20520 19772 "GET /api/analytics/data-sources/student_count/data/ HTTP/1.1" 404 6197
+INFO 2025-09-10 17:57:30,675 security_middleware 20520 16692 REQUEST - GET /api/analytics/data-sources/student_by_status/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,675 security_middleware 20520 16692 API_REQUEST [1d7ef7ca] - GET /api/analytics/data-sources/student_by_status/data/ - User: Anonymous
+INFO 2025-09-10 17:57:30,680 security_middleware 20520 16692 API_RESPONSE [1d7ef7ca] - GET /api/analytics/data-sources/student_by_status/data/ - Status: 404
+WARNING 2025-09-10 17:57:30,680 security_middleware 20520 16692 RESPONSE - GET /api/analytics/data-sources/student_by_status/data/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,680 log 20520 16692 Not Found: /api/analytics/data-sources/student_by_status/data/
+WARNING 2025-09-10 17:57:30,681 basehttp 20520 16692 "GET /api/analytics/data-sources/student_by_status/data/ HTTP/1.1" 404 6209
+INFO 2025-09-10 17:57:30,688 security_middleware 20520 13568 REQUEST - GET /api/analytics/data-sources/grade_distribution/data/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,689 security_middleware 20520 13568 API_REQUEST [465cd2c0] - GET /api/analytics/data-sources/grade_distribution/data/ - User: Anonymous
+INFO 2025-09-10 17:57:30,693 security_middleware 20520 13568 API_RESPONSE [465cd2c0] - GET /api/analytics/data-sources/grade_distribution/data/ - Status: 404
+WARNING 2025-09-10 17:57:30,693 security_middleware 20520 13568 RESPONSE - GET /api/analytics/data-sources/grade_distribution/data/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,693 log 20520 13568 Not Found: /api/analytics/data-sources/grade_distribution/data/
+WARNING 2025-09-10 17:57:30,694 basehttp 20520 13568 "GET /api/analytics/data-sources/grade_distribution/data/ HTTP/1.1" 404 6212
+INFO 2025-09-10 17:57:30,721 security_middleware 20520 20620 REQUEST - GET /api/analytics/reports/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,722 security_middleware 20520 20620 API_REQUEST [4f95d22d] - GET /api/analytics/reports/ - User: Anonymous
+INFO 2025-09-10 17:57:30,728 security_middleware 20520 20620 API_RESPONSE [4f95d22d] - GET /api/analytics/reports/ - Status: 404
+WARNING 2025-09-10 17:57:30,728 security_middleware 20520 20620 RESPONSE - GET /api/analytics/reports/ - Status: 404 - Duration: 0.007s
+WARNING 2025-09-10 17:57:30,728 log 20520 20620 Not Found: /api/analytics/reports/
+WARNING 2025-09-10 17:57:30,729 basehttp 20520 20620 "GET /api/analytics/reports/ HTTP/1.1" 404 6125
+INFO 2025-09-10 17:57:30,736 security_middleware 20520 22768 REQUEST - POST /api/analytics/reports/1/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,737 security_middleware 20520 22768 API_REQUEST [e134b00e] - POST /api/analytics/reports/1/execute/ - User: Anonymous
+INFO 2025-09-10 17:57:30,741 security_middleware 20520 22768 API_RESPONSE [e134b00e] - POST /api/analytics/reports/1/execute/ - Status: 404
+WARNING 2025-09-10 17:57:30,741 security_middleware 20520 22768 RESPONSE - POST /api/analytics/reports/1/execute/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,742 log 20520 22768 Not Found: /api/analytics/reports/1/execute/
+WARNING 2025-09-10 17:57:30,742 basehttp 20520 22768 "POST /api/analytics/reports/1/execute/ HTTP/1.1" 404 6156
+INFO 2025-09-10 17:57:30,749 security_middleware 20520 32 REQUEST - GET /api/analytics/analytics/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,750 security_middleware 20520 32 API_REQUEST [3d7492bb] - GET /api/analytics/analytics/ - User: Anonymous
+INFO 2025-09-10 17:57:30,754 security_middleware 20520 32 API_RESPONSE [3d7492bb] - GET /api/analytics/analytics/ - Status: 404
+WARNING 2025-09-10 17:57:30,755 security_middleware 20520 32 RESPONSE - GET /api/analytics/analytics/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,755 log 20520 32 Not Found: /api/analytics/analytics/
+WARNING 2025-09-10 17:57:30,755 basehttp 20520 32 "GET /api/analytics/analytics/ HTTP/1.1" 404 6131
+INFO 2025-09-10 17:57:30,784 security_middleware 20520 13360 REQUEST - GET /api/analytics/analytics/system_stats/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,785 security_middleware 20520 13360 API_REQUEST [3a422a8e] - GET /api/analytics/analytics/system_stats/ - User: Anonymous
+INFO 2025-09-10 17:57:30,789 security_middleware 20520 13360 API_RESPONSE [3a422a8e] - GET /api/analytics/analytics/system_stats/ - Status: 404
+WARNING 2025-09-10 17:57:30,789 security_middleware 20520 13360 RESPONSE - GET /api/analytics/analytics/system_stats/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:30,789 log 20520 13360 Not Found: /api/analytics/analytics/system_stats/
+WARNING 2025-09-10 17:57:30,790 basehttp 20520 13360 "GET /api/analytics/analytics/system_stats/ HTTP/1.1" 404 6170
+INFO 2025-09-10 17:57:30,797 security_middleware 20520 21676 REQUEST - GET /api/schema/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 17:57:30,798 security_middleware 20520 21676 API_REQUEST [78460bed] - GET /api/schema/ - User: Anonymous
+INFO 2025-09-10 17:57:30,965 security_middleware 20520 21676 API_RESPONSE [78460bed] - GET /api/schema/ - Status: 500
+WARNING 2025-09-10 17:57:30,965 security_middleware 20520 21676 RESPONSE - GET /api/schema/ - Status: 500 - Duration: 0.168s
+ERROR 2025-09-10 17:57:30,965 basehttp 20520 21676 "GET /api/schema/ HTTP/1.1" 500 132773
+INFO 2025-09-10 17:57:40,956 security_middleware 20520 16764 REQUEST - GET /api/analytics/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 17:57:40,957 security_middleware 20520 16764 API_REQUEST [04c21c8c] - GET /api/analytics/ - User: Anonymous
+INFO 2025-09-10 17:57:40,961 security_middleware 20520 16764 API_RESPONSE [04c21c8c] - GET /api/analytics/ - Status: 404
+WARNING 2025-09-10 17:57:40,961 security_middleware 20520 16764 RESPONSE - GET /api/analytics/ - Status: 404 - Duration: 0.005s
+WARNING 2025-09-10 17:57:40,962 log 20520 16764 Not Found: /api/analytics/
+WARNING 2025-09-10 17:57:40,962 basehttp 20520 16764 "GET /api/analytics/ HTTP/1.1" 404 6101
+INFO 2025-09-10 17:58:05,128 autoreload 20520 16588 D:\project\uni\backend\apps\analytics\urls.py changed, reloading.
+INFO 2025-09-10 17:58:05,810 autoreload 23116 23172 Watching for file changes with StatReloader
+INFO 2025-09-10 17:58:46,131 autoreload 296 22144 Watching for file changes with StatReloader
+INFO 2025-09-10 17:59:33,154 autoreload 296 22144 D:\project\uni\backend\apps\analytics\views.py changed, reloading.
+INFO 2025-09-10 17:59:33,313 autoreload 23116 23172 D:\project\uni\backend\apps\analytics\views.py changed, reloading.
+INFO 2025-09-10 17:59:33,893 autoreload 17372 3168 Watching for file changes with StatReloader
+INFO 2025-09-10 17:59:34,041 autoreload 14836 22752 Watching for file changes with StatReloader
+INFO 2025-09-10 17:59:43,888 autoreload 17372 3168 D:\project\uni\backend\apps\analytics\views.py changed, reloading.
+INFO 2025-09-10 17:59:43,892 autoreload 14836 22752 D:\project\uni\backend\apps\analytics\views.py changed, reloading.
+INFO 2025-09-10 17:59:44,586 autoreload 2768 18312 Watching for file changes with StatReloader
+INFO 2025-09-10 17:59:44,586 autoreload 10764 21260 Watching for file changes with StatReloader
+INFO 2025-09-10 18:00:05,089 autoreload 2768 18312 D:\project\uni\backend\apps\analytics\views.py changed, reloading.
+INFO 2025-09-10 18:00:05,090 autoreload 10764 21260 D:\project\uni\backend\apps\analytics\views.py changed, reloading.
+INFO 2025-09-10 18:00:05,945 autoreload 14148 5924 Watching for file changes with StatReloader
+INFO 2025-09-10 18:00:05,945 autoreload 23068 7308 Watching for file changes with StatReloader
+INFO 2025-09-10 18:00:18,860 autoreload 22564 21196 Watching for file changes with StatReloader
+INFO 2025-09-10 18:00:31,927 autoreload 10356 19652 Watching for file changes with StatReloader
+INFO 2025-09-10 18:00:38,476 security_middleware 10356 22308 REQUEST - GET /api/analytics/dashboards/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 18:00:38,476 security_middleware 10356 22308 API_REQUEST [1cf49be0] - GET /api/analytics/dashboards/ - User: Anonymous
+INFO 2025-09-10 18:00:38,482 security_middleware 10356 22308 API_RESPONSE [1cf49be0] - GET /api/analytics/dashboards/ - Status: 401
+WARNING 2025-09-10 18:00:38,482 security_middleware 10356 22308 RESPONSE - GET /api/analytics/dashboards/ - Status: 401 - Duration: 0.007s
+WARNING 2025-09-10 18:00:38,483 log 10356 22308 Unauthorized: /api/analytics/dashboards/
+WARNING 2025-09-10 18:00:38,483 basehttp 10356 22308 "GET /api/analytics/dashboards/ HTTP/1.1" 401 191
+INFO 2025-09-10 18:00:55,126 security_middleware 10356 22308 REQUEST - GET /api/analytics/data-sources/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 18:00:55,126 security_middleware 10356 22308 API_REQUEST [f32f9cd3] - GET /api/analytics/data-sources/ - User: Anonymous
+INFO 2025-09-10 18:00:55,127 security_middleware 10356 22308 API_RESPONSE [f32f9cd3] - GET /api/analytics/data-sources/ - Status: 401
+WARNING 2025-09-10 18:00:55,127 security_middleware 10356 22308 RESPONSE - GET /api/analytics/data-sources/ - Status: 401 - Duration: 0.002s
+WARNING 2025-09-10 18:00:55,128 log 10356 22308 Unauthorized: /api/analytics/data-sources/
+WARNING 2025-09-10 18:00:55,128 basehttp 10356 22308 "GET /api/analytics/data-sources/ HTTP/1.1" 401 193
+INFO 2025-09-10 18:03:16,778 autoreload 10356 19652 D:\project\uni\backend\apps\analytics\__init__.py changed, reloading.
+INFO 2025-09-10 18:03:17,601 autoreload 21964 22936 Watching for file changes with StatReloader

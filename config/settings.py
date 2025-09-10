@@ -51,6 +51,7 @@ LOCAL_APPS = [
     'apps.library',
     'apps.financial',
     'apps.notifications',
+    'apps.analytics',
     'apps.reports',
     'apps.research',
     'apps.announcements',
