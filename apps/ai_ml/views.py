@@ -22,7 +22,8 @@ from .serializers import (
     GradingAssistanceSerializer, AnomalyDetectionSerializer, IntelligentScheduleSerializer,
     NLPFeedbackAnalysisSerializer, PerformancePredictionRequestSerializer,
     CourseRecommendationRequestSerializer, GradingAssistanceRequestSerializer,
-    ScheduleGenerationRequestSerializer, NLPFeedbackRequestSerializer, ModelTrainingRequestSerializer
+    ScheduleGenerationRequestSerializer, NLPFeedbackRequestSerializer, ModelTrainingRequestSerializer,
+    AIMLDashboardSerializer
 )
 from .services import (
     performance_prediction_service, course_recommendation_service,
@@ -398,6 +399,7 @@ class NLPFeedbackAnalysisViewSet(viewsets.ReadOnlyModelViewSet):
 class AIMLDashboardViewSet(viewsets.ViewSet):
     """Dashboard for AI/ML insights"""
 
+    serializer_class = AIMLDashboardSerializer
     # permission_classes = [permissions.IsAuthenticated]  # Temporarily disabled for testing
 
     @extend_schema(

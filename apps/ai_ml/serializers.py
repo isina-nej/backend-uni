@@ -16,7 +16,10 @@ class MLModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MLModel
-        fields = '__all__'
+        fields = [
+            'id', 'name', 'model_type', 'version', 'status', 'accuracy', 'precision', 'recall',
+            'f1_score', 'training_data_size', 'last_trained', 'training_duration', 'created_at', 'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
@@ -29,7 +32,11 @@ class StudentPerformancePredictionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = StudentPerformancePrediction
-        fields = '__all__'
+        fields = [
+            'id', 'student', 'student_name', 'course', 'course_name', 'model_used', 'model_name',
+            'predicted_score', 'confidence_level', 'risk_level', 'recommendations',
+            'created_at', 'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
@@ -43,7 +50,13 @@ class CourseRecommendationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CourseRecommendation
-        fields = '__all__'
+        fields = [
+            'id', 'student', 'student_name', 'recommended_course', 'course_name', 'course_code',
+            'model_used', 'model_name', 'recommendation_score', 'confidence_level', 'reasoning',
+            'interest_match', 'skill_match', 'career_alignment', 'prerequisite_satisfaction',
+            'peer_performance', 'prerequisites_needed', 'expected_difficulty', 'is_viewed', 'is_enrolled',
+            'recommendation_date', 'expires_at', 'created_at', 'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
@@ -56,7 +69,11 @@ class GradingAssistanceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GradingAssistance
-        fields = '__all__'
+        fields = [
+            'id', 'assignment', 'assignment_title', 'student', 'student_name', 'model_used', 'model_name',
+            'predicted_grade', 'confidence_score', 'grading_criteria', 'feedback_suggestions',
+            'created_at', 'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
@@ -69,7 +86,13 @@ class AnomalyDetectionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AnomalyDetection
-        fields = '__all__'
+        fields = [
+            'id', 'model_used', 'model_name', 'anomaly_type', 'severity', 'description',
+            'affected_user', 'affected_user_name', 'affected_course', 'affected_course_name',
+            'detected_metrics', 'expected_values', 'actual_values', 'anomaly_score', 'confidence_score',
+            'is_investigated', 'investigation_notes', 'resolution_status', 'detected_at', 'resolved_at',
+            'created_at', 'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
@@ -81,7 +104,11 @@ class IntelligentScheduleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = IntelligentSchedule
-        fields = '__all__'
+        fields = [
+            'id', 'user', 'user_name', 'model_used', 'model_name', 'schedule_type',
+            'original_schedule', 'optimized_schedule', 'optimization_score',
+            'constraints_used', 'created_at', 'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
@@ -95,7 +122,11 @@ class NLPFeedbackAnalysisSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NLPFeedbackAnalysis
-        fields = '__all__'
+        fields = [
+            'id', 'student', 'student_name', 'course', 'course_name', 'instructor', 'instructor_name',
+            'model_used', 'model_name', 'feedback_text', 'sentiment_score', 'key_topics',
+            'actionable_insights', 'response_suggestions', 'created_at', 'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
@@ -163,3 +194,16 @@ class ModelTrainingRequestSerializer(serializers.Serializer):
         ('nlp_feedback', 'NLP Feedback Analysis'),
     ])
     hyperparameters = serializers.JSONField(required=False, default=dict)
+
+
+class AIMLDashboardSerializer(serializers.Serializer):
+    """Serializer for AI/ML dashboard data"""
+
+    total_models = serializers.IntegerField()
+    active_models = serializers.IntegerField()
+    predictions_today = serializers.IntegerField()
+    recommendations_today = serializers.IntegerField()
+    grading_assistances_today = serializers.IntegerField()
+    anomalies_detected = serializers.IntegerField()
+    schedules_generated = serializers.IntegerField()
+    feedback_analyzed = serializers.IntegerField()
