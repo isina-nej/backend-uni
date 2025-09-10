@@ -43,7 +43,7 @@ class APIEndpointThrottle(SimpleRateThrottle):
 
     def get_rate(self):
         # Different rates for different endpoints
-        if self.view and hasattr(self.view, 'get_view_name'):
+        if hasattr(self, 'view') and self.view and hasattr(self.view, 'get_view_name'):
             view_name = self.view.get_view_name().lower()
             if 'auth' in view_name:
                 return '10/minute'  # Stricter for auth endpoints

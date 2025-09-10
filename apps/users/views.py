@@ -14,6 +14,7 @@ from django.contrib.auth import login, logout
 from django.db.models import Q, Count, Avg, Sum
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
+from config.filters import UserFilter
 
 from .models import (
     Ministry, University, Faculty, Department, ResearchCenter, 
@@ -52,10 +53,10 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserListSerializer
     permission_classes = [IsAuthenticated]
+    filterset_class = UserFilter
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_fields = ['user_type', 'is_active']
-    search_fields = ['username', 'email', 'first_name', 'last_name', 'national_id']
-    ordering_fields = ['username', 'email', 'last_activity', 'date_joined']
+    search_fields = ['username', 'email', 'first_name', 'last_name', 'national_id', 'phone']
+    ordering_fields = ['username', 'email', 'first_activity', 'last_activity', 'date_joined']
     ordering = ['-date_joined']
 
     def get_serializer_class(self):

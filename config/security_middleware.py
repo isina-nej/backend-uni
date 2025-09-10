@@ -106,9 +106,11 @@ class RequestLoggingMiddleware(MiddlewareMixin):
 
         # Log API requests
         if request.path.startswith('/api/'):
+            user = getattr(request, 'user', None)
+            username = user.username if user and hasattr(user, 'is_authenticated') and user.is_authenticated else 'Anonymous'
             logger.info(
                 f"API_REQUEST [{request.request_id}] - {request.method} {request.path} - "
-                f"User: {getattr(request.user, 'username', 'Anonymous')}"
+                f"User: {username}"
             )
 
         response = self.get_response(request)

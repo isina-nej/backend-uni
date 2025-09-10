@@ -9,6 +9,10 @@ class Course(models.Model):
     professor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     students = models.ManyToManyField(User, related_name='enrolled_courses', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.code}: {self.title}"
+        return f"{self.code} - {self.title}"
+
+    class Meta:
+        ordering = ['-created_at']

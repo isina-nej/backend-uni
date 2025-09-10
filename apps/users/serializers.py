@@ -7,6 +7,7 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
+from config.validators import AdvancedValidators
 from .models import (
     Ministry, University, Faculty, Department, ResearchCenter, 
     AdministrativeUnit, Position, AccessLevel, Employee, EmployeeDuty, User,
@@ -27,7 +28,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             'national_id', 'username', 'email', 'password', 'password_confirm',
-            'user_type', 'phone', 'first_name', 'last_name',
+            'user_type', 'phone', 'first_name', 'last_name', 'birth_date',
             'preferred_language', 'timezone'
         ]
 
@@ -35,6 +36,13 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         if attrs['password'] != attrs['password_confirm']:
             raise serializers.ValidationError(_("رمزهای عبور مطابقت ندارند"))
         attrs.pop('password_confirm')
+        
+        # Apply advanced validation
+        try:
+            AdvancedValidators.validate_student_registration(attrs)
+        except serializers.ValidationError:
+            raise
+            
         return attrs
 
     def create(self, validated_data):
