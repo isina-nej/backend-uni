@@ -1,0 +1,65 @@
+name: CI for Django and APIDOG Import with Private Repo
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'schema.yml'  # برای جلوگیری از loop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'  # ورژن Pythonت رو بذار
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install drf-spectacular
+
+    - name: Run tests
+      run: |
+        pytest
+
+    - name: Generate OpenAPI Schema
+      run: |
+        python manage.py spectacular --file schema.yml --format yaml
+
+    - name: Upload Schema to GitHub Gist
+      id: gist
+      env:
+        GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}  # تغییر از GITHUB_PAT به GIST_TOKEN
+      run: |
+        GIST_URL=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+          -X POST https://api.github.com/gists \
+          -d "{\"public\":true,\"files\":{\"schema.yml\":{\"content\":$(cat schema.yml | jq -R -s .)}}}" \
+          | jq -r '.files."schema.yml".raw_url')
+        echo "GIST_URL=$GIST_URL" >> $GITHUB_ENV
+
+    - name: Import Schema to APIDOG
+      run: |
+        curl -X POST "https://api.apidog.com/v1/projects/${{ secrets.APIDOG_PROJECT_ID }}/import-openapi" \
+          -H "Authorization: Bearer ${{ secrets.APIDOG_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+                "input": {
+                  "url": "'"$GIST_URL"'"
+                },
+                "options": {
+                  "targetEndpointFolderId": 0,
+                  "targetSchemaFolderId": 0,
+                  "endpointOverwriteBehavior": "OVERWRITE_EXISTING",
+                  "schemaOverwriteBehavior": "OVERWRITE_EXISTING",
+                  "updateFolderOfChangedEndpoint": false,
+                  "prependBasePath": false
+                }
+              }'

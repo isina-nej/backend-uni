@@ -7,10 +7,12 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
-from .models import (
+from .models_new import (
     Ministry, University, Faculty, Department, ResearchCenter, 
-    AdministrativeUnit, Position, AccessLevel, Employee, EmployeeDuty, User,
-    StudentCategory, AcademicProgram, Student, StudentCategoryAssignment
+    AdministrativeUnit, Position, AccessLevel, Employee, EmployeeDuty, User
+)
+from .student_models import (
+    StudentCategory, AcademicProgram, Student, StudentCategoryAssignment, AcademicRecord
 )
 
 
@@ -474,7 +476,7 @@ class StudentDetailSerializer(serializers.ModelSerializer):
 
     def get_academic_record(self, obj):
         try:
-            return {"message": "Academic record exists"}
+            return AcademicRecordSerializer(obj.academic_record).data
         except:
             return None
 
@@ -548,7 +550,14 @@ class StudentCategoryAssignmentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# AcademicRecord serializer removed - will be implemented later
+class AcademicRecordSerializer(serializers.ModelSerializer):
+    """پرونده تحصیلی"""
+    student_name = serializers.CharField(source='student.get_full_name', read_only=True)
+
+    class Meta:
+        model = AcademicRecord
+        fields = '__all__'
+
 
 # ==============================================================================
 # STATISTICAL SERIALIZERS

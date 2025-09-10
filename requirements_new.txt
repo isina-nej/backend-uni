@@ -12,7 +12,7 @@ django-filter==23.4
 django-extensions==3.2.3
 
 # Database
-# psycopg2-binary==2.9.9  # PostgreSQL - فعلاً کامنت شده
+psycopg2-binary==2.9.9  # PostgreSQL
 redis==5.0.1  # Redis for caching and sessions
 django-redis==5.4.0
 

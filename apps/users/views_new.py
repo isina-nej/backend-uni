@@ -15,12 +15,14 @@ from django.db.models import Q, Count, Avg, Sum
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
 
-from .models import (
+from .models_new import (
     Ministry, University, Faculty, Department, ResearchCenter, 
-    AdministrativeUnit, Position, AccessLevel, Employee, EmployeeDuty, User,
-    StudentCategory, AcademicProgram, Student, StudentCategoryAssignment
+    AdministrativeUnit, Position, AccessLevel, Employee, EmployeeDuty, User
 )
-from .serializers import (
+from .student_models import (
+    StudentCategory, AcademicProgram, Student, StudentCategoryAssignment, AcademicRecord
+)
+from .serializers_new import (
     # Authentication
     UserRegistrationSerializer, UserLoginSerializer, UserProfileSerializer,
     # Organizational
@@ -36,7 +38,7 @@ from .serializers import (
     # Student
     StudentCategorySerializer, AcademicProgramListSerializer, AcademicProgramDetailSerializer,
     StudentListSerializer, StudentDetailSerializer, StudentCreateUpdateSerializer,
-    StudentCategoryAssignmentSerializer,
+    StudentCategoryAssignmentSerializer, AcademicRecordSerializer,
     # Statistics
     UniversityStatsSerializer, DashboardStatsSerializer
 )
@@ -492,7 +494,12 @@ class StudentViewSet(viewsets.ModelViewSet):
     def academic_record(self, request, pk=None):
         """پرونده تحصیلی دانشجو"""
         student = self.get_object()
-        return Response({'message': 'Academic record feature will be implemented later'})
+        try:
+            record = student.academic_record
+            serializer = AcademicRecordSerializer(record)
+            return Response(serializer.data)
+        except AcademicRecord.DoesNotExist:
+            return Response({'message': 'پرونده تحصیلی یافت نشد'}, status=status.HTTP_404_NOT_FOUND)
 
     @action(detail=True, methods=['get'])
     def categories(self, request, pk=None):
@@ -560,7 +567,15 @@ class StudentCategoryAssignmentViewSet(viewsets.ModelViewSet):
     ordering = ['-start_date']
 
 
-# AcademicRecordViewSet removed - will be implemented later
+class AcademicRecordViewSet(viewsets.ModelViewSet):
+    """مدیریت پرونده‌های تحصیلی"""
+    queryset = AcademicRecord.objects.select_related('student').all()
+    serializer_class = AcademicRecordSerializer
+    permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['student', 'is_active']
+    ordering = ['-created_at']
+
 
 # ==============================================================================
 # DASHBOARD AND STATISTICS VIEWS

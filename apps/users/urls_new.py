@@ -10,7 +10,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from .views import (
+from .views_new import (
     # Authentication
     AuthViewSet,
     # Organizational
@@ -22,7 +22,7 @@ from .views import (
     EmployeeViewSet, EmployeeDutyViewSet,
     # Student
     StudentCategoryViewSet, AcademicProgramViewSet, StudentViewSet,
-    StudentCategoryAssignmentViewSet,
+    StudentCategoryAssignmentViewSet, AcademicRecordViewSet,
     # Dashboard
     DashboardViewSet
 )
@@ -57,7 +57,7 @@ router.register(r'student-categories', StudentCategoryViewSet, basename='student
 router.register(r'academic-programs', AcademicProgramViewSet, basename='academic-program')
 router.register(r'students', StudentViewSet, basename='student')
 router.register(r'student-category-assignments', StudentCategoryAssignmentViewSet, basename='student-category-assignment')
-# router.register(r'academic-records', AcademicRecordViewSet, basename='academic-record')  # Removed temporarily
+router.register(r'academic-records', AcademicRecordViewSet, basename='academic-record')
 
 # Dashboard and Statistics
 router.register(r'dashboard', DashboardViewSet, basename='dashboard')

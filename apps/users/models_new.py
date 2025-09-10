@@ -35,7 +35,6 @@ class PersonModel(BaseModel):
     national_id = models.CharField(
         max_length=10, 
         unique=True,
-        null=True, blank=True,
         validators=[RegexValidator(r'^\d{10}$', 'کد ملی باید ۱۰ رقم باشد')],
         verbose_name='کد ملی'
     )
@@ -397,18 +396,18 @@ class Position(BaseModel):
 
     title = models.CharField(max_length=255, unique=True, verbose_name='عنوان پست')
     title_en = models.CharField(max_length=255, blank=True, verbose_name='عنوان انگلیسی')
-    level = models.CharField(max_length=20, choices=POSITION_LEVELS, default='MIDDLE', verbose_name='سطح')
+    level = models.CharField(max_length=20, choices=POSITION_LEVELS, verbose_name='سطح')
     
     # شرح وظایف
-    responsibilities = models.TextField(default='', verbose_name='شرح وظایف')
-    requirements = models.TextField(default='', verbose_name='شرایط احراز')
+    responsibilities = models.TextField(verbose_name='شرح وظایف')
+    requirements = models.TextField(verbose_name='شرایط احراز')
     skills_required = models.JSONField(default=list, verbose_name='مهارت‌های مورد نیاز')
     
     # سطح دسترسی پیش‌فرض
     default_access_level = models.IntegerField(default=1, verbose_name='سطح دسترسی پیش‌فرض')
     
     # اطلاعات حقوقی
-    salary_grade = models.CharField(max_length=10, blank=True, null=True, verbose_name='گروه حقوقی')
+    salary_grade = models.CharField(max_length=10, blank=True, verbose_name='گروه حقوقی')
     benefits = models.JSONField(default=list, verbose_name='مزایا')
     
     description = models.TextField(blank=True, verbose_name='توضیحات')
@@ -553,7 +552,7 @@ class Employee(PersonModel):
     )
     
     # اطلاعات مالی
-    salary_grade = models.CharField(max_length=10, blank=True, null=True, verbose_name='پایه حقوقی')
+    salary_grade = models.CharField(max_length=10, blank=True, verbose_name='پایه حقوقی')
     bank_account = models.CharField(max_length=20, blank=True, verbose_name='شماره حساب')
     
     # اطلاعات تکمیلی
@@ -685,10 +684,10 @@ class User(AbstractUser):
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user_type = models.CharField(max_length=20, choices=USER_TYPES, verbose_name='نوع کاربر')
     national_id = models.CharField(
         max_length=10, 
         unique=True,
-        null=True, blank=True,
         validators=[RegexValidator(r'^\d{10}$', 'کد ملی باید ۱۰ رقم باشد')],
         verbose_name='کد ملی'
     )
@@ -721,15 +720,15 @@ class User(AbstractUser):
     
     # امنیت
     two_factor_enabled = models.BooleanField(default=False, verbose_name='تأیید دو مرحله‌ای')
-    last_password_change = models.DateTimeField(null=True, blank=True, verbose_name='آخرین تغییر رمز')
+    last_password_change = models.DateTimeField(auto_now_add=True, verbose_name='آخرین تغییر رمز')
     failed_login_attempts = models.IntegerField(default=0, verbose_name='تلاش‌های ناموفق ورود')
     account_locked_until = models.DateTimeField(null=True, blank=True, verbose_name='قفل تا تاریخ')
     
     # فعالیت
     last_activity = models.DateTimeField(auto_now=True, verbose_name='آخرین فعالیت')
     
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    USERNAME_FIELD = 'national_id'
+    REQUIRED_FIELDS = ['email', 'user_type']
 
     class Meta:
         verbose_name = 'کاربر'
@@ -760,385 +759,3 @@ class User(AbstractUser):
         self.account_locked_until = None
         self.failed_login_attempts = 0
         self.save()
-
-
-# ==============================================================================
-# STUDENT MODELS
-# ==============================================================================
-
-class StudentCategory(BaseModel):
-    """دسته‌های ویژه دانشجویان"""
-    CATEGORY_TYPES = [
-        ('TALENT', 'استعداد درخشان'),
-        ('MARTYR_FAMILY', 'خانواده شهدا'),
-        ('VETERAN_FAMILY', 'خانواده ایثارگران'),
-        ('DISABLED', 'معلول'),
-        ('ATHLETE', 'ورزشکار'),
-        ('INTERNATIONAL', 'بین‌المللی'),
-        ('MARRIED', 'متأهل'),
-        ('WORKING', 'شاغل'),
-        ('RURAL', 'روستایی'),
-        ('NOMAD', 'عشایری'),
-        ('MINORITY', 'اقلیت'),
-    ]
-
-    name = models.CharField(max_length=100, unique=True, verbose_name='نام دسته')
-    name_en = models.CharField(max_length=100, blank=True, verbose_name='نام انگلیسی')
-    category_type = models.CharField(max_length=20, choices=CATEGORY_TYPES, verbose_name='نوع دسته')
-    description = models.TextField(verbose_name='توضیحات')
-    
-    # مزایا و تسهیلات
-    benefits = models.JSONField(default=list, verbose_name='مزایا')
-    special_services = models.JSONField(default=list, verbose_name='خدمات ویژه')
-    
-    # شرایط عضویت
-    eligibility_criteria = models.TextField(verbose_name='شرایط واجد شرایط بودن')
-    required_documents = models.JSONField(default=list, verbose_name='مدارک مورد نیاز')
-    
-    # محدودیت‌ها
-    max_members = models.IntegerField(null=True, blank=True, verbose_name='حداکثر اعضا')
-    validity_period_months = models.IntegerField(null=True, blank=True, verbose_name='مدت اعتبار (ماه)')
-    
-    class Meta:
-        verbose_name = 'دسته دانشجویی'
-        verbose_name_plural = 'دسته‌های دانشجویی'
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-
-class AcademicProgram(BaseModel):
-    """برنامه‌های تحصیلی"""
-    PROGRAM_TYPES = [
-        ('BACHELOR', 'کارشناسی'),
-        ('MASTER', 'کارشناسی ارشد'),
-        ('PHD', 'دکتری تخصصی'),
-        ('PROFESSIONAL_DOCTORATE', 'دکتری حرفه‌ای'),
-        ('POST_DOCTORATE', 'فوق دکتری'),
-        ('DIPLOMA', 'دیپلم'),
-        ('ASSOCIATE', 'کاردانی'),
-    ]
-
-    PROGRAM_MODES = [
-        ('FULL_TIME', 'تمام وقت'),
-        ('PART_TIME', 'پاره وقت'),
-        ('EVENING', 'شبانه'),
-        ('WEEKEND', 'آخر هفته'),
-        ('DISTANCE', 'مجازی'),
-        ('HYBRID', 'ترکیبی'),
-    ]
-
-    department = models.ForeignKey(
-        Department,
-        on_delete=models.CASCADE,
-        related_name='academic_programs',
-        verbose_name='گروه آموزشی'
-    )
-    name = models.CharField(max_length=255, verbose_name='نام برنامه')
-    name_en = models.CharField(max_length=255, blank=True, verbose_name='نام انگلیسی')
-    code = models.CharField(max_length=20, verbose_name='کد برنامه')
-    
-    # نوع و حالت برنامه
-    program_type = models.CharField(max_length=30, choices=PROGRAM_TYPES, verbose_name='نوع برنامه')
-    program_mode = models.CharField(max_length=20, choices=PROGRAM_MODES, verbose_name='حالت ارائه')
-    
-    # مشخصات آموزشی
-    total_credits = models.IntegerField(verbose_name='مجموع واحدها')
-    duration_semesters = models.IntegerField(verbose_name='مدت تحصیل (ترم)')
-    minimum_gpa = models.DecimalField(
-        max_digits=4, 
-        decimal_places=2,
-        validators=[MinValueValidator(0), MaxValueValidator(20)],
-        verbose_name='حداقل معدل'
-    )
-    
-    # پیش‌نیازها
-    prerequisites = models.JSONField(default=list, verbose_name='پیش‌نیازهای ورود')
-    entrance_requirements = models.TextField(verbose_name='شرایط پذیرش')
-    
-    # اطلاعات مالی
-    tuition_per_semester = models.DecimalField(
-        max_digits=12, 
-        decimal_places=0,
-        verbose_name='شهریه هر ترم'
-    )
-    additional_fees = models.JSONField(default=dict, verbose_name='هزینه‌های اضافی')
-    
-    # ظرفیت
-    max_capacity = models.IntegerField(verbose_name='حداکثر ظرفیت')
-    current_enrollment = models.IntegerField(default=0, verbose_name='تعداد فعلی ثبت‌نام')
-    
-    # وضعیت
-    is_accepting_students = models.BooleanField(default=True, verbose_name='پذیرای دانشجو')
-    accreditation_status = models.CharField(max_length=50, verbose_name='وضعیت اعتبار')
-    
-    # اطلاعات تکمیلی
-    objectives = models.TextField(verbose_name='اهداف برنامه')
-    career_prospects = models.TextField(verbose_name='چشم‌انداز شغلی')
-    curriculum = models.JSONField(default=dict, verbose_name='برنامه درسی')
-    
-    class Meta:
-        verbose_name = 'برنامه تحصیلی'
-        verbose_name_plural = 'برنامه‌های تحصیلی'
-        unique_together = ['department', 'code']
-        ordering = ['name']
-
-    def __str__(self):
-        return f"{self.name} - {self.department.name}"
-
-    @property
-    def remaining_capacity(self):
-        """ظرفیت باقی‌مانده"""
-        return self.max_capacity - self.current_enrollment
-
-    @property
-    def is_full(self):
-        """آیا ظرفیت تکمیل است؟"""
-        return self.current_enrollment >= self.max_capacity
-
-
-class Student(PersonModel):
-    """مدل اصلی دانشجویان"""
-    STUDENT_TYPES = [
-        ('REGULAR', 'روزانه'),
-        ('EVENING', 'شبانه'),
-        ('SELF_SUPPORTING', 'پردیس خودگردان'),
-        ('DISTANCE', 'مجازی'),
-        ('PAYAM_NOOR', 'پیام نور'),
-        ('NON_PROFIT', 'غیرانتفاعی'),
-        ('AZAD', 'آزاد اسلامی'),
-    ]
-
-    ACADEMIC_STATUS = [
-        ('ACTIVE', 'فعال'),
-        ('ACADEMIC_LEAVE', 'مرخصی تحصیلی'),
-        ('CONDITIONAL', 'مشروط'),
-        ('GUEST', 'مهمان'),
-        ('TRANSFER', 'انتقالی'),
-        ('GRADUATED', 'فارغ‌التحصیل'),
-        ('DROPPED', 'انصرافی'),
-        ('EXPELLED', 'اخراج'),
-        ('SUSPENDED', 'تعلیق'),
-    ]
-
-    FINANCIAL_STATUS = [
-        ('REGULAR', 'عادی'),
-        ('SCHOLARSHIP', 'بورسیه'),
-        ('LOAN', 'وام‌گیرنده'),
-        ('DISCOUNT', 'تخفیف شهریه'),
-        ('EXEMPTION', 'معافیت شهریه'),
-        ('SPONSORED', 'تحت حمایت'),
-    ]
-
-    MARITAL_STATUS = [
-        ('SINGLE', 'مجرد'),
-        ('MARRIED', 'متأهل'),
-        ('DIVORCED', 'مطلقه'),
-        ('WIDOWED', 'بیوه'),
-    ]
-
-    # شناسه‌ها
-    student_id = models.CharField(
-        max_length=20, 
-        unique=True,
-        verbose_name='شماره دانشجویی'
-    )
-    university_student_id = models.CharField(
-        max_length=30,
-        verbose_name='شماره دانشجویی دانشگاه'
-    )
-    
-    # برنامه تحصیلی
-    academic_program = models.ForeignKey(
-        AcademicProgram,
-        on_delete=models.CASCADE,
-        related_name='students',
-        verbose_name='برنامه تحصیلی'
-    )
-    
-    # نوع دانشجو
-    student_type = models.CharField(max_length=20, choices=STUDENT_TYPES, verbose_name='نوع دانشجو')
-    academic_status = models.CharField(
-        max_length=20, 
-        choices=ACADEMIC_STATUS, 
-        default='ACTIVE',
-        verbose_name='وضعیت تحصیلی'
-    )
-    financial_status = models.CharField(
-        max_length=20, 
-        choices=FINANCIAL_STATUS, 
-        default='REGULAR',
-        verbose_name='وضعیت مالی'
-    )
-    
-    # اطلاعات شخصی تکمیلی
-    marital_status = models.CharField(
-        max_length=10, 
-        choices=MARITAL_STATUS, 
-        default='SINGLE',
-        verbose_name='وضعیت تأهل'
-    )
-    military_service_status = models.CharField(
-        max_length=50,
-        blank=True,
-        verbose_name='وضعیت خدمت نظام وظیفه'
-    )
-    
-    # اطلاعات تحصیلی
-    entrance_year = models.IntegerField(verbose_name='سال ورود')
-    entrance_semester = models.CharField(
-        max_length=10,
-        choices=[('FALL', 'پاییز'), ('SPRING', 'بهار'), ('SUMMER', 'تابستان')],
-        verbose_name='ترم ورود'
-    )
-    current_semester = models.IntegerField(default=1, verbose_name='ترم جاری')
-    
-    # عملکرد تحصیلی
-    current_gpa = models.DecimalField(
-        max_digits=4, 
-        decimal_places=2,
-        default=0,
-        validators=[MinValueValidator(0), MaxValueValidator(20)],
-        verbose_name='معدل فعلی'
-    )
-    cumulative_gpa = models.DecimalField(
-        max_digits=4, 
-        decimal_places=2,
-        default=0,
-        validators=[MinValueValidator(0), MaxValueValidator(20)],
-        verbose_name='معدل کل'
-    )
-    total_credits_earned = models.IntegerField(default=0, verbose_name='واحدهای گذرانده شده')
-    total_credits_attempted = models.IntegerField(default=0, verbose_name='واحدهای اخذ شده')
-    
-    # اطلاعات مالی
-    total_tuition_paid = models.DecimalField(
-        max_digits=12, 
-        decimal_places=0,
-        default=0,
-        verbose_name='کل شهریه پرداخت شده'
-    )
-    outstanding_balance = models.DecimalField(
-        max_digits=12, 
-        decimal_places=0,
-        default=0,
-        verbose_name='بدهی باقی‌مانده'
-    )
-    scholarship_amount = models.DecimalField(
-        max_digits=12, 
-        decimal_places=0,
-        default=0,
-        verbose_name='مبلغ بورسیه'
-    )
-    
-    # اطلاعات والدین/سرپرست
-    father_name = models.CharField(max_length=100, verbose_name='نام پدر')
-    guardian_phone = models.CharField(
-        max_length=11,
-        validators=[RegexValidator(r'^09\d{9}$', 'شماره موبایل نامعتبر')],
-        verbose_name='تلفن سرپرست'
-    )
-    
-    # آدرس‌ها
-    permanent_address = models.TextField(verbose_name='آدرس دائمی')
-    
-    # اطلاعات اضطراری
-    emergency_contact_name = models.CharField(max_length=100, verbose_name='نام تماس اضطراری')
-    emergency_contact_phone = models.CharField(
-        max_length=11,
-        validators=[RegexValidator(r'^09\d{9}$', 'شماره موبایل نامعتبر')],
-        verbose_name='تلفن تماس اضطراری'
-    )
-    
-    # تاریخ‌های مهم
-    expected_graduation_date = models.DateField(null=True, blank=True, verbose_name='تاریخ فارغ‌التحصیلی انتظاری')
-    
-    class Meta:
-        verbose_name = 'دانشجو'
-        verbose_name_plural = 'دانشجویان'
-        ordering = ['last_name', 'first_name']
-
-    def __str__(self):
-        return f"{self.get_full_name()} ({self.student_id})"
-
-    def get_absolute_url(self):
-        return reverse('student-detail', kwargs={'pk': self.pk})
-
-    @property
-    def university(self):
-        """دانشگاه دانشجو"""
-        return self.academic_program.department.faculty.university
-
-    @property
-    def faculty(self):
-        """دانشکده دانشجو"""
-        return self.academic_program.department.faculty
-
-    @property
-    def department(self):
-        """گروه آموزشی دانشجو"""
-        return self.academic_program.department
-
-    def can_register_for_semester(self):
-        """آیا می‌تواند برای ترم ثبت‌نام کند؟"""
-        return (
-            self.academic_status == 'ACTIVE' and
-            self.outstanding_balance <= 0 and
-            self.is_active
-        )
-
-
-class StudentCategoryAssignment(BaseModel):
-    """تخصیص دانشجو به دسته‌های ویژه"""
-    student = models.ForeignKey(
-        Student,
-        on_delete=models.CASCADE,
-        related_name='category_assignments',
-        verbose_name='دانشجو'
-    )
-    category = models.ForeignKey(
-        StudentCategory,
-        on_delete=models.CASCADE,
-        related_name='student_assignments',
-        verbose_name='دسته'
-    )
-    
-    # تاریخ‌ها
-    start_date = models.DateField(verbose_name='تاریخ شروع')
-    end_date = models.DateField(null=True, blank=True, verbose_name='تاریخ پایان')
-    
-    # وضعیت
-    status = models.CharField(
-        max_length=20,
-        choices=[
-            ('ACTIVE', 'فعال'),
-            ('INACTIVE', 'غیرفعال'),
-            ('SUSPENDED', 'تعلیق'),
-            ('EXPIRED', 'منقضی'),
-        ],
-        default='ACTIVE',
-        verbose_name='وضعیت'
-    )
-    
-    class Meta:
-        verbose_name = 'تخصیص دسته دانشجویی'
-        verbose_name_plural = 'تخصیص‌های دسته دانشجویی'
-        unique_together = ['student', 'category']
-        ordering = ['-start_date']
-
-    def __str__(self):
-        return f"{self.student.get_full_name()} - {self.category.name}"
-
-
-# Extend User model for Student relationship
-User.add_to_class(
-    'student', 
-    models.OneToOneField(
-        Student, 
-        on_delete=models.CASCADE, 
-        null=True, 
-        blank=True,
-        verbose_name='دانشجو'
-    )
-)
