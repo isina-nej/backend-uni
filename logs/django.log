@@ -2405,3 +2405,305 @@ WARNING 2025-09-10 18:00:55,128 log 10356 22308 Unauthorized: /api/analytics/dat
 WARNING 2025-09-10 18:00:55,128 basehttp 10356 22308 "GET /api/analytics/data-sources/ HTTP/1.1" 401 193
 INFO 2025-09-10 18:03:16,778 autoreload 10356 19652 D:\project\uni\backend\apps\analytics\__init__.py changed, reloading.
 INFO 2025-09-10 18:03:17,601 autoreload 21964 22936 Watching for file changes with StatReloader
+INFO 2025-09-10 18:11:15,422 autoreload 21964 22936 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-10 18:11:16,428 autoreload 1064 22068 Watching for file changes with StatReloader
+INFO 2025-09-10 18:11:31,722 autoreload 1064 22068 D:\project\uni\backend\config\api_urls.py changed, reloading.
+INFO 2025-09-10 18:11:32,445 autoreload 22564 23008 Watching for file changes with StatReloader
+INFO 2025-09-10 18:17:02,272 autoreload 14876 14040 Watching for file changes with StatReloader
+INFO 2025-09-10 18:17:21,364 autoreload 1744 1228 Watching for file changes with StatReloader
+INFO 2025-09-10 18:18:06,381 security_middleware 1744 22172 REQUEST - GET /api/data-management/import-export-jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,381 security_middleware 1744 22172 API_REQUEST [e23e8e85] - GET /api/data-management/import-export-jobs/ - User: Anonymous
+INFO 2025-09-10 18:18:06,406 security_middleware 1744 22172 API_RESPONSE [e23e8e85] - GET /api/data-management/import-export-jobs/ - Status: 404
+WARNING 2025-09-10 18:18:06,406 security_middleware 1744 22172 RESPONSE - GET /api/data-management/import-export-jobs/ - Status: 404 - Duration: 0.025s
+WARNING 2025-09-10 18:18:06,407 log 1744 22172 Not Found: /api/data-management/import-export-jobs/
+WARNING 2025-09-10 18:18:06,407 basehttp 1744 22172 "GET /api/data-management/import-export-jobs/ HTTP/1.1" 404 19052
+INFO 2025-09-10 18:18:06,409 security_middleware 1744 16104 REQUEST - POST /api/data-management/import-export-jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,409 security_middleware 1744 16104 API_REQUEST [be570f02] - POST /api/data-management/import-export-jobs/ - User: Anonymous
+INFO 2025-09-10 18:18:06,414 security_middleware 1744 16104 API_RESPONSE [be570f02] - POST /api/data-management/import-export-jobs/ - Status: 404
+WARNING 2025-09-10 18:18:06,415 security_middleware 1744 16104 RESPONSE - POST /api/data-management/import-export-jobs/ - Status: 404 - Duration: 0.006s
+WARNING 2025-09-10 18:18:06,415 log 1744 16104 Not Found: /api/data-management/import-export-jobs/
+WARNING 2025-09-10 18:18:06,416 basehttp 1744 16104 "POST /api/data-management/import-export-jobs/ HTTP/1.1" 404 19053
+INFO 2025-09-10 18:18:06,419 security_middleware 1744 22564 REQUEST - GET /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,419 security_middleware 1744 22564 API_REQUEST [39211351] - GET /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:18:06,427 security_middleware 1744 22564 API_RESPONSE [39211351] - GET /api/data-management/backup-schedules/ - Status: 200
+INFO 2025-09-10 18:18:06,427 security_middleware 1744 22564 RESPONSE - GET /api/data-management/backup-schedules/ - Status: 200 - Duration: 0.008s
+INFO 2025-09-10 18:18:06,428 basehttp 1744 22564 "GET /api/data-management/backup-schedules/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:18:06,430 security_middleware 1744 23316 REQUEST - POST /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,430 security_middleware 1744 23316 API_REQUEST [5e9f18cd] - POST /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:18:06,434 security_middleware 1744 23316 API_RESPONSE [5e9f18cd] - POST /api/data-management/backup-schedules/ - Status: 400
+WARNING 2025-09-10 18:18:06,435 security_middleware 1744 23316 RESPONSE - POST /api/data-management/backup-schedules/ - Status: 400 - Duration: 0.005s
+WARNING 2025-09-10 18:18:06,435 log 1744 23316 Bad Request: /api/data-management/backup-schedules/
+WARNING 2025-09-10 18:18:06,435 basehttp 1744 23316 "POST /api/data-management/backup-schedules/ HTTP/1.1" 400 310
+INFO 2025-09-10 18:18:06,438 security_middleware 1744 21284 REQUEST - GET /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,439 security_middleware 1744 21284 API_REQUEST [434a7997] - GET /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:18:06,443 security_middleware 1744 21284 API_RESPONSE [434a7997] - GET /api/data-management/sync-tasks/ - Status: 200
+INFO 2025-09-10 18:18:06,443 security_middleware 1744 21284 RESPONSE - GET /api/data-management/sync-tasks/ - Status: 200 - Duration: 0.005s
+INFO 2025-09-10 18:18:06,444 basehttp 1744 21284 "GET /api/data-management/sync-tasks/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:18:06,446 security_middleware 1744 20072 REQUEST - POST /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,446 security_middleware 1744 20072 API_REQUEST [79728a68] - POST /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:18:06,451 security_middleware 1744 20072 API_RESPONSE [79728a68] - POST /api/data-management/sync-tasks/ - Status: 400
+WARNING 2025-09-10 18:18:06,451 security_middleware 1744 20072 RESPONSE - POST /api/data-management/sync-tasks/ - Status: 400 - Duration: 0.005s
+WARNING 2025-09-10 18:18:06,452 log 1744 20072 Bad Request: /api/data-management/sync-tasks/
+WARNING 2025-09-10 18:18:06,452 basehttp 1744 20072 "POST /api/data-management/sync-tasks/ HTTP/1.1" 400 280
+INFO 2025-09-10 18:18:06,455 security_middleware 1744 17288 REQUEST - GET /api/data-management/external-integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,456 security_middleware 1744 17288 API_REQUEST [0c97d5ee] - GET /api/data-management/external-integrations/ - User: Anonymous
+INFO 2025-09-10 18:18:06,461 security_middleware 1744 17288 API_RESPONSE [0c97d5ee] - GET /api/data-management/external-integrations/ - Status: 404
+WARNING 2025-09-10 18:18:06,462 security_middleware 1744 17288 RESPONSE - GET /api/data-management/external-integrations/ - Status: 404 - Duration: 0.006s
+WARNING 2025-09-10 18:18:06,462 log 1744 17288 Not Found: /api/data-management/external-integrations/
+WARNING 2025-09-10 18:18:06,462 basehttp 1744 17288 "GET /api/data-management/external-integrations/ HTTP/1.1" 404 19061
+INFO 2025-09-10 18:18:06,464 security_middleware 1744 19524 REQUEST - POST /api/data-management/external-integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:18:06,464 security_middleware 1744 19524 API_REQUEST [1164497e] - POST /api/data-management/external-integrations/ - User: Anonymous
+INFO 2025-09-10 18:18:06,469 security_middleware 1744 19524 API_RESPONSE [1164497e] - POST /api/data-management/external-integrations/ - Status: 404
+WARNING 2025-09-10 18:18:06,469 security_middleware 1744 19524 RESPONSE - POST /api/data-management/external-integrations/ - Status: 404 - Duration: 0.006s
+WARNING 2025-09-10 18:18:06,469 log 1744 19524 Not Found: /api/data-management/external-integrations/
+WARNING 2025-09-10 18:18:06,470 basehttp 1744 19524 "POST /api/data-management/external-integrations/ HTTP/1.1" 404 19062
+INFO 2025-09-10 18:20:57,655 security_middleware 1744 14040 REQUEST - GET /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,655 security_middleware 1744 14040 API_REQUEST [afe1e426] - GET /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:20:57,661 security_middleware 1744 14040 API_RESPONSE [afe1e426] - GET /api/data-management/jobs/ - Status: 200
+INFO 2025-09-10 18:20:57,662 security_middleware 1744 14040 RESPONSE - GET /api/data-management/jobs/ - Status: 200 - Duration: 0.007s
+INFO 2025-09-10 18:20:57,663 basehttp 1744 14040 "GET /api/data-management/jobs/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:20:57,665 security_middleware 1744 20924 REQUEST - POST /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,666 security_middleware 1744 20924 API_REQUEST [fe5adf6f] - POST /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:20:57,668 security_middleware 1744 20924 API_RESPONSE [fe5adf6f] - POST /api/data-management/jobs/ - Status: 415
+WARNING 2025-09-10 18:20:57,669 security_middleware 1744 20924 RESPONSE - POST /api/data-management/jobs/ - Status: 415 - Duration: 0.003s
+WARNING 2025-09-10 18:20:57,669 log 1744 20924 Unsupported Media Type: /api/data-management/jobs/
+WARNING 2025-09-10 18:20:57,670 basehttp 1744 20924 "POST /api/data-management/jobs/ HTTP/1.1" 415 159
+INFO 2025-09-10 18:20:57,675 security_middleware 1744 22784 REQUEST - GET /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,676 security_middleware 1744 22784 API_REQUEST [990a17eb] - GET /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:20:57,677 security_middleware 1744 22784 API_RESPONSE [990a17eb] - GET /api/data-management/backup-schedules/ - Status: 200
+INFO 2025-09-10 18:20:57,677 security_middleware 1744 22784 RESPONSE - GET /api/data-management/backup-schedules/ - Status: 200 - Duration: 0.002s
+INFO 2025-09-10 18:20:57,677 basehttp 1744 22784 "GET /api/data-management/backup-schedules/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:20:57,680 security_middleware 1744 21728 REQUEST - POST /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,680 security_middleware 1744 21728 API_REQUEST [4684b06e] - POST /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:20:57,684 security_middleware 1744 21728 API_RESPONSE [4684b06e] - POST /api/data-management/backup-schedules/ - Status: 400
+WARNING 2025-09-10 18:20:57,685 security_middleware 1744 21728 RESPONSE - POST /api/data-management/backup-schedules/ - Status: 400 - Duration: 0.005s
+WARNING 2025-09-10 18:20:57,685 log 1744 21728 Bad Request: /api/data-management/backup-schedules/
+WARNING 2025-09-10 18:20:57,685 basehttp 1744 21728 "POST /api/data-management/backup-schedules/ HTTP/1.1" 400 310
+INFO 2025-09-10 18:20:57,689 security_middleware 1744 15880 REQUEST - GET /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,689 security_middleware 1744 15880 API_REQUEST [1f6ec093] - GET /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:20:57,690 security_middleware 1744 15880 API_RESPONSE [1f6ec093] - GET /api/data-management/sync-tasks/ - Status: 200
+INFO 2025-09-10 18:20:57,690 security_middleware 1744 15880 RESPONSE - GET /api/data-management/sync-tasks/ - Status: 200 - Duration: 0.001s
+INFO 2025-09-10 18:20:57,690 basehttp 1744 15880 "GET /api/data-management/sync-tasks/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:20:57,692 security_middleware 1744 9248 REQUEST - POST /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,692 security_middleware 1744 9248 API_REQUEST [f8552cee] - POST /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:20:57,696 security_middleware 1744 9248 API_RESPONSE [f8552cee] - POST /api/data-management/sync-tasks/ - Status: 400
+WARNING 2025-09-10 18:20:57,697 security_middleware 1744 9248 RESPONSE - POST /api/data-management/sync-tasks/ - Status: 400 - Duration: 0.005s
+WARNING 2025-09-10 18:20:57,697 log 1744 9248 Bad Request: /api/data-management/sync-tasks/
+WARNING 2025-09-10 18:20:57,697 basehttp 1744 9248 "POST /api/data-management/sync-tasks/ HTTP/1.1" 400 280
+INFO 2025-09-10 18:20:57,701 security_middleware 1744 5644 REQUEST - GET /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,701 security_middleware 1744 5644 API_REQUEST [93b1adc0] - GET /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:20:57,707 security_middleware 1744 5644 API_RESPONSE [93b1adc0] - GET /api/data-management/integrations/ - Status: 200
+INFO 2025-09-10 18:20:57,708 security_middleware 1744 5644 RESPONSE - GET /api/data-management/integrations/ - Status: 200 - Duration: 0.007s
+INFO 2025-09-10 18:20:57,709 basehttp 1744 5644 "GET /api/data-management/integrations/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:20:57,712 security_middleware 1744 11152 REQUEST - POST /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,712 security_middleware 1744 11152 API_REQUEST [ff613b86] - POST /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:20:57,757 security_middleware 1744 11152 API_RESPONSE [ff613b86] - POST /api/data-management/integrations/ - Status: 201
+INFO 2025-09-10 18:20:57,757 security_middleware 1744 11152 RESPONSE - POST /api/data-management/integrations/ - Status: 201 - Duration: 0.045s
+INFO 2025-09-10 18:20:57,758 basehttp 1744 11152 "POST /api/data-management/integrations/ HTTP/1.1" 201 802
+INFO 2025-09-10 18:20:57,761 security_middleware 1744 20320 REQUEST - POST /api/data-management/integrations/e8163833-e8a4-4b21-9bfa-327875ba4ab0/test-connection/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:20:57,762 security_middleware 1744 20320 API_REQUEST [031ba4ac] - POST /api/data-management/integrations/e8163833-e8a4-4b21-9bfa-327875ba4ab0/test-connection/ - User: Anonymous
+INFO 2025-09-10 18:20:57,773 security_middleware 1744 20320 API_RESPONSE [031ba4ac] - POST /api/data-management/integrations/e8163833-e8a4-4b21-9bfa-327875ba4ab0/test-connection/ - Status: 404
+WARNING 2025-09-10 18:20:57,773 security_middleware 1744 20320 RESPONSE - POST /api/data-management/integrations/e8163833-e8a4-4b21-9bfa-327875ba4ab0/test-connection/ - Status: 404 - Duration: 0.012s
+WARNING 2025-09-10 18:20:57,773 log 1744 20320 Not Found: /api/data-management/integrations/e8163833-e8a4-4b21-9bfa-327875ba4ab0/test-connection/
+WARNING 2025-09-10 18:20:57,774 basehttp 1744 20320 "POST /api/data-management/integrations/e8163833-e8a4-4b21-9bfa-327875ba4ab0/test-connection/ HTTP/1.1" 404 19194
+INFO 2025-09-10 18:34:21,372 security_middleware 1744 8880 REQUEST - GET /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,373 security_middleware 1744 8880 API_REQUEST [bbc49598] - GET /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:34:21,377 security_middleware 1744 8880 API_RESPONSE [bbc49598] - GET /api/data-management/jobs/ - Status: 200
+INFO 2025-09-10 18:34:21,377 security_middleware 1744 8880 RESPONSE - GET /api/data-management/jobs/ - Status: 200 - Duration: 0.005s
+INFO 2025-09-10 18:34:21,378 basehttp 1744 8880 "GET /api/data-management/jobs/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:34:21,380 security_middleware 1744 21816 REQUEST - POST /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,381 security_middleware 1744 21816 API_REQUEST [acb4f864] - POST /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:34:21,383 security_middleware 1744 21816 API_RESPONSE [acb4f864] - POST /api/data-management/jobs/ - Status: 415
+WARNING 2025-09-10 18:34:21,384 security_middleware 1744 21816 RESPONSE - POST /api/data-management/jobs/ - Status: 415 - Duration: 0.003s
+WARNING 2025-09-10 18:34:21,384 log 1744 21816 Unsupported Media Type: /api/data-management/jobs/
+WARNING 2025-09-10 18:34:21,384 basehttp 1744 21816 "POST /api/data-management/jobs/ HTTP/1.1" 415 159
+INFO 2025-09-10 18:34:21,389 security_middleware 1744 22392 REQUEST - GET /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,390 security_middleware 1744 22392 API_REQUEST [91af5bf1] - GET /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:34:21,394 security_middleware 1744 22392 API_RESPONSE [91af5bf1] - GET /api/data-management/backup-schedules/ - Status: 200
+INFO 2025-09-10 18:34:21,394 security_middleware 1744 22392 RESPONSE - GET /api/data-management/backup-schedules/ - Status: 200 - Duration: 0.005s
+INFO 2025-09-10 18:34:21,395 basehttp 1744 22392 "GET /api/data-management/backup-schedules/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:34:21,396 security_middleware 1744 19304 REQUEST - POST /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,397 security_middleware 1744 19304 API_REQUEST [3859de10] - POST /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:34:21,417 security_middleware 1744 19304 API_RESPONSE [3859de10] - POST /api/data-management/backup-schedules/ - Status: 201
+INFO 2025-09-10 18:34:21,418 security_middleware 1744 19304 RESPONSE - POST /api/data-management/backup-schedules/ - Status: 201 - Duration: 0.021s
+INFO 2025-09-10 18:34:21,418 basehttp 1744 19304 "POST /api/data-management/backup-schedules/ HTTP/1.1" 201 769
+INFO 2025-09-10 18:34:21,420 security_middleware 1744 13092 REQUEST - POST /api/data-management/backup-schedules/16add6ce-167c-443c-bc25-785af8e87c9b/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,421 security_middleware 1744 13092 API_REQUEST [e3378f68] - POST /api/data-management/backup-schedules/16add6ce-167c-443c-bc25-785af8e87c9b/execute/ - User: Anonymous
+INFO 2025-09-10 18:34:21,426 services 1744 13092 Starting backup: Daily Database Backup
+ERROR 2025-09-10 18:34:21,464 services 1744 13092 Full backup failed: Unable to serialize database: no such table: grades_grade
+INFO 2025-09-10 18:34:21,467 security_middleware 1744 13092 API_RESPONSE [e3378f68] - POST /api/data-management/backup-schedules/16add6ce-167c-443c-bc25-785af8e87c9b/execute/ - Status: 200
+INFO 2025-09-10 18:34:21,467 security_middleware 1744 13092 RESPONSE - POST /api/data-management/backup-schedules/16add6ce-167c-443c-bc25-785af8e87c9b/execute/ - Status: 200 - Duration: 0.047s
+INFO 2025-09-10 18:34:21,467 basehttp 1744 13092 "POST /api/data-management/backup-schedules/16add6ce-167c-443c-bc25-785af8e87c9b/execute/ HTTP/1.1" 200 769
+INFO 2025-09-10 18:34:21,470 security_middleware 1744 14196 REQUEST - GET /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,471 security_middleware 1744 14196 API_REQUEST [2f737379] - GET /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:34:21,475 security_middleware 1744 14196 API_RESPONSE [2f737379] - GET /api/data-management/sync-tasks/ - Status: 200
+INFO 2025-09-10 18:34:21,475 security_middleware 1744 14196 RESPONSE - GET /api/data-management/sync-tasks/ - Status: 200 - Duration: 0.005s
+INFO 2025-09-10 18:34:21,476 basehttp 1744 14196 "GET /api/data-management/sync-tasks/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:34:21,478 security_middleware 1744 8792 REQUEST - POST /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,478 security_middleware 1744 8792 API_REQUEST [43ab831e] - POST /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:34:21,485 security_middleware 1744 8792 API_RESPONSE [43ab831e] - POST /api/data-management/sync-tasks/ - Status: 201
+INFO 2025-09-10 18:34:21,485 security_middleware 1744 8792 RESPONSE - POST /api/data-management/sync-tasks/ - Status: 201 - Duration: 0.008s
+INFO 2025-09-10 18:34:21,486 basehttp 1744 8792 "POST /api/data-management/sync-tasks/ HTTP/1.1" 201 736
+INFO 2025-09-10 18:34:21,488 security_middleware 1744 23304 REQUEST - POST /api/data-management/sync-tasks/0c716b2d-4215-4984-933e-20674aefe427/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,488 security_middleware 1744 23304 API_REQUEST [a678ce8b] - POST /api/data-management/sync-tasks/0c716b2d-4215-4984-933e-20674aefe427/execute/ - User: Anonymous
+INFO 2025-09-10 18:34:21,492 services 1744 23304 Starting sync task: User Data Sync
+INFO 2025-09-10 18:34:21,493 services 1744 23304 One-way sync: 4 records
+INFO 2025-09-10 18:34:21,497 security_middleware 1744 23304 API_RESPONSE [a678ce8b] - POST /api/data-management/sync-tasks/0c716b2d-4215-4984-933e-20674aefe427/execute/ - Status: 200
+INFO 2025-09-10 18:34:21,497 security_middleware 1744 23304 RESPONSE - POST /api/data-management/sync-tasks/0c716b2d-4215-4984-933e-20674aefe427/execute/ - Status: 200 - Duration: 0.010s
+INFO 2025-09-10 18:34:21,498 basehttp 1744 23304 "POST /api/data-management/sync-tasks/0c716b2d-4215-4984-933e-20674aefe427/execute/ HTTP/1.1" 200 789
+INFO 2025-09-10 18:34:21,501 security_middleware 1744 4248 REQUEST - GET /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,502 security_middleware 1744 4248 API_REQUEST [16b5772f] - GET /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:34:21,508 security_middleware 1744 4248 API_RESPONSE [16b5772f] - GET /api/data-management/integrations/ - Status: 200
+INFO 2025-09-10 18:34:21,508 security_middleware 1744 4248 RESPONSE - GET /api/data-management/integrations/ - Status: 200 - Duration: 0.007s
+INFO 2025-09-10 18:34:21,509 basehttp 1744 4248 "GET /api/data-management/integrations/ HTTP/1.1" 200 998
+INFO 2025-09-10 18:34:21,510 security_middleware 1744 21268 REQUEST - POST /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,511 security_middleware 1744 21268 API_REQUEST [6a06af3b] - POST /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:34:21,517 security_middleware 1744 21268 API_RESPONSE [6a06af3b] - POST /api/data-management/integrations/ - Status: 201
+INFO 2025-09-10 18:34:21,517 security_middleware 1744 21268 RESPONSE - POST /api/data-management/integrations/ - Status: 201 - Duration: 0.007s
+INFO 2025-09-10 18:34:21,518 basehttp 1744 21268 "POST /api/data-management/integrations/ HTTP/1.1" 201 802
+INFO 2025-09-10 18:34:21,520 security_middleware 1744 20576 REQUEST - POST /api/data-management/integrations/1d7adb99-998b-4944-9186-793946870008/test-connection/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:34:21,520 security_middleware 1744 20576 API_REQUEST [ebb2b192] - POST /api/data-management/integrations/1d7adb99-998b-4944-9186-793946870008/test-connection/ - User: Anonymous
+INFO 2025-09-10 18:34:21,525 security_middleware 1744 20576 API_RESPONSE [ebb2b192] - POST /api/data-management/integrations/1d7adb99-998b-4944-9186-793946870008/test-connection/ - Status: 404
+WARNING 2025-09-10 18:34:21,526 security_middleware 1744 20576 RESPONSE - POST /api/data-management/integrations/1d7adb99-998b-4944-9186-793946870008/test-connection/ - Status: 404 - Duration: 0.006s
+WARNING 2025-09-10 18:34:21,526 log 1744 20576 Not Found: /api/data-management/integrations/1d7adb99-998b-4944-9186-793946870008/test-connection/
+WARNING 2025-09-10 18:34:21,526 basehttp 1744 20576 "POST /api/data-management/integrations/1d7adb99-998b-4944-9186-793946870008/test-connection/ HTTP/1.1" 404 19194
+INFO 2025-09-10 18:34:35,346 autoreload 1744 1228 D:\project\uni\backend\apps\data_management\views.py changed, reloading.
+INFO 2025-09-10 18:34:36,350 autoreload 21164 7156 Watching for file changes with StatReloader
+INFO 2025-09-10 18:34:45,977 autoreload 21164 7156 D:\project\uni\backend\apps\data_management\views.py changed, reloading.
+INFO 2025-09-10 18:34:46,866 autoreload 21064 6484 Watching for file changes with StatReloader
+INFO 2025-09-10 18:37:06,568 security_middleware 21064 13388 REQUEST - GET /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,569 security_middleware 21064 13388 API_REQUEST [f94018e0] - GET /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:37:06,579 security_middleware 21064 13388 API_RESPONSE [f94018e0] - GET /api/data-management/jobs/ - Status: 200
+INFO 2025-09-10 18:37:06,580 security_middleware 21064 13388 RESPONSE - GET /api/data-management/jobs/ - Status: 200 - Duration: 0.011s
+INFO 2025-09-10 18:37:06,580 basehttp 21064 13388 "GET /api/data-management/jobs/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:37:06,584 security_middleware 21064 23100 REQUEST - POST /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,584 security_middleware 21064 23100 API_REQUEST [f1ca589e] - POST /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:37:06,589 security_middleware 21064 23100 API_RESPONSE [f1ca589e] - POST /api/data-management/jobs/ - Status: 400
+WARNING 2025-09-10 18:37:06,589 security_middleware 21064 23100 RESPONSE - POST /api/data-management/jobs/ - Status: 400 - Duration: 0.006s
+WARNING 2025-09-10 18:37:06,590 log 21064 23100 Bad Request: /api/data-management/jobs/
+WARNING 2025-09-10 18:37:06,591 basehttp 21064 23100 "POST /api/data-management/jobs/ HTTP/1.1" 400 273
+INFO 2025-09-10 18:37:06,595 security_middleware 21064 22384 REQUEST - GET /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,595 security_middleware 21064 22384 API_REQUEST [ef67831a] - GET /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:37:06,602 security_middleware 21064 22384 API_RESPONSE [ef67831a] - GET /api/data-management/backup-schedules/ - Status: 200
+INFO 2025-09-10 18:37:06,602 security_middleware 21064 22384 RESPONSE - GET /api/data-management/backup-schedules/ - Status: 200 - Duration: 0.007s
+INFO 2025-09-10 18:37:06,603 basehttp 21064 22384 "GET /api/data-management/backup-schedules/ HTTP/1.1" 200 965
+INFO 2025-09-10 18:37:06,605 security_middleware 21064 12084 REQUEST - POST /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,606 security_middleware 21064 12084 API_REQUEST [afe09b7f] - POST /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:37:06,614 security_middleware 21064 12084 API_RESPONSE [afe09b7f] - POST /api/data-management/backup-schedules/ - Status: 201
+INFO 2025-09-10 18:37:06,615 security_middleware 21064 12084 RESPONSE - POST /api/data-management/backup-schedules/ - Status: 201 - Duration: 0.009s
+INFO 2025-09-10 18:37:06,615 basehttp 21064 12084 "POST /api/data-management/backup-schedules/ HTTP/1.1" 201 769
+INFO 2025-09-10 18:37:06,618 security_middleware 21064 20492 REQUEST - POST /api/data-management/backup-schedules/a32b57f2-4bf9-4bb5-9469-7bab1b0d44b3/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,618 security_middleware 21064 20492 API_REQUEST [c585f9ba] - POST /api/data-management/backup-schedules/a32b57f2-4bf9-4bb5-9469-7bab1b0d44b3/execute/ - User: Anonymous
+INFO 2025-09-10 18:37:06,623 services 21064 20492 Starting backup: Daily Database Backup
+ERROR 2025-09-10 18:37:06,659 services 21064 20492 Full backup failed: Unable to serialize database: no such table: grades_grade
+INFO 2025-09-10 18:37:06,662 security_middleware 21064 20492 API_RESPONSE [c585f9ba] - POST /api/data-management/backup-schedules/a32b57f2-4bf9-4bb5-9469-7bab1b0d44b3/execute/ - Status: 200
+INFO 2025-09-10 18:37:06,662 security_middleware 21064 20492 RESPONSE - POST /api/data-management/backup-schedules/a32b57f2-4bf9-4bb5-9469-7bab1b0d44b3/execute/ - Status: 200 - Duration: 0.044s
+INFO 2025-09-10 18:37:06,662 basehttp 21064 20492 "POST /api/data-management/backup-schedules/a32b57f2-4bf9-4bb5-9469-7bab1b0d44b3/execute/ HTTP/1.1" 200 769
+INFO 2025-09-10 18:37:06,665 security_middleware 21064 9180 REQUEST - GET /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,665 security_middleware 21064 9180 API_REQUEST [39046aed] - GET /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:37:06,675 security_middleware 21064 9180 API_RESPONSE [39046aed] - GET /api/data-management/sync-tasks/ - Status: 200
+INFO 2025-09-10 18:37:06,675 security_middleware 21064 9180 RESPONSE - GET /api/data-management/sync-tasks/ - Status: 200 - Duration: 0.010s
+INFO 2025-09-10 18:37:06,675 basehttp 21064 9180 "GET /api/data-management/sync-tasks/ HTTP/1.1" 200 985
+INFO 2025-09-10 18:37:06,677 security_middleware 21064 12508 REQUEST - POST /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,677 security_middleware 21064 12508 API_REQUEST [96ca1ba8] - POST /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:37:06,686 security_middleware 21064 12508 API_RESPONSE [96ca1ba8] - POST /api/data-management/sync-tasks/ - Status: 201
+INFO 2025-09-10 18:37:06,686 security_middleware 21064 12508 RESPONSE - POST /api/data-management/sync-tasks/ - Status: 201 - Duration: 0.009s
+INFO 2025-09-10 18:37:06,687 basehttp 21064 12508 "POST /api/data-management/sync-tasks/ HTTP/1.1" 201 736
+INFO 2025-09-10 18:37:06,690 security_middleware 21064 18212 REQUEST - POST /api/data-management/sync-tasks/353deabb-5f1e-4ae8-8e5e-a44646d4317a/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,690 security_middleware 21064 18212 API_REQUEST [6cd1450d] - POST /api/data-management/sync-tasks/353deabb-5f1e-4ae8-8e5e-a44646d4317a/execute/ - User: Anonymous
+INFO 2025-09-10 18:37:06,696 services 21064 18212 Starting sync task: User Data Sync
+INFO 2025-09-10 18:37:06,697 services 21064 18212 One-way sync: 4 records
+INFO 2025-09-10 18:37:06,702 security_middleware 21064 18212 API_RESPONSE [6cd1450d] - POST /api/data-management/sync-tasks/353deabb-5f1e-4ae8-8e5e-a44646d4317a/execute/ - Status: 200
+INFO 2025-09-10 18:37:06,703 security_middleware 21064 18212 RESPONSE - POST /api/data-management/sync-tasks/353deabb-5f1e-4ae8-8e5e-a44646d4317a/execute/ - Status: 200 - Duration: 0.013s
+INFO 2025-09-10 18:37:06,703 basehttp 21064 18212 "POST /api/data-management/sync-tasks/353deabb-5f1e-4ae8-8e5e-a44646d4317a/execute/ HTTP/1.1" 200 789
+INFO 2025-09-10 18:37:06,706 security_middleware 21064 23004 REQUEST - GET /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,707 security_middleware 21064 23004 API_REQUEST [df3614ab] - GET /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:37:06,716 security_middleware 21064 23004 API_RESPONSE [df3614ab] - GET /api/data-management/integrations/ - Status: 200
+INFO 2025-09-10 18:37:06,716 security_middleware 21064 23004 RESPONSE - GET /api/data-management/integrations/ - Status: 200 - Duration: 0.010s
+INFO 2025-09-10 18:37:06,717 basehttp 21064 23004 "GET /api/data-management/integrations/ HTTP/1.1" 200 1801
+INFO 2025-09-10 18:37:06,719 security_middleware 21064 16968 REQUEST - POST /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,720 security_middleware 21064 16968 API_REQUEST [59ea2b98] - POST /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:37:06,754 security_middleware 21064 16968 API_RESPONSE [59ea2b98] - POST /api/data-management/integrations/ - Status: 201
+INFO 2025-09-10 18:37:06,755 security_middleware 21064 16968 RESPONSE - POST /api/data-management/integrations/ - Status: 201 - Duration: 0.036s
+INFO 2025-09-10 18:37:06,755 basehttp 21064 16968 "POST /api/data-management/integrations/ HTTP/1.1" 201 802
+INFO 2025-09-10 18:37:06,758 security_middleware 21064 6316 REQUEST - POST /api/data-management/integrations/95bf1d0a-ab5c-4e4d-a9b6-e46170335601/test_connection/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:37:06,758 security_middleware 21064 6316 API_REQUEST [6096b50c] - POST /api/data-management/integrations/95bf1d0a-ab5c-4e4d-a9b6-e46170335601/test_connection/ - User: Anonymous
+INFO 2025-09-10 18:37:06,767 security_middleware 21064 6316 API_RESPONSE [6096b50c] - POST /api/data-management/integrations/95bf1d0a-ab5c-4e4d-a9b6-e46170335601/test_connection/ - Status: 200
+INFO 2025-09-10 18:37:06,767 security_middleware 21064 6316 RESPONSE - POST /api/data-management/integrations/95bf1d0a-ab5c-4e4d-a9b6-e46170335601/test_connection/ - Status: 200 - Duration: 0.009s
+INFO 2025-09-10 18:37:06,767 basehttp 21064 6316 "POST /api/data-management/integrations/95bf1d0a-ab5c-4e4d-a9b6-e46170335601/test_connection/ HTTP/1.1" 200 92
+INFO 2025-09-10 18:39:00,978 security_middleware 21064 21516 REQUEST - GET /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:00,978 security_middleware 21064 21516 API_REQUEST [a94fe347] - GET /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:39:00,979 security_middleware 21064 21516 API_RESPONSE [a94fe347] - GET /api/data-management/jobs/ - Status: 200
+INFO 2025-09-10 18:39:00,979 security_middleware 21064 21516 RESPONSE - GET /api/data-management/jobs/ - Status: 200 - Duration: 0.001s
+INFO 2025-09-10 18:39:00,979 basehttp 21064 21516 "GET /api/data-management/jobs/ HTTP/1.1" 200 196
+INFO 2025-09-10 18:39:00,982 security_middleware 21064 4976 REQUEST - POST /api/data-management/jobs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:00,982 security_middleware 21064 4976 API_REQUEST [c39404ec] - POST /api/data-management/jobs/ - User: Anonymous
+INFO 2025-09-10 18:39:00,989 security_middleware 21064 4976 API_RESPONSE [c39404ec] - POST /api/data-management/jobs/ - Status: 201
+INFO 2025-09-10 18:39:00,989 security_middleware 21064 4976 RESPONSE - POST /api/data-management/jobs/ - Status: 201 - Duration: 0.007s
+INFO 2025-09-10 18:39:00,989 basehttp 21064 4976 "POST /api/data-management/jobs/ HTTP/1.1" 201 803
+INFO 2025-09-10 18:39:00,992 security_middleware 21064 14352 REQUEST - GET /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:00,992 security_middleware 21064 14352 API_REQUEST [a6eb5198] - GET /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/ - User: Anonymous
+INFO 2025-09-10 18:39:00,998 security_middleware 21064 14352 API_RESPONSE [a6eb5198] - GET /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/ - Status: 200
+INFO 2025-09-10 18:39:00,998 security_middleware 21064 14352 RESPONSE - GET /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/ - Status: 200 - Duration: 0.007s
+INFO 2025-09-10 18:39:00,999 basehttp 21064 14352 "GET /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/ HTTP/1.1" 200 803
+INFO 2025-09-10 18:39:01,001 security_middleware 21064 20044 REQUEST - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,001 security_middleware 21064 20044 API_REQUEST [dbfb24eb] - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/execute/ - User: Anonymous
+ERROR 2025-09-10 18:39:01,010 services 21064 20044 Import job failed: The 'source_file' attribute has no file associated with it.
+INFO 2025-09-10 18:39:01,013 security_middleware 21064 20044 API_RESPONSE [dbfb24eb] - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/execute/ - Status: 200
+INFO 2025-09-10 18:39:01,014 security_middleware 21064 20044 RESPONSE - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/execute/ - Status: 200 - Duration: 0.013s
+INFO 2025-09-10 18:39:01,014 basehttp 21064 20044 "POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/execute/ HTTP/1.1" 200 1000
+INFO 2025-09-10 18:39:01,016 security_middleware 21064 1872 REQUEST - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/cancel/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,017 security_middleware 21064 1872 API_REQUEST [35109b0f] - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/cancel/ - User: Anonymous
+INFO 2025-09-10 18:39:01,024 security_middleware 21064 1872 API_RESPONSE [35109b0f] - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/cancel/ - Status: 400
+WARNING 2025-09-10 18:39:01,024 security_middleware 21064 1872 RESPONSE - POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/cancel/ - Status: 400 - Duration: 0.008s
+WARNING 2025-09-10 18:39:01,024 log 21064 1872 Bad Request: /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/cancel/
+WARNING 2025-09-10 18:39:01,025 basehttp 21064 1872 "POST /api/data-management/jobs/d55fb74a-9c49-41f8-8a8c-a34557d115ec/cancel/ HTTP/1.1" 400 46
+INFO 2025-09-10 18:39:01,029 security_middleware 21064 21264 REQUEST - GET /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,030 security_middleware 21064 21264 API_REQUEST [1f423c31] - GET /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:39:01,030 security_middleware 21064 21264 API_RESPONSE [1f423c31] - GET /api/data-management/backup-schedules/ - Status: 200
+INFO 2025-09-10 18:39:01,031 security_middleware 21064 21264 RESPONSE - GET /api/data-management/backup-schedules/ - Status: 200 - Duration: 0.001s
+INFO 2025-09-10 18:39:01,031 basehttp 21064 21264 "GET /api/data-management/backup-schedules/ HTTP/1.1" 200 965
+INFO 2025-09-10 18:39:01,033 security_middleware 21064 22208 REQUEST - POST /api/data-management/backup-schedules/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,033 security_middleware 21064 22208 API_REQUEST [3b566951] - POST /api/data-management/backup-schedules/ - User: Anonymous
+INFO 2025-09-10 18:39:01,041 security_middleware 21064 22208 API_RESPONSE [3b566951] - POST /api/data-management/backup-schedules/ - Status: 201
+INFO 2025-09-10 18:39:01,041 security_middleware 21064 22208 RESPONSE - POST /api/data-management/backup-schedules/ - Status: 201 - Duration: 0.008s
+INFO 2025-09-10 18:39:01,041 basehttp 21064 22208 "POST /api/data-management/backup-schedules/ HTTP/1.1" 201 769
+INFO 2025-09-10 18:39:01,043 security_middleware 21064 10052 REQUEST - POST /api/data-management/backup-schedules/eb989354-0300-4e1c-aece-56e373eea057/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,043 security_middleware 21064 10052 API_REQUEST [4dbbd835] - POST /api/data-management/backup-schedules/eb989354-0300-4e1c-aece-56e373eea057/execute/ - User: Anonymous
+INFO 2025-09-10 18:39:01,048 services 21064 10052 Starting backup: Daily Database Backup
+ERROR 2025-09-10 18:39:01,062 services 21064 10052 Full backup failed: Unable to serialize database: no such table: grades_grade
+INFO 2025-09-10 18:39:01,064 security_middleware 21064 10052 API_RESPONSE [4dbbd835] - POST /api/data-management/backup-schedules/eb989354-0300-4e1c-aece-56e373eea057/execute/ - Status: 200
+INFO 2025-09-10 18:39:01,065 security_middleware 21064 10052 RESPONSE - POST /api/data-management/backup-schedules/eb989354-0300-4e1c-aece-56e373eea057/execute/ - Status: 200 - Duration: 0.021s
+INFO 2025-09-10 18:39:01,065 basehttp 21064 10052 "POST /api/data-management/backup-schedules/eb989354-0300-4e1c-aece-56e373eea057/execute/ HTTP/1.1" 200 769
+INFO 2025-09-10 18:39:01,068 security_middleware 21064 17744 REQUEST - GET /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,068 security_middleware 21064 17744 API_REQUEST [7c14a9f9] - GET /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:39:01,069 security_middleware 21064 17744 API_RESPONSE [7c14a9f9] - GET /api/data-management/sync-tasks/ - Status: 200
+INFO 2025-09-10 18:39:01,069 security_middleware 21064 17744 RESPONSE - GET /api/data-management/sync-tasks/ - Status: 200 - Duration: 0.001s
+INFO 2025-09-10 18:39:01,069 basehttp 21064 17744 "GET /api/data-management/sync-tasks/ HTTP/1.1" 200 985
+INFO 2025-09-10 18:39:01,071 security_middleware 21064 6044 REQUEST - POST /api/data-management/sync-tasks/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,072 security_middleware 21064 6044 API_REQUEST [2bec24c9] - POST /api/data-management/sync-tasks/ - User: Anonymous
+INFO 2025-09-10 18:39:01,079 security_middleware 21064 6044 API_RESPONSE [2bec24c9] - POST /api/data-management/sync-tasks/ - Status: 201
+INFO 2025-09-10 18:39:01,079 security_middleware 21064 6044 RESPONSE - POST /api/data-management/sync-tasks/ - Status: 201 - Duration: 0.008s
+INFO 2025-09-10 18:39:01,080 basehttp 21064 6044 "POST /api/data-management/sync-tasks/ HTTP/1.1" 201 736
+INFO 2025-09-10 18:39:01,082 security_middleware 21064 692 REQUEST - POST /api/data-management/sync-tasks/748a0c28-1307-40fd-b548-16b458a15287/execute/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,082 security_middleware 21064 692 API_REQUEST [416ee16e] - POST /api/data-management/sync-tasks/748a0c28-1307-40fd-b548-16b458a15287/execute/ - User: Anonymous
+INFO 2025-09-10 18:39:01,086 services 21064 692 Starting sync task: User Data Sync
+INFO 2025-09-10 18:39:01,087 services 21064 692 One-way sync: 4 records
+INFO 2025-09-10 18:39:01,091 security_middleware 21064 692 API_RESPONSE [416ee16e] - POST /api/data-management/sync-tasks/748a0c28-1307-40fd-b548-16b458a15287/execute/ - Status: 200
+INFO 2025-09-10 18:39:01,092 security_middleware 21064 692 RESPONSE - POST /api/data-management/sync-tasks/748a0c28-1307-40fd-b548-16b458a15287/execute/ - Status: 200 - Duration: 0.010s
+INFO 2025-09-10 18:39:01,092 basehttp 21064 692 "POST /api/data-management/sync-tasks/748a0c28-1307-40fd-b548-16b458a15287/execute/ HTTP/1.1" 200 789
+INFO 2025-09-10 18:39:01,095 security_middleware 21064 20308 REQUEST - GET /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,095 security_middleware 21064 20308 API_REQUEST [16a9c034] - GET /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:39:01,096 security_middleware 21064 20308 API_RESPONSE [16a9c034] - GET /api/data-management/integrations/ - Status: 200
+INFO 2025-09-10 18:39:01,096 security_middleware 21064 20308 RESPONSE - GET /api/data-management/integrations/ - Status: 200 - Duration: 0.001s
+INFO 2025-09-10 18:39:01,096 basehttp 21064 20308 "GET /api/data-management/integrations/ HTTP/1.1" 200 1801
+INFO 2025-09-10 18:39:01,098 security_middleware 21064 3816 REQUEST - POST /api/data-management/integrations/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,098 security_middleware 21064 3816 API_REQUEST [3ab9c9c5] - POST /api/data-management/integrations/ - User: Anonymous
+INFO 2025-09-10 18:39:01,106 security_middleware 21064 3816 API_RESPONSE [3ab9c9c5] - POST /api/data-management/integrations/ - Status: 201
+INFO 2025-09-10 18:39:01,106 security_middleware 21064 3816 RESPONSE - POST /api/data-management/integrations/ - Status: 201 - Duration: 0.008s
+INFO 2025-09-10 18:39:01,106 basehttp 21064 3816 "POST /api/data-management/integrations/ HTTP/1.1" 201 802
+INFO 2025-09-10 18:39:01,108 security_middleware 21064 21960 REQUEST - POST /api/data-management/integrations/f361a6d4-83dd-40d6-b3e8-ef8656d4d353/test_connection/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: python-requests/2.32.4
+INFO 2025-09-10 18:39:01,109 security_middleware 21064 21960 API_REQUEST [2424b0c3] - POST /api/data-management/integrations/f361a6d4-83dd-40d6-b3e8-ef8656d4d353/test_connection/ - User: Anonymous
+INFO 2025-09-10 18:39:01,115 security_middleware 21064 21960 API_RESPONSE [2424b0c3] - POST /api/data-management/integrations/f361a6d4-83dd-40d6-b3e8-ef8656d4d353/test_connection/ - Status: 200
+INFO 2025-09-10 18:39:01,116 security_middleware 21064 21960 RESPONSE - POST /api/data-management/integrations/f361a6d4-83dd-40d6-b3e8-ef8656d4d353/test_connection/ - Status: 200 - Duration: 0.007s
+INFO 2025-09-10 18:39:01,116 basehttp 21064 21960 "POST /api/data-management/integrations/f361a6d4-83dd-40d6-b3e8-ef8656d4d353/test_connection/ HTTP/1.1" 200 92
