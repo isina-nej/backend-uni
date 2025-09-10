@@ -24,6 +24,7 @@ urlpatterns = [
     path('announcements/', include('apps.announcements.urls')),
     path('assignments/', include('apps.assignments.urls')),
     path('auth/', include('apps.authentication.urls')),
+    path('dormitory/', include('apps.dormitory.urls')),  # اضافه شده: مدیریت خوابگاه
     path('auth/token/', obtain_auth_token, name='api_token_auth'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
