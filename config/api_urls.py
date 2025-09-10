@@ -13,6 +13,7 @@ urlpatterns = [
     path('analytics/', include('apps.analytics.urls')),
     path('data-management/', include('apps.data_management.urls')),
     path('mobile/', include('apps.mobile_api.urls')),
+    path('ai-ml/', include('apps.ai_ml.urls')),
     path('grades/', include('apps.grades.urls')),
     path('schedules/', include('apps.schedules.urls')),
     path('exams/', include('apps.exams.urls')),

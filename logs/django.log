@@ -3275,3 +3275,161 @@ INFO 2025-09-10 21:43:31,193 security_middleware 20884 21748 RESPONSE - GET /api
 INFO 2025-09-10 21:43:31,194 basehttp 20884 21748 "GET /api/mobile/dashboard/ HTTP/1.1" 200 1076
 INFO 2025-09-10 21:48:45,167 autoreload 20884 19528 D:\project\uni\backend\apps\mobile_api\services.py changed, reloading.
 INFO 2025-09-10 21:48:46,110 autoreload 22164 22648 Watching for file changes with StatReloader
+INFO 2025-09-10 22:00:19,594 autoreload 22164 22648 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-10 22:00:20,423 autoreload 20576 20364 Watching for file changes with StatReloader
+INFO 2025-09-10 22:00:36,023 autoreload 20576 20364 D:\project\uni\backend\config\api_urls.py changed, reloading.
+INFO 2025-09-10 22:00:36,793 autoreload 12588 11552 Watching for file changes with StatReloader
+INFO 2025-09-10 22:00:46,153 autoreload 12588 11552 D:\project\uni\backend\apps\ai_ml\models.py changed, reloading.
+INFO 2025-09-10 22:00:46,969 autoreload 22012 9084 Watching for file changes with StatReloader
+INFO 2025-09-10 22:00:50,935 autoreload 22012 9084 D:\project\uni\backend\apps\ai_ml\models.py changed, reloading.
+INFO 2025-09-10 22:00:51,702 autoreload 4444 21916 Watching for file changes with StatReloader
+INFO 2025-09-10 22:05:59,657 autoreload 4444 21916 D:\project\uni\backend\apps\ai_ml\models.py changed, reloading.
+INFO 2025-09-10 22:06:00,455 autoreload 16220 21480 Watching for file changes with StatReloader
+INFO 2025-09-10 22:06:17,190 autoreload 16220 21480 D:\project\uni\backend\apps\ai_ml\serializers.py changed, reloading.
+INFO 2025-09-10 22:06:18,113 autoreload 9408 21044 Watching for file changes with StatReloader
+INFO 2025-09-10 22:08:40,838 autoreload 9408 21044 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:08:41,850 autoreload 22984 17416 Watching for file changes with StatReloader
+INFO 2025-09-10 22:10:14,005 autoreload 22984 17416 D:\project\uni\backend\apps\ai_ml\services.py changed, reloading.
+INFO 2025-09-10 22:10:14,930 autoreload 636 17968 Watching for file changes with StatReloader
+INFO 2025-09-10 22:11:44,890 autoreload 636 17968 D:\project\uni\backend\apps\ai_ml\services.py changed, reloading.
+INFO 2025-09-10 22:11:45,826 autoreload 23040 17744 Watching for file changes with StatReloader
+INFO 2025-09-10 22:12:09,041 autoreload 23040 17744 D:\project\uni\backend\apps\ai_ml\serializers.py changed, reloading.
+INFO 2025-09-10 22:12:09,961 autoreload 19776 19468 Watching for file changes with StatReloader
+INFO 2025-09-10 22:12:41,889 autoreload 14604 3176 Watching for file changes with StatReloader
+INFO 2025-09-10 22:13:22,542 autoreload 21532 20884 Watching for file changes with StatReloader
+INFO 2025-09-10 22:13:42,529 security_middleware 21532 21204 REQUEST - GET /api/docs/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:13:42,530 security_middleware 21532 21204 API_REQUEST [86612978] - GET /api/docs/ - User: Anonymous
+INFO 2025-09-10 22:13:42,559 security_middleware 21532 21204 API_RESPONSE [86612978] - GET /api/docs/ - Status: 401
+WARNING 2025-09-10 22:13:42,559 security_middleware 21532 21204 RESPONSE - GET /api/docs/ - Status: 401 - Duration: 0.030s
+WARNING 2025-09-10 22:13:42,560 log 21532 21204 Unauthorized: /api/docs/
+WARNING 2025-09-10 22:13:42,560 basehttp 21532 21204 "GET /api/docs/ HTTP/1.1" 401 16
+INFO 2025-09-10 22:13:51,520 security_middleware 21532 21204 REQUEST - GET /api/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:13:51,521 security_middleware 21532 21204 API_REQUEST [32dd0c4f] - GET /api/ - User: Anonymous
+INFO 2025-09-10 22:13:51,749 security_middleware 21532 21204 API_RESPONSE [32dd0c4f] - GET /api/ - Status: 404
+WARNING 2025-09-10 22:13:51,749 security_middleware 21532 21204 RESPONSE - GET /api/ - Status: 404 - Duration: 0.229s
+WARNING 2025-09-10 22:13:51,750 log 21532 21204 Not Found: /api/
+WARNING 2025-09-10 22:13:51,750 basehttp 21532 21204 "GET /api/ HTTP/1.1" 404 6872
+INFO 2025-09-10 22:14:05,428 security_middleware 21532 21204 REQUEST - GET /api/ai-ml/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:14:05,429 security_middleware 21532 21204 API_REQUEST [4c156ace] - GET /api/ai-ml/ - User: Anonymous
+INFO 2025-09-10 22:14:05,431 security_middleware 21532 21204 API_RESPONSE [4c156ace] - GET /api/ai-ml/ - Status: 401
+WARNING 2025-09-10 22:14:05,432 security_middleware 21532 21204 RESPONSE - GET /api/ai-ml/ - Status: 401 - Duration: 0.004s
+WARNING 2025-09-10 22:14:05,433 log 21532 21204 Unauthorized: /api/ai-ml/
+WARNING 2025-09-10 22:14:05,433 basehttp 21532 21204 "GET /api/ai-ml/ HTTP/1.1" 401 176
+INFO 2025-09-10 22:14:34,357 security_middleware 21532 21204 REQUEST - POST /api/token/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:14:34,357 security_middleware 21532 21204 API_REQUEST [c1b413e9] - POST /api/token/ - User: Anonymous
+INFO 2025-09-10 22:14:34,684 security_middleware 21532 21204 API_RESPONSE [c1b413e9] - POST /api/token/ - Status: 200
+INFO 2025-09-10 22:14:34,684 security_middleware 21532 21204 RESPONSE - POST /api/token/ - Status: 200 - Duration: 0.327s
+INFO 2025-09-10 22:14:34,684 basehttp 21532 21204 "POST /api/token/ HTTP/1.1" 200 582
+INFO 2025-09-10 22:14:43,482 security_middleware 21532 21204 REQUEST - GET /api/ai-ml/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:14:43,482 security_middleware 21532 21204 API_REQUEST [abbb57b6] - GET /api/ai-ml/ - User: Anonymous
+INFO 2025-09-10 22:14:43,483 security_middleware 21532 21204 API_RESPONSE [abbb57b6] - GET /api/ai-ml/ - Status: 401
+WARNING 2025-09-10 22:14:43,483 security_middleware 21532 21204 RESPONSE - GET /api/ai-ml/ - Status: 401 - Duration: 0.002s
+WARNING 2025-09-10 22:14:43,483 log 21532 21204 Unauthorized: /api/ai-ml/
+WARNING 2025-09-10 22:14:43,484 basehttp 21532 21204 "GET /api/ai-ml/ HTTP/1.1" 401 176
+INFO 2025-09-10 22:14:52,340 security_middleware 21532 21204 REQUEST - GET /api/ai-ml/ml-models/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:14:52,341 security_middleware 21532 21204 API_REQUEST [ae1dc069] - GET /api/ai-ml/ml-models/ - User: Anonymous
+INFO 2025-09-10 22:14:52,348 security_middleware 21532 21204 API_RESPONSE [ae1dc069] - GET /api/ai-ml/ml-models/ - Status: 404
+WARNING 2025-09-10 22:14:52,348 security_middleware 21532 21204 RESPONSE - GET /api/ai-ml/ml-models/ - Status: 404 - Duration: 0.008s
+WARNING 2025-09-10 22:14:52,348 log 21532 21204 Not Found: /api/ai-ml/ml-models/
+WARNING 2025-09-10 22:14:52,349 basehttp 21532 21204 "GET /api/ai-ml/ml-models/ HTTP/1.1" 404 24310
+INFO 2025-09-10 22:15:03,373 security_middleware 21532 21204 REQUEST - GET /api/ai-ml/models/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:15:03,374 security_middleware 21532 21204 API_REQUEST [fd3ba9b3] - GET /api/ai-ml/models/ - User: Anonymous
+INFO 2025-09-10 22:15:03,374 security_middleware 21532 21204 API_RESPONSE [fd3ba9b3] - GET /api/ai-ml/models/ - Status: 401
+WARNING 2025-09-10 22:15:03,375 security_middleware 21532 21204 RESPONSE - GET /api/ai-ml/models/ - Status: 401 - Duration: 0.001s
+WARNING 2025-09-10 22:15:03,375 log 21532 21204 Unauthorized: /api/ai-ml/models/
+WARNING 2025-09-10 22:15:03,375 basehttp 21532 21204 "GET /api/ai-ml/models/ HTTP/1.1" 401 183
+INFO 2025-09-10 22:15:31,188 security_middleware 21532 21204 REQUEST - GET /api/ai-ml/models/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:15:31,188 security_middleware 21532 21204 API_REQUEST [cf637f2b] - GET /api/ai-ml/models/ - User: Anonymous
+INFO 2025-09-10 22:15:31,189 security_middleware 21532 21204 API_RESPONSE [cf637f2b] - GET /api/ai-ml/models/ - Status: 401
+WARNING 2025-09-10 22:15:31,189 security_middleware 21532 21204 RESPONSE - GET /api/ai-ml/models/ - Status: 401 - Duration: 0.001s
+WARNING 2025-09-10 22:15:31,189 log 21532 21204 Unauthorized: /api/ai-ml/models/
+WARNING 2025-09-10 22:15:31,190 basehttp 21532 21204 "GET /api/ai-ml/models/ HTTP/1.1" 401 183
+INFO 2025-09-10 22:16:32,720 autoreload 21532 20884 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:16:34,276 autoreload 22448 2440 Watching for file changes with StatReloader
+INFO 2025-09-10 22:16:42,793 autoreload 22448 2440 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:16:44,058 autoreload 21944 13092 Watching for file changes with StatReloader
+INFO 2025-09-10 22:16:51,790 autoreload 21944 13092 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:16:52,892 autoreload 24068 18196 Watching for file changes with StatReloader
+INFO 2025-09-10 22:17:14,267 autoreload 24068 18196 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:17:15,218 autoreload 24516 9212 Watching for file changes with StatReloader
+INFO 2025-09-10 22:17:24,653 autoreload 24516 9212 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:17:25,708 autoreload 23116 22588 Watching for file changes with StatReloader
+INFO 2025-09-10 22:17:35,214 autoreload 23116 22588 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:17:36,104 autoreload 17600 13520 Watching for file changes with StatReloader
+INFO 2025-09-10 22:17:44,457 autoreload 17600 13520 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:17:45,380 autoreload 24100 10524 Watching for file changes with StatReloader
+INFO 2025-09-10 22:18:00,060 autoreload 24100 10524 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:18:01,007 autoreload 21100 24292 Watching for file changes with StatReloader
+INFO 2025-09-10 22:18:37,435 autoreload 21100 24292 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:18:38,290 autoreload 7932 6868 Watching for file changes with StatReloader
+INFO 2025-09-10 22:18:58,095 autoreload 22284 19796 Watching for file changes with StatReloader
+INFO 2025-09-10 22:19:26,291 autoreload 7932 6868 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:19:27,214 autoreload 14192 19024 Watching for file changes with StatReloader
+INFO 2025-09-10 22:19:38,818 autoreload 17424 23176 Watching for file changes with StatReloader
+INFO 2025-09-10 22:22:10,630 autoreload 14192 19024 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:22:11,810 autoreload 24520 6364 Watching for file changes with StatReloader
+INFO 2025-09-10 22:22:34,702 autoreload 16216 19496 Watching for file changes with StatReloader
+INFO 2025-09-10 22:23:35,920 autoreload 16216 19496 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:23:36,283 autoreload 24520 6364 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:23:36,741 autoreload 23988 24336 Watching for file changes with StatReloader
+INFO 2025-09-10 22:23:37,074 autoreload 9740 17856 Watching for file changes with StatReloader
+INFO 2025-09-10 22:23:54,727 autoreload 20676 21360 Watching for file changes with StatReloader
+INFO 2025-09-10 22:24:41,001 autoreload 1652 8460 Watching for file changes with StatReloader
+INFO 2025-09-10 22:24:45,118 security_middleware 1652 10480 REQUEST - GET /api/ai-ml/models/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:24:45,118 security_middleware 1652 10480 API_REQUEST [f6541275] - GET /api/ai-ml/models/ - User: Anonymous
+INFO 2025-09-10 22:24:45,136 security_middleware 1652 10480 API_RESPONSE [f6541275] - GET /api/ai-ml/models/ - Status: 401
+WARNING 2025-09-10 22:24:45,136 security_middleware 1652 10480 RESPONSE - GET /api/ai-ml/models/ - Status: 401 - Duration: 0.018s
+WARNING 2025-09-10 22:24:45,136 log 1652 10480 Unauthorized: /api/ai-ml/models/
+WARNING 2025-09-10 22:24:45,137 basehttp 1652 10480 "GET /api/ai-ml/models/ HTTP/1.1" 401 183
+INFO 2025-09-10 22:24:59,563 autoreload 1652 8460 D:\project\uni\backend\config\settings.py changed, reloading.
+INFO 2025-09-10 22:25:00,930 autoreload 1212 18088 Watching for file changes with StatReloader
+INFO 2025-09-10 22:25:15,303 autoreload 24728 22952 Watching for file changes with StatReloader
+INFO 2025-09-10 22:25:44,870 security_middleware 1212 23820 REQUEST - GET /api/ai-ml/models/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:25:44,870 security_middleware 1212 23820 API_REQUEST [97b361df] - GET /api/ai-ml/models/ - User: Anonymous
+INFO 2025-09-10 22:25:44,884 security_middleware 1212 23820 API_RESPONSE [97b361df] - GET /api/ai-ml/models/ - Status: 200
+INFO 2025-09-10 22:25:44,885 security_middleware 1212 23820 RESPONSE - GET /api/ai-ml/models/ - Status: 200 - Duration: 0.015s
+INFO 2025-09-10 22:25:44,885 basehttp 1212 23820 "GET /api/ai-ml/models/ HTTP/1.1" 200 196
+INFO 2025-09-10 22:26:01,226 security_middleware 1212 23820 REQUEST - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:26:01,227 security_middleware 1212 23820 API_REQUEST [f9c1596d] - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous
+ERROR 2025-09-10 22:26:01,231 views 1212 23820 Dashboard data retrieval failed: Cannot resolve keyword 'is_active' into field. Choices are: accuracy, anomaly_detections, course_recommendations, created_at, f1_score, feature_importance, grading_assistance, hyperparameters, id, intelligent_schedules, last_trained, model_file_path, model_type, name, nlp_analyses, performance_predictions, precision, recall, scaler_file_path, status, training_data_size, training_duration, updated_at, version
+INFO 2025-09-10 22:26:01,232 security_middleware 1212 23820 API_RESPONSE [f9c1596d] - GET /api/ai-ml/dashboard/dashboard/ - Status: 500
+WARNING 2025-09-10 22:26:01,233 security_middleware 1212 23820 RESPONSE - GET /api/ai-ml/dashboard/dashboard/ - Status: 500 - Duration: 0.006s
+ERROR 2025-09-10 22:26:01,233 log 1212 23820 Internal Server Error: /api/ai-ml/dashboard/dashboard/
+ERROR 2025-09-10 22:26:01,233 basehttp 1212 23820 "GET /api/ai-ml/dashboard/dashboard/ HTTP/1.1" 500 456
+INFO 2025-09-10 22:26:44,775 autoreload 1212 18088 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:26:46,005 autoreload 24552 21712 Watching for file changes with StatReloader
+INFO 2025-09-10 22:27:04,279 autoreload 25280 22760 Watching for file changes with StatReloader
+INFO 2025-09-10 22:27:35,002 security_middleware 24552 10460 REQUEST - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:27:35,002 security_middleware 24552 10460 API_REQUEST [2be71947] - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous
+INFO 2025-09-10 22:27:35,017 security_middleware 24552 10460 API_RESPONSE [2be71947] - GET /api/ai-ml/dashboard/dashboard/ - Status: 200
+INFO 2025-09-10 22:27:35,017 security_middleware 24552 10460 RESPONSE - GET /api/ai-ml/dashboard/dashboard/ - Status: 200 - Duration: 0.015s
+INFO 2025-09-10 22:27:35,018 basehttp 24552 10460 "GET /api/ai-ml/dashboard/dashboard/ HTTP/1.1" 200 183
+INFO 2025-09-10 22:28:44,540 security_middleware 24552 10460 REQUEST - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:28:44,541 security_middleware 24552 10460 API_REQUEST [1a06355f] - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous
+INFO 2025-09-10 22:28:44,542 security_middleware 24552 10460 API_RESPONSE [1a06355f] - GET /api/ai-ml/dashboard/dashboard/ - Status: 200
+INFO 2025-09-10 22:28:44,542 security_middleware 24552 10460 RESPONSE - GET /api/ai-ml/dashboard/dashboard/ - Status: 200 - Duration: 0.002s
+INFO 2025-09-10 22:28:44,543 basehttp 24552 10460 "GET /api/ai-ml/dashboard/dashboard/ HTTP/1.1" 200 183
+INFO 2025-09-10 22:29:00,127 security_middleware 24552 10460 REQUEST - GET /api/ai-ml/models/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:29:00,127 security_middleware 24552 10460 API_REQUEST [17a41d0d] - GET /api/ai-ml/models/ - User: Anonymous
+INFO 2025-09-10 22:29:00,135 security_middleware 24552 10460 API_RESPONSE [17a41d0d] - GET /api/ai-ml/models/ - Status: 200
+INFO 2025-09-10 22:29:00,135 security_middleware 24552 10460 RESPONSE - GET /api/ai-ml/models/ - Status: 200 - Duration: 0.008s
+INFO 2025-09-10 22:29:00,136 basehttp 24552 10460 "GET /api/ai-ml/models/ HTTP/1.1" 200 2976
+INFO 2025-09-10 22:29:20,395 autoreload 6584 13464 Watching for file changes with StatReloader
+INFO 2025-09-10 22:32:40,097 security_middleware 24552 24608 REQUEST - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:32:40,098 security_middleware 24552 24608 API_REQUEST [447b6bd5] - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous
+INFO 2025-09-10 22:32:40,099 security_middleware 24552 24608 API_RESPONSE [447b6bd5] - GET /api/ai-ml/dashboard/dashboard/ - Status: 200
+INFO 2025-09-10 22:32:40,099 security_middleware 24552 24608 RESPONSE - GET /api/ai-ml/dashboard/dashboard/ - Status: 200 - Duration: 0.003s
+INFO 2025-09-10 22:32:40,100 basehttp 24552 24608 "GET /api/ai-ml/dashboard/dashboard/ HTTP/1.1" 200 183
+INFO 2025-09-10 22:33:03,041 autoreload 24552 21712 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:33:04,062 autoreload 25364 18656 Watching for file changes with StatReloader
+INFO 2025-09-10 22:33:14,216 autoreload 25364 18656 D:\project\uni\backend\apps\ai_ml\views.py changed, reloading.
+INFO 2025-09-10 22:33:15,231 autoreload 19692 20176 Watching for file changes with StatReloader
+INFO 2025-09-10 22:33:24,842 autoreload 10688 10156 Watching for file changes with StatReloader
+INFO 2025-09-10 22:36:55,759 security_middleware 19692 25156 REQUEST - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.2673
+INFO 2025-09-10 22:36:55,760 security_middleware 19692 25156 API_REQUEST [9285103e] - GET /api/ai-ml/dashboard/dashboard/ - User: Anonymous
+INFO 2025-09-10 22:36:55,783 security_middleware 19692 25156 API_RESPONSE [9285103e] - GET /api/ai-ml/dashboard/dashboard/ - Status: 200
+INFO 2025-09-10 22:36:55,783 security_middleware 19692 25156 RESPONSE - GET /api/ai-ml/dashboard/dashboard/ - Status: 200 - Duration: 0.024s
+INFO 2025-09-10 22:36:55,784 basehttp 19692 25156 "GET /api/ai-ml/dashboard/dashboard/ HTTP/1.1" 200 183
+INFO 2025-09-10 22:37:01,284 basehttp 19692 25156 - Broken pipe from ('127.0.0.1', 6756)
+INFO 2025-09-10 22:53:01,632 autoreload 19692 20176 D:\project\uni\backend\apps\ai_ml\models.py changed, reloading.
+INFO 2025-09-10 22:53:05,135 autoreload 22840 24876 Watching for file changes with StatReloader
