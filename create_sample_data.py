@@ -174,9 +174,16 @@ def create_sample_data():
                 'name_en': 'Computer Engineering',
                 'code': 'CE-BS',
                 'department': department,
+                'program_type': 'BACHELOR',
+                'program_mode': 'FULL_TIME',
+                'total_credits': 140,
                 'duration_semesters': 8,
-                'min_credits': 140,
-                'max_credits': 160
+                'minimum_gpa': 12.00,
+                'tuition_per_semester': 5000000,
+                'max_capacity': 50,
+                'entrance_requirements': 'دیپلم ریاضی',
+                'objectives': 'آموزش مهندسین کامپیوتر',
+                'career_prospects': 'برنامه‌نویسی، تحلیل سیستم‌ها'
             }
         )
         print(f"{'✅ Created' if created else '✅ Found'} Academic Program: {academic_program.name}")
@@ -193,11 +200,12 @@ def create_sample_data():
                 'birth_date': date(2002, 8, 20),
                 'phone': '09129876543',
                 'email': 's.mohammadi@ut.ac.ir',
-                'university': university,
-                'current_program': academic_program,
-                'entry_year': 1402,
-                'entry_semester': 'FALL',
-                'student_status': 'ACTIVE'
+                'academic_program': academic_program,
+                'student_type': 'REGULAR',
+                'entrance_year': 1402,
+                'entrance_semester': 'FALL',
+                'current_semester': 3,
+                'current_gpa': 16.50
             }
         )
         print(f"{'✅ Created' if created else '✅ Found'} Student: {student.get_full_name()}")
@@ -228,7 +236,8 @@ def create_sample_data():
                 'first_name': 'سارا',
                 'last_name': 'محمدی',
                 'user_type': 'STUDENT',
-                'student': student,
+                'national_id': '0987654321',
+                'phone': '09129876543',
                 'is_active': True
             }
         )

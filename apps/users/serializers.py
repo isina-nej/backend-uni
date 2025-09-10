@@ -72,6 +72,25 @@ class UserLoginSerializer(serializers.Serializer):
         raise serializers.ValidationError(_("کد ملی و رمز عبور الزامی است"))
 
 
+class UserListSerializer(serializers.ModelSerializer):
+    """لیست کاربران"""
+    full_name = serializers.SerializerMethodField()
+    user_type_display = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = [
+            'id', 'username', 'email', 'full_name', 'user_type', 'user_type_display',
+            'phone', 'is_active', 'last_activity'
+        ]
+
+    def get_full_name(self, obj):
+        return f"{obj.first_name} {obj.last_name}".strip()
+
+    def get_user_type_display(self, obj):
+        return obj.get_user_type_display()
+
+
 class UserProfileSerializer(serializers.ModelSerializer):
     """پروفایل کاربر"""
     employee_info = serializers.SerializerMethodField()

@@ -13,6 +13,8 @@ from rest_framework_simplejwt.views import (
 from .views import (
     # Authentication
     AuthViewSet,
+    # User Management
+    UserViewSet,
     # Organizational
     MinistryViewSet, UniversityViewSet, FacultyViewSet, DepartmentViewSet,
     ResearchCenterViewSet, AdministrativeUnitViewSet,
@@ -35,6 +37,9 @@ router = DefaultRouter()
 
 # Authentication (بدون prefix برای راحتی)
 router.register(r'auth', AuthViewSet, basename='auth')
+
+# User Management
+router.register(r'', UserViewSet, basename='user')
 
 # Organizational Hierarchy
 router.register(r'ministries', MinistryViewSet, basename='ministry')

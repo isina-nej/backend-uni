@@ -11,9 +11,9 @@ class CourseViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        if user.role == 'admin':
+        if user.user_type == 'ADMIN':
             return Course.objects.all()
-        elif user.role == 'professor':
+        elif user.user_type == 'EMPLOYEE':
             return Course.objects.filter(professor=user)
         else:
             return Course.objects.filter(students=user)

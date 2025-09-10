@@ -23,6 +23,7 @@ from .models import (
 from .serializers import (
     # Authentication
     UserRegistrationSerializer, UserLoginSerializer, UserProfileSerializer,
+    UserListSerializer,
     # Organizational
     MinistrySerializer, UniversityListSerializer, UniversityDetailSerializer,
     FacultyListSerializer, FacultyDetailSerializer, DepartmentListSerializer,
@@ -40,6 +41,47 @@ from .serializers import (
     # Statistics
     UniversityStatsSerializer, DashboardStatsSerializer
 )
+
+
+# ==============================================================================
+# USER MANAGEMENT VIEWS
+# ==============================================================================
+
+class UserViewSet(viewsets.ModelViewSet):
+    """مدیریت کاربران"""
+    queryset = User.objects.all()
+    serializer_class = UserListSerializer
+    permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['user_type', 'is_active']
+    search_fields = ['username', 'email', 'first_name', 'last_name', 'national_id']
+    ordering_fields = ['username', 'email', 'last_activity', 'date_joined']
+    ordering = ['-date_joined']
+
+    def get_serializer_class(self):
+        if self.action == 'retrieve':
+            return UserProfileSerializer
+        return UserListSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.user_type == 'ADMIN':
+            return User.objects.all()
+        elif user.user_type == 'EMPLOYEE':
+            # کارمندان فقط کاربران هم واحد رو می‌بینن
+            return User.objects.filter(
+                Q(employee__primary_unit=user.employee.primary_unit) |
+                Q(pk=user.pk)
+            )
+        else:
+            # دانشجویان فقط خودشان رو می‌بینن
+            return User.objects.filter(pk=user.pk)
+
+    @action(detail=False, methods=['get'])
+    def me(self, request):
+        """پروفایل کاربر فعلی"""
+        serializer = UserProfileSerializer(request.user)
+        return Response(serializer.data)
 
 
 # ==============================================================================

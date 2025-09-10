@@ -685,6 +685,7 @@ class User(AbstractUser):
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user_type = models.CharField(max_length=20, choices=USER_TYPES, default='EMPLOYEE', verbose_name='نوع کاربر')
     national_id = models.CharField(
         max_length=10, 
         unique=True,
@@ -729,7 +730,7 @@ class User(AbstractUser):
     last_activity = models.DateTimeField(auto_now=True, verbose_name='آخرین فعالیت')
     
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    REQUIRED_FIELDS = ['email', 'user_type']
 
     class Meta:
         verbose_name = 'کاربر'
