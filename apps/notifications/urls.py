@@ -20,5 +20,5 @@ app_name = 'notifications'
 
 urlpatterns = [
     # API routes
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]

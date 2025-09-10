@@ -73,11 +73,11 @@ router.register(r'dashboard', DashboardViewSet, basename='dashboard')
 
 urlpatterns = [
     # API Router URLs
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
     
     # JWT Token URLs
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
     # DRF Browsable API Authentication
     path('api-auth/', include('rest_framework.urls')),
@@ -90,15 +90,15 @@ urlpatterns = [
 # URL patterns اضافی برای endpoint های خاص
 extra_patterns = [
     # Authentication shortcuts
-    path('api/register/', AuthViewSet.as_view({'post': 'register'}), name='user-register'),
-    path('api/login/', AuthViewSet.as_view({'post': 'login'}), name='user-login'),
-    path('api/logout/', AuthViewSet.as_view({'post': 'logout'}), name='user-logout'),
-    path('api/profile/', AuthViewSet.as_view({'get': 'profile', 'put': 'update_profile'}), name='user-profile'),
+    path('register/', AuthViewSet.as_view({'post': 'register'}), name='user-register'),
+    path('login/', AuthViewSet.as_view({'post': 'login'}), name='user-login'),
+    path('logout/', AuthViewSet.as_view({'post': 'logout'}), name='user-logout'),
+    path('profile/', AuthViewSet.as_view({'get': 'profile', 'put': 'update_profile'}), name='user-profile'),
     
     # Quick access to statistics
-    path('api/stats/', DashboardViewSet.as_view({'get': 'stats'}), name='dashboard-stats'),
-    path('api/recent-activities/', DashboardViewSet.as_view({'get': 'recent_activities'}), name='recent-activities'),
-    path('api/system-health/', DashboardViewSet.as_view({'get': 'system_health'}), name='system-health'),
+    path('stats/', DashboardViewSet.as_view({'get': 'stats'}), name='dashboard-stats'),
+    path('recent-activities/', DashboardViewSet.as_view({'get': 'recent_activities'}), name='recent-activities'),
+    path('system-health/', DashboardViewSet.as_view({'get': 'system_health'}), name='system-health'),
 ]
 
 urlpatterns += extra_patterns

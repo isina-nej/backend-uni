@@ -15,5 +15,5 @@ router.register(r'staff', DormitoryStaffViewSet, basename='dormitory-staff')
 router.register(r'maintenance', DormitoryMaintenanceViewSet, basename='dormitory-maintenance')
 
 urlpatterns = [
-    path('api/dormitory/', include(router.urls)),
+    path('', include(router.urls)),
 ]

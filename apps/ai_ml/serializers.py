@@ -34,10 +34,12 @@ class StudentPerformancePredictionSerializer(serializers.ModelSerializer):
         model = StudentPerformancePrediction
         fields = [
             'id', 'student', 'student_name', 'course', 'course_name', 'model_used', 'model_name',
-            'predicted_score', 'confidence_level', 'risk_level', 'recommendations',
+            'predicted_grade', 'confidence_score', 'risk_level', 'attendance_factor', 'assignment_factor',
+            'quiz_factor', 'participation_factor', 'previous_performance_factor', 'recommendations',
+            'intervention_suggestions', 'prediction_date', 'valid_until',
             'created_at', 'updated_at'
         ]
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'prediction_date', 'created_at', 'updated_at']
 
 
 class CourseRecommendationSerializer(serializers.ModelSerializer):
@@ -71,10 +73,12 @@ class GradingAssistanceSerializer(serializers.ModelSerializer):
         model = GradingAssistance
         fields = [
             'id', 'assignment', 'assignment_title', 'student', 'student_name', 'model_used', 'model_name',
-            'predicted_grade', 'confidence_score', 'grading_criteria', 'feedback_suggestions',
+            'ai_suggested_grade', 'confidence_score', 'strengths', 'weaknesses', 'suggestions',
+            'content_quality_score', 'originality_score', 'completeness_score',
+            'ai_generated_feedback', 'feedback_quality_score', 'analysis_date', 'processing_time',
             'created_at', 'updated_at'
         ]
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'analysis_date', 'processing_time', 'created_at', 'updated_at']
 
 
 class AnomalyDetectionSerializer(serializers.ModelSerializer):
@@ -106,10 +110,12 @@ class IntelligentScheduleSerializer(serializers.ModelSerializer):
         model = IntelligentSchedule
         fields = [
             'id', 'user', 'user_name', 'model_used', 'model_name', 'schedule_type',
-            'original_schedule', 'optimized_schedule', 'optimization_score',
-            'constraints_used', 'created_at', 'updated_at'
+            'title', 'description', 'schedule_data', 'optimization_score',
+            'workload_balance', 'deadline_pressure', 'learning_style', 'time_preferences',
+            'start_date', 'end_date', 'is_active', 'generated_at', 'last_updated',
+            'created_at', 'updated_at'
         ]
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'generated_at', 'last_updated', 'created_at', 'updated_at']
 
 
 class NLPFeedbackAnalysisSerializer(serializers.ModelSerializer):
@@ -124,10 +130,12 @@ class NLPFeedbackAnalysisSerializer(serializers.ModelSerializer):
         model = NLPFeedbackAnalysis
         fields = [
             'id', 'student', 'student_name', 'course', 'course_name', 'instructor', 'instructor_name',
-            'model_used', 'model_name', 'feedback_text', 'sentiment_score', 'key_topics',
-            'actionable_insights', 'response_suggestions', 'created_at', 'updated_at'
+            'model_used', 'model_name', 'feedback_text', 'feedback_type', 'sentiment_score', 'sentiment_label',
+            'topics', 'keywords', 'entities', 'clarity_score', 'constructiveness_score', 'specificity_score',
+            'key_insights', 'suggested_actions', 'analyzed_at', 'processing_time',
+            'created_at', 'updated_at'
         ]
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'analyzed_at', 'processing_time', 'created_at', 'updated_at']
 
 
 # Request Serializers

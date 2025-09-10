@@ -213,7 +213,7 @@ class GradingAssistanceViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GradingAssistanceSerializer
     # permission_classes = [permissions.IsAuthenticated]  # Temporarily disabled for testing
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['student', 'assignment', 'model_used', 'status']
+    filterset_fields = ['student', 'assignment', 'model_used']
 
     @extend_schema(
         summary="Analyze Submission",
@@ -365,7 +365,7 @@ class NLPFeedbackAnalysisViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = NLPFeedbackAnalysisSerializer
     # permission_classes = [permissions.IsAuthenticated]  # Temporarily disabled for testing
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['feedback_type', 'sentiment', 'priority']
+    filterset_fields = ['feedback_type', 'sentiment_label']
 
     @extend_schema(
         summary="Analyze Feedback",
