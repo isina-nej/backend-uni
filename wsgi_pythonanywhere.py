@@ -10,8 +10,8 @@ project_home = '/home/sinanej2/backend-uni'
 if project_home not in sys.path:
     sys.path.insert(0, project_home)
 
-# Set Django settings module
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_production')
+# Set Django settings module to the simplified version
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_simple')
 
 # Import Django WSGI application
 from django.core.wsgi import get_wsgi_application

@@ -1,0 +1,31 @@
+# ==============================================================================
+# MINIMAL REQUIREMENTS FOR PRODUCTION DEPLOYMENT
+# تنظیمات ساده شده برای سرور PythonAnywhere
+# ==============================================================================
+
+# Core Django - حداقل پکیج‌های مورد نیاز
+Django==4.2.7
+djangorestframework==3.14.0
+
+# Database Driver for MySQL
+mysqlclient==2.2.0
+
+# Essential Third Party
+django-cors-headers==4.3.1
+django-filter==23.4
+
+# Authentication
+djangorestframework-simplejwt==5.3.0
+PyJWT==2.8.0
+
+# API Documentation
+drf-spectacular==0.26.5
+
+# Environment Management
+python-decouple==3.8
+
+# Image Processing (if needed)
+Pillow==10.1.0
+
+# Production Deployment
+gunicorn==21.2.0
