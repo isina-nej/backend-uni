@@ -34,7 +34,7 @@ THIRD_PARTY_APPS = [
     'django_filters',
     'corsheaders',
     'drf_spectacular',
-    'channels',  # For WebSocket support
+    # 'channels',  # For WebSocket support - disabled for production
 ]
 # The `LOCAL_APPS` list in the Django settings file is defining the names of the local Django
 # applications that are part of the University Management System project. Each string in the list
@@ -66,19 +66,19 @@ LOCAL_APPS = [
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
-    'config.monitoring.MonitoringMiddleware',  # Performance monitoring
+    # 'config.monitoring.MonitoringMiddleware',  # Performance monitoring - disabled for production
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',  # Cache middleware
-    'config.security_middleware.SecurityMiddleware',
-    'config.security_middleware.RequestLoggingMiddleware',
-    'config.advanced_security.SQLInjectionProtectionMiddleware',
-    'config.advanced_security.XSSProtectionMiddleware',
-    'config.advanced_security.SecurityHeadersMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',  # Cache middleware - disabled for production
+    # 'config.security_middleware.SecurityMiddleware',
+    # 'config.security_middleware.RequestLoggingMiddleware',
+    # 'config.advanced_security.SQLInjectionProtectionMiddleware',
+    # 'config.advanced_security.XSSProtectionMiddleware',
+    # 'config.advanced_security.SecurityHeadersMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',  # For internationalization
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',  # Cache middleware
+    # 'django.middleware.cache.FetchFromCacheMiddleware',  # Cache middleware - disabled for production
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -104,7 +104,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-ASGI_APPLICATION = 'config.asgi.application'
+# ASGI_APPLICATION = 'config.asgi.application'  # Disabled for production
 
 # Database (SQLite for development)
 DATABASES = {
