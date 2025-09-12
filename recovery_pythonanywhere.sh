@@ -40,17 +40,17 @@ echo "📁 Creating necessary directories..."
 mkdir -p /home/sinanej2/sinanej2.pythonanywhere.com/static
 mkdir -p /home/sinanej2/sinanej2.pythonanywhere.com/media
 
-# Step 4: Test Django setup
+# Step 4: Test Django setup with simplified settings
 echo "🧪 Testing Django configuration..."
-python3.10 manage.py check --settings=config.settings_pythonanywhere
+python3.10 manage.py check --settings=config.settings_simplified_pythonanywhere
 
 # Step 5: Try collectstatic with simplified settings
 echo "📁 Collecting static files..."
-python3.10 manage.py collectstatic --noinput --settings=config.settings_pythonanywhere
+python3.10 manage.py collectstatic --noinput --settings=config.settings_simplified_pythonanywhere
 
-# Step 6: Try migrations
+# Step 6: Try migrations with simplified settings
 echo "🗄️ Running database migrations..."
-python3.10 manage.py migrate --settings=config.settings_pythonanywhere
+python3.10 manage.py migrate --settings=config.settings_simplified_pythonanywhere
 
 echo "✅ Recovery script completed!"
 echo ""

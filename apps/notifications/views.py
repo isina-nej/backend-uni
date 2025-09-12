@@ -23,7 +23,16 @@ from .serializers import (
     NotificationPreferenceSerializer, WebSocketConnectionSerializer,
     NotificationCreateSerializer, BulkNotificationSerializer
 )
-from .services import notification_service
+
+# Import service with fallback for PythonAnywhere compatibility
+try:
+    from .services import notification_service
+except ImportError:
+    try:
+        from .services_pythonanywhere import notification_service
+    except ImportError:
+        notification_service = None
+
 import logging
 
 logger = logging.getLogger(__name__)
