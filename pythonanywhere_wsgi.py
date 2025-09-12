@@ -1,12 +1,12 @@
-#!/var/www/yourusername_pythonanywhere_com_wsgi.py
+#!/var/www/sinanej2_pythonanywhere_com_wsgi.py
 # WSGI configuration for PythonAnywhere
-# Replace 'yourusername' with your actual PythonAnywhere username
+# Replace 'sinanej2' with your actual PythonAnywhere username
 
 import os
 import sys
 
 # Add your project directory to Python path
-path = '/home/yourusername/backend-uni'  # Replace with your actual path
+path = '/home/sinanej2/backend-uni/backend-uni'  # Your actual path
 if path not in sys.path:
     sys.path.insert(0, path)
 

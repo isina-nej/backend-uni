@@ -1,0 +1,28 @@
+# Minimal Requirements for PythonAnywhere (Space-Optimized)
+# تنها پکیج‌های ضروری برای عملکرد اولیه
+
+# Core Django
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+
+# Authentication
+djangorestframework-simplejwt==5.3.0
+PyJWT==2.8.0
+
+# API Documentation
+drf-spectacular==0.26.5
+
+# Database
+mysqlclient==2.2.0
+
+# Configuration
+python-decouple==3.8
+
+# WSGI Server
+gunicorn==21.2.0
+
+# Basic utilities
+Pillow==10.1.0
+pytz==2023.3
+requests==2.31.0

@@ -16,7 +16,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 # PythonAnywhere domain configuration
 ALLOWED_HOSTS = [
-    'yourusername.pythonanywhere.com',  # Replace with your PythonAnywhere domain
+    'sinanej2.pythonanywhere.com',  # Your PythonAnywhere domain
     'localhost',
     '127.0.0.1',
 ]
@@ -101,10 +101,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME', default='yourusername$your_db_name'),
-        'USER': config('DB_USER', default='yourusername'),
+        'NAME': config('DB_NAME', default='sinanej2$your_db_name'),
+        'USER': config('DB_USER', default='sinanej2'),
         'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='yourusername.mysql.pythonanywhere-services.com'),
+        'HOST': config('DB_HOST', default='sinanej2.mysql.pythonanywhere-services.com'),
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -137,11 +137,11 @@ USE_TZ = True
 
 # Static files configuration for PythonAnywhere
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/yourusername/yourusername.pythonanywhere.com/static'  # Replace with your username
+STATIC_ROOT = '/home/sinanej2/sinanej2.pythonanywhere.com/static'
 
 # Media files configuration
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/yourusername/yourusername.pythonanywhere.com/media'  # Replace with your username
+MEDIA_ROOT = '/home/sinanej2/sinanej2.pythonanywhere.com/media'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -184,7 +184,7 @@ SIMPLE_JWT = {
 # CORS Configuration for production
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://yourusername.pythonanywhere.com",  # Your PythonAnywhere domain
+    "https://sinanej2.pythonanywhere.com",  # Your PythonAnywhere domain
     "http://localhost:3000",  # For development
 ]
 
@@ -215,36 +215,30 @@ CACHES = {
     }
 }
 
-# Logging Configuration for Production
+# Logging Configuration for Production (Simplified)
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+        'simple': {
+            'format': '{levelname} {asctime} {message}',
             'style': '{',
         },
     },
     'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': '/home/yourusername/logs/django.log',  # Replace with your username
-            'formatter': 'verbose',
-        },
         'console': {
-            'level': 'ERROR',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
+            'formatter': 'simple',
         },
     },
     'root': {
-        'handlers': ['console', 'file'],
+        'handlers': ['console'],
         'level': 'INFO',
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': False,
         },
