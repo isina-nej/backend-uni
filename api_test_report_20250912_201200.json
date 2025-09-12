@@ -1,0 +1,716 @@
+{
+  "timestamp": "2025-09-12T20:12:00.089585",
+  "summary": {
+    "total_tests": 36,
+    "successful_tests": 0,
+    "failed_tests": 36,
+    "success_rate": 0.0,
+    "average_response_time": 0.556,
+    "max_response_time": 1.341,
+    "min_response_time": 0.303
+  },
+  "results_by_method": {
+    "GET": {
+      "total": 33,
+      "successful": 0,
+      "failed": 33
+    },
+    "POST": {
+      "total": 3,
+      "successful": 0,
+      "failed": 3
+    }
+  },
+  "results_by_status": {
+    "500": 36
+  },
+  "failed_endpoints": [
+    {
+      "endpoint": "/api/health/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.773
+    },
+    {
+      "endpoint": "/api/info/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.506
+    },
+    {
+      "endpoint": "/api/version/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.339
+    },
+    {
+      "endpoint": "/api/status/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.528
+    },
+    {
+      "endpoint": "/api/schema/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.424
+    },
+    {
+      "endpoint": "/api/docs/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.45
+    },
+    {
+      "endpoint": "/api/redoc/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.393
+    },
+    {
+      "endpoint": "/api/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.41
+    },
+    {
+      "endpoint": "/api/courses/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.441
+    },
+    {
+      "endpoint": "/api/users/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.479
+    },
+    {
+      "endpoint": "/api/grades/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.743
+    },
+    {
+      "endpoint": "/api/schedules/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.383
+    },
+    {
+      "endpoint": "/api/notifications/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.368
+    },
+    {
+      "endpoint": "/api/auth/token/",
+      "method": "POST",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.912
+    },
+    {
+      "endpoint": "/api/dormitory/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 1.341
+    },
+    {
+      "endpoint": "/api/token/refresh/",
+      "method": "POST",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.756
+    },
+    {
+      "endpoint": "/api/token/",
+      "method": "POST",
+      "status_code": 500,
+      "error": null,
+      "response_time": 1.013
+    },
+    {
+      "endpoint": "/api/dormitory/complexes/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 1.317
+    },
+    {
+      "endpoint": "/api/dormitory/rooms/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.512
+    },
+    {
+      "endpoint": "/api/dormitory/buildings/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.399
+    },
+    {
+      "endpoint": "/api/dormitory/accommodations/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.43
+    },
+    {
+      "endpoint": "/api/dormitory/staff/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.403
+    },
+    {
+      "endpoint": "/api/dormitory/maintenance/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.451
+    },
+    {
+      "endpoint": "/api/analytics/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.514
+    },
+    {
+      "endpoint": "/api/data-management/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.318
+    },
+    {
+      "endpoint": "/api/ai-ml/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.616
+    },
+    {
+      "endpoint": "/api/mobile/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.5
+    },
+    {
+      "endpoint": "/api/exams/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.612
+    },
+    {
+      "endpoint": "/api/library/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.781
+    },
+    {
+      "endpoint": "/api/financial/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.607
+    },
+    {
+      "endpoint": "/api/attendance/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.365
+    },
+    {
+      "endpoint": "/api/research/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.412
+    },
+    {
+      "endpoint": "/api/announcements/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.383
+    },
+    {
+      "endpoint": "/api/assignments/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.365
+    },
+    {
+      "endpoint": "/api/auth/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.487
+    },
+    {
+      "endpoint": "/api/reports/",
+      "method": "GET",
+      "status_code": 500,
+      "error": null,
+      "response_time": 0.303
+    }
+  ],
+  "performance_issues": [],
+  "detailed_results": [
+    {
+      "endpoint": "/api/health/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.773,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:23.229552",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/info/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.506,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:23.872266",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/version/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.339,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:24.190497",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/status/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.528,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:24.493740",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/schema/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.424,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:24.632311",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/docs/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.45,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:28.443101",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/redoc/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.393,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:28.889570",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.41,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:29.126926",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/courses/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.441,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:29.536966",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/users/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.479,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:29.579696",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/grades/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.743,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:33.320347",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/schedules/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.383,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:33.485885",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/notifications/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.368,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:33.564925",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/auth/token/",
+      "method": "POST",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.912,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:35.046392",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/dormitory/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 1.341,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:35.473292",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/token/refresh/",
+      "method": "POST",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.756,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:39.432989",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/token/",
+      "method": "POST",
+      "status_code": 500,
+      "success": false,
+      "response_time": 1.013,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:39.720055",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/dormitory/complexes/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 1.317,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:40.197986",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/dormitory/rooms/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.512,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:41.216836",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/dormitory/buildings/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.399,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:41.491751",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/dormitory/accommodations/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.43,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:44.473985",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/dormitory/staff/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.403,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:44.537670",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/dormitory/maintenance/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.451,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:45.294747",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/analytics/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.514,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:46.124980",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/data-management/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.318,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:46.779278",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/ai-ml/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.616,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:49.571767",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/mobile/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.5,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:49.781834",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/exams/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.612,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:50.658805",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/library/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.781,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:51.375637",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/financial/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.607,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:52.776626",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/attendance/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.365,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:54.624679",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/research/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.412,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:54.714033",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/announcements/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.383,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:55.806667",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/assignments/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.365,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:56.086612",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/auth/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.487,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:57.891740",
+      "retry_count": 3
+    },
+    {
+      "endpoint": "/api/reports/",
+      "method": "GET",
+      "status_code": 500,
+      "success": false,
+      "response_time": 0.303,
+      "error_message": null,
+      "response_size": 1169,
+      "content_type": "text/html",
+      "timestamp": "2025-09-12 20:11:59.587835",
+      "retry_count": 3
+    }
+  ]
+}

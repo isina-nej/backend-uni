@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تست API - 2025-09-12T20:09:29</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .success { color: #27ae60; }
+        .warning { color: #f39c12; }
+        .danger { color: #e74c3c; }
+        .info { color: #3498db; }
+        .results-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        tr:hover {
+            background: #f8f9fa;
+        }
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        .status-success { background: #d4edda; color: #155724; }
+        .status-error { background: #f8d7da; color: #721c24; }
+        .method-badge {
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+        .method-GET { background: #d4edda; color: #155724; }
+        .method-POST { background: #cce5ff; color: #004085; }
+        .method-PUT { background: #fff3cd; color: #856404; }
+        .method-DELETE { background: #f8d7da; color: #721c24; }
+        .performance-good { color: #27ae60; }
+        .performance-slow { color: #f39c12; }
+        .performance-critical { color: #e74c3c; }
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 گزارش تست API</h1>
+            <p>University Management System</p>
+            <p>📅 2025-09-12T20:09:29</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value success">36</div>
+                <div class="stat-label">کل تست‌ها</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value success">36</div>
+                <div class="stat-label">موفق</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value danger">0</div>
+                <div class="stat-label">ناموفق</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value info">100.0%</div>
+                <div class="stat-label">درصد موفقیت</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value info">0.305s</div>
+                <div class="stat-label">میانگین زمان پاسخ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value warning">1.085s</div>
+                <div class="stat-label">حداکثر زمان پاسخ</div>
+            </div>
+        </div>
+
+        <div class="results-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>متد</th>
+                        <th>وضعیت</th>
+                        <th>زمان پاسخ</th>
+                        <th>اندازه پاسخ</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>/api/health/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.016s</td>
+                        <td>251 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/version/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.081s</td>
+                        <td>914 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/status/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.298s</td>
+                        <td>151 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/docs/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.329s</td>
+                        <td>4992 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/redoc/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.358s</td>
+                        <td>748 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.362s</td>
+                        <td>961 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/users/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.376s</td>
+                        <td>1062 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/courses/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.561s</td>
+                        <td>423 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/grades/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.678s</td>
+                        <td>436 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/schedules/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.911s</td>
+                        <td>540 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/dormitory/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.742s</td>
+                        <td>1367 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/notifications/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.775s</td>
+                        <td>1100 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/token/refresh/</td>
+                        <td><span class="method-badge method-POST">POST</span></td>
+                        <td><span class="status-badge status-success">400</span></td>
+                        <td class="performance-good">0.7s</td>
+                        <td>216 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/token/</td>
+                        <td><span class="method-badge method-POST">POST</span></td>
+                        <td><span class="status-badge status-success">400</span></td>
+                        <td class="performance-good">0.715s</td>
+                        <td>259 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/auth/token/</td>
+                        <td><span class="method-badge method-POST">POST</span></td>
+                        <td><span class="status-badge status-success">400</span></td>
+                        <td class="performance-good">0.72s</td>
+                        <td>264 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/info/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">1.082s</td>
+                        <td>804 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/dormitory/complexes/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.516s</td>
+                        <td>196 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/dormitory/buildings/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.39s</td>
+                        <td>196 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/dormitory/rooms/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.093s</td>
+                        <td>196 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/schema/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">1.085s</td>
+                        <td>756833 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/dormitory/accommodations/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.016s</td>
+                        <td>196 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/dormitory/staff/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.017s</td>
+                        <td>196 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/dormitory/maintenance/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.013s</td>
+                        <td>196 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/analytics/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.013s</td>
+                        <td>241 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/ai-ml/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.013s</td>
+                        <td>530 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/data-management/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.014s</td>
+                        <td>281 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/exams/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.013s</td>
+                        <td>50 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/mobile/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.015s</td>
+                        <td>1326 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/library/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.012s</td>
+                        <td>103 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/financial/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.011s</td>
+                        <td>60 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/attendance/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.012s</td>
+                        <td>65 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/research/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.012s</td>
+                        <td>59 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/assignments/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.009s</td>
+                        <td>135 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/announcements/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.01s</td>
+                        <td>74 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/auth/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.009s</td>
+                        <td>76 bytes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/reports/</td>
+                        <td><span class="method-badge method-GET">GET</span></td>
+                        <td><span class="status-badge status-success">200</span></td>
+                        <td class="performance-good">0.009s</td>
+                        <td>78 bytes</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>🚀 تولید شده توسط API Testing Suite</p>
+            <p>📊 University Management System - Professional Testing</p>
+        </div>
+    </div>
+</body>
+</html>

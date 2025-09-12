@@ -18,6 +18,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # Production-specific settings
 DEBUG = env('DEBUG')
 
+# Override SECRET_KEY from environment
+SECRET_KEY = env('SECRET_KEY')
+
 # Security settings
 ALLOWED_HOSTS = [
     'sinanej2.pythonanywhere.com',
