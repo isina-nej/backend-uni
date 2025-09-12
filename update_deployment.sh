@@ -17,19 +17,19 @@ source ~/.virtualenvs/backend-uni-env/bin/activate
 
 # Install any new requirements
 echo "📦 Updating requirements..."
-pip install -r requirements.txt
+pip install -r requirements_production.txt
 
 # Run migrations if any
 echo "🗄️ Running migrations..."
-python manage.py migrate --settings=config.settings_production
+python manage.py migrate --settings=config.settings_simple
 
 # Collect static files
 echo "📁 Collecting static files..."
-python manage.py collectstatic --noinput --settings=config.settings_production
+python manage.py collectstatic --noinput --settings=config.settings_simple
 
 # Test the application
 echo "🧪 Testing Django configuration..."
-python manage.py check --settings=config.settings_production
+python manage.py check --settings=config.settings_simple
 
 echo "✅ Update completed!"
 echo ""
