@@ -25,8 +25,8 @@ class NotificationSerializer(serializers.ModelSerializer):
         model = Notification
         fields = [
             'id', 'user', 'user_username', 'user_full_name',
-            'title', 'message', 'notification_type', 'priority',
-            'data', 'template_name', 'is_read', 'is_sent',
+            'title', 'message', 'type', 'priority',
+            'extra_data', 'is_read', 'is_sent',
             'created_at', 'updated_at', 'read_at', 'sent_at',
             'scheduled_for', 'expires_at', 'time_since_created'
         ]
@@ -48,8 +48,8 @@ class NotificationCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
         fields = [
-            'title', 'message', 'notification_type', 'priority',
-            'data', 'template_name', 'scheduled_for', 'expires_at'
+            'title', 'message', 'type', 'priority',
+            'extra_data', 'scheduled_for', 'expires_at'
         ]
 
 
@@ -59,9 +59,10 @@ class NotificationTemplateSerializer(serializers.ModelSerializer):
     class Meta:
         model = NotificationTemplate
         fields = [
-            'id', 'name', 'template_type', 'subject_template',
-            'content_template', 'variables', 'is_active',
-            'created_at', 'updated_at'
+            'id', 'name', 'type', 'title_template', 'message_template',
+            'default_channels', 'priority', 'is_active', 'is_real_time',
+            'title_template_en', 'message_template_en', 'title_template_ar',
+            'message_template_ar', 'created_at', 'updated_at'
         ]
 
 
@@ -73,9 +74,11 @@ class NotificationPreferenceSerializer(serializers.ModelSerializer):
     class Meta:
         model = NotificationPreference
         fields = [
-            'id', 'user', 'user_username', 'delivery_method',
-            'is_enabled', 'notification_types', 'quiet_hours_start',
-            'quiet_hours_end', 'frequency', 'created_at', 'updated_at'
+            'id', 'user', 'user_username', 'email_enabled', 'sms_enabled',
+            'push_enabled', 'in_app_enabled', 'websocket_enabled', 'web_enabled',
+            'flutter_enabled', 'telegram_enabled', 'preferences',
+            'quiet_hours_enabled', 'quiet_start_time', 'quiet_end_time',
+            'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'user', 'created_at', 'updated_at']
 
@@ -108,5 +111,5 @@ class BulkNotificationSerializer(serializers.Serializer):
     )
     title = serializers.CharField(max_length=255)
     message = serializers.CharField()
-    notification_type = serializers.CharField(max_length=50, default='info')
+    type = serializers.CharField(max_length=50, default='info')
     priority = serializers.CharField(max_length=20, default='medium')

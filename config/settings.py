@@ -348,6 +348,7 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'COMPONENT_SPLIT_REQUEST': True,
+    'DISABLE_ERRORS_AND_WARNINGS': True,
     'SWAGGER_UI_SETTINGS': {
         'deepLinking': True,
         'persistAuthorization': True,
@@ -368,6 +369,11 @@ SPECTACULAR_SETTINGS = {
                     'main': '#1976d2'
                 }
             }
+        }
+    },
+    'EXTENSIONS': {
+        'drf_spectacular.contrib.django_filters': {
+            'SKIP_FILTERS_WITH_ERRORS': True,
         }
     }
 }

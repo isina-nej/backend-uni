@@ -537,11 +537,8 @@ class StudentCreateUpdateSerializer(serializers.ModelSerializer):
             'university_student_id', 'academic_program', 'student_type',
             'academic_status', 'financial_status', 'marital_status',
             'military_service_status', 'entrance_year', 'entrance_semester',
-            'current_semester', 'dormitory_resident', 'dormitory_room',
-            'meal_plan', 'father_name', 'father_job', 'mother_name', 'mother_job',
-            'guardian_phone', 'permanent_address', 'current_address',
-            'emergency_contact_name', 'emergency_contact_phone', 'emergency_contact_relation',
-            'blood_type', 'medical_conditions', 'medications', 'allergies'
+            'current_semester', 'father_name', 'guardian_phone', 'permanent_address',
+            'emergency_contact_name', 'emergency_contact_phone'
         ]
 
     def validate_national_id(self, value):

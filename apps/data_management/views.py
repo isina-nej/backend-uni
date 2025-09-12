@@ -29,6 +29,7 @@ logger = logging.getLogger(__name__)
 class ImportExportJobViewSet(viewsets.ModelViewSet):
     """ViewSet for managing import/export jobs"""
     
+    queryset = ImportExportJob.objects.all()
     serializer_class = ImportExportJobSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
@@ -37,6 +38,8 @@ class ImportExportJobViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         """Get jobs accessible to the user"""
+        if getattr(self, 'swagger_fake_view', False):
+            return ImportExportJob.objects.none()
         user = self.request.user
         if user.is_superuser:
             return ImportExportJob.objects.all()

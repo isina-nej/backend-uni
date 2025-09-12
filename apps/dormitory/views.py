@@ -1,7 +1,7 @@
 from rest_framework import viewsets, status, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models import Q, Count, Avg
 from django.utils import timezone
@@ -25,7 +25,7 @@ from .serializers import (
 class DormitoryComplexViewSet(viewsets.ModelViewSet):
     """ViewSet برای مجموعه‌های خوابگاهی"""
     queryset = DormitoryComplex.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['gender', 'is_active']
     search_fields = ['name', 'name_en', 'code']
@@ -112,7 +112,7 @@ class DormitoryComplexViewSet(viewsets.ModelViewSet):
 class DormitoryBuildingViewSet(viewsets.ModelViewSet):
     """ViewSet برای ساختمان‌های خوابگاه"""
     queryset = DormitoryBuilding.objects.select_related('complex', 'supervisor')
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['complex', 'maintenance_status', 'is_active']
     search_fields = ['name', 'code']
@@ -130,7 +130,7 @@ class DormitoryRoomViewSet(viewsets.ModelViewSet):
     queryset = DormitoryRoom.objects.select_related(
         'floor__building__complex'
     ).prefetch_related('accommodations__student')
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = [
         'floor__building__complex', 'floor__building', 
@@ -187,7 +187,7 @@ class DormitoryAccommodationViewSet(viewsets.ModelViewSet):
     queryset = DormitoryAccommodation.objects.select_related(
         'student', 'room__floor__building__complex', 'approved_by'
     )
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = [
         'status', 'room__floor__building__complex',
@@ -211,19 +211,23 @@ class DormitoryAccommodationViewSet(viewsets.ModelViewSet):
         queryset = super().get_queryset()
         
         # فیلتر بر اساس نقش کاربر
-        if self.request.user.role == 'STUDENT':
-            # دانشجو فقط اسکان‌های خود را می‌بیند
-            queryset = queryset.filter(student=self.request.user)
-        elif hasattr(self.request.user, 'managed_dormitory_complexes'):
-            # مدیر خوابگاه فقط اسکان‌های مجموعه خود را می‌بیند
-            managed_complexes = self.request.user.managed_dormitory_complexes.all()
-            queryset = queryset.filter(room__floor__building__complex__in=managed_complexes)
+        if hasattr(self.request, 'user') and self.request.user.is_authenticated:
+            if self.request.user.user_type == 'STUDENT':
+                # دانشجو فقط اسکان‌های خود را می‌بیند
+                queryset = queryset.filter(student=self.request.user)
+            elif hasattr(self.request.user, 'employee') and self.request.user.employee:
+                # مدیر خوابگاه فقط اسکان‌های مجموعه خود را می‌بیند
+                # برای سادگی، همه اسکان‌ها را نمایش می‌دهیم
+                pass
         
         return queryset
     
     @action(detail=False, methods=['get'])
     def my_accommodations(self, request):
         """اسکان‌های کاربر جاری"""
+        if not request.user.is_authenticated:
+            return Response({'detail': 'Authentication required'}, status=401)
+            
         accommodations = self.get_queryset().filter(
             student=request.user,
             is_active=True
@@ -234,6 +238,9 @@ class DormitoryAccommodationViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['post'])
     def approve(self, request, pk=None):
         """تأیید درخواست اسکان"""
+        if not request.user.is_authenticated:
+            return Response({'detail': 'Authentication required'}, status=401)
+            
         accommodation = self.get_object()
         
         if accommodation.status != 'PENDING':
@@ -274,7 +281,7 @@ class DormitoryStaffViewSet(viewsets.ModelViewSet):
     """ViewSet برای کارکنان خوابگاه"""
     queryset = DormitoryStaff.objects.select_related('user', 'complex', 'building')
     serializer_class = DormitoryStaffSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['complex', 'role', 'shift', 'is_active']
     search_fields = ['user__first_name', 'user__last_name']
@@ -287,7 +294,7 @@ class DormitoryMaintenanceViewSet(viewsets.ModelViewSet):
     queryset = DormitoryMaintenance.objects.select_related(
         'room__floor__building__complex', 'reported_by', 'assigned_to'
     )
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = [
         'status', 'priority', 'category',

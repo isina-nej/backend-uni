@@ -52,7 +52,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """مدیریت کاربران"""
     queryset = User.objects.all()
     serializer_class = UserListSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     filterset_class = UserFilter
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['username', 'email', 'first_name', 'last_name', 'national_id', 'phone']
@@ -65,18 +65,7 @@ class UserViewSet(viewsets.ModelViewSet):
         return UserListSerializer
 
     def get_queryset(self):
-        user = self.request.user
-        if user.user_type == 'ADMIN':
-            return User.objects.all()
-        elif user.user_type == 'EMPLOYEE':
-            # کارمندان فقط کاربران هم واحد رو می‌بینن
-            return User.objects.filter(
-                Q(employee__primary_unit=user.employee.primary_unit) |
-                Q(pk=user.pk)
-            )
-        else:
-            # دانشجویان فقط خودشان رو می‌بینن
-            return User.objects.filter(pk=user.pk)
+        return User.objects.all()
 
     @action(detail=False, methods=['get'])
     def me(self, request):

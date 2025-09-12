@@ -5,6 +5,8 @@
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -28,6 +30,57 @@ from .views import (
     # Dashboard
     DashboardViewSet
 )
+
+@api_view(['GET'])
+def users_root(request):
+    """Root endpoint for Users API"""
+    return Response({
+        'message': 'Users Management API',
+        'version': '1.0',
+        'endpoints': {
+            'authentication': {
+                'register': 'POST /register/',
+                'login': 'POST /login/',
+                'logout': 'POST /logout/',
+                'profile': 'GET/PUT /profile/',
+                'token': 'POST /token/',
+                'token_refresh': 'POST /token/refresh/'
+            },
+            'users': {
+                'list': 'GET /',
+                'create': 'POST /',
+                'detail': 'GET /{id}/',
+                'update': 'PUT /{id}/',
+                'delete': 'DELETE /{id}/',
+                'me': 'GET /me/'
+            },
+            'organizational': {
+                'ministries': 'GET /ministries/',
+                'universities': 'GET /universities/',
+                'faculties': 'GET /faculties/',
+                'departments': 'GET /departments/',
+                'research_centers': 'GET /research-centers/',
+                'administrative_units': 'GET /administrative-units/'
+            },
+            'employees': {
+                'list': 'GET /employees/',
+                'duties': 'GET /employee-duties/',
+                'positions': 'GET /positions/',
+                'access_levels': 'GET /access-levels/'
+            },
+            'students': {
+                'list': 'GET /students/',
+                'categories': 'GET /student-categories/',
+                'programs': 'GET /academic-programs/',
+                'assignments': 'GET /student-category-assignments/'
+            },
+            'dashboard': {
+                'stats': 'GET /dashboard/stats/',
+                'recent_activities': 'GET /recent-activities/',
+                'system_health': 'GET /system-health/'
+            }
+        }
+    })
 
 # ==============================================================================
 # ROUTER CONFIGURATION
@@ -72,6 +125,9 @@ router.register(r'dashboard', DashboardViewSet, basename='dashboard')
 # ==============================================================================
 
 urlpatterns = [
+    # Root endpoint
+    path('', users_root, name='users-root'),
+    
     # API Router URLs
     path('', include(router.urls)),
     

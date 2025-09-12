@@ -43,7 +43,7 @@ class NotificationViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     pagination_class = NotificationPagination
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['notification_type', 'priority', 'is_read', 'is_sent']
+    filterset_fields = ['type', 'priority', 'is_read', 'is_sent']
     
     def get_queryset(self):
         """Get notifications for the authenticated user"""
@@ -263,7 +263,7 @@ class AdminNotificationViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAdminUser]
     pagination_class = NotificationPagination
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['user', 'notification_type', 'priority', 'is_read', 'is_sent']
+    filterset_fields = ['user', 'type', 'priority', 'is_read', 'is_sent']
     
     def get_queryset(self):
         """Get all notifications for admin"""

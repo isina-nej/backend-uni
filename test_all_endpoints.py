@@ -6,6 +6,7 @@
 import requests
 import json
 from datetime import datetime
+import time
 
 # Base URL
 BASE_URL = "http://127.0.0.1:8000"
@@ -64,13 +65,28 @@ def test_endpoint(url):
     try:
         full_url = BASE_URL + url
         response = requests.get(full_url, timeout=10)
+        
+        # Expected status codes that should be considered successful
+        expected_codes = [200, 201, 202, 301, 302, 303, 307, 308]  # Success redirects
+        acceptable_codes = [401, 403, 404, 405, 429]  # Acceptable for certain endpoints (429 = rate limited)
+        
+        # Special cases for expected status codes
+        if url in ["/api/", "/api/auth/token/", "/api/token/", "/api/token/refresh/"]:
+            # These endpoints are expected to return 404 or 405
+            is_success = response.status_code in expected_codes + [404, 405, 429]
+        else:
+            is_success = response.status_code in expected_codes or (
+                response.status_code in acceptable_codes and response.status_code < 500
+            )
+        
         return {
             'url': url,
             'status_code': response.status_code,
-            'success': response.status_code < 500,  # هر چیز کمتر از 500 موفق محسوب می‌شود
+            'success': is_success,
             'error': None,
             'response_size': len(response.content),
-            'content_type': response.headers.get('content-type', '')
+            'content_type': response.headers.get('content-type', ''), 
+            'expected': url in ["/api/", "/api/auth/token/", "/api/token/", "/api/token/refresh/"]
         }
     except requests.exceptions.ConnectionError:
         return {
@@ -79,7 +95,8 @@ def test_endpoint(url):
             'success': False,
             'error': 'Connection Error - Server might be down',
             'response_size': 0,
-            'content_type': ''
+            'content_type': '',
+            'expected': False
         }
     except requests.exceptions.Timeout:
         return {
@@ -88,7 +105,8 @@ def test_endpoint(url):
             'success': False,
             'error': 'Timeout',
             'response_size': 0,
-            'content_type': ''
+            'content_type': '',
+            'expected': False
         }
     except Exception as e:
         return {
@@ -97,7 +115,8 @@ def test_endpoint(url):
             'success': False,
             'error': str(e),
             'response_size': 0,
-            'content_type': ''
+            'content_type': '',
+            'expected': False
         }
 
 def main():
@@ -115,11 +134,22 @@ def main():
         results.append(result)
         
         if result['success']:
-            print(f"✅ {result['status_code']}")
+            status_display = f"✅ {result['status_code']}"
+            if result.get('expected', False):
+                status_display += " (expected)"
+            if result['status_code'] == 429:
+                status_display += " (rate limited)"
+            print(status_display)
             successful += 1
         else:
-            print(f"❌ {result.get('status_code', 'ERROR')} - {result['error']}")
+            status_display = f"❌ {result.get('status_code', 'ERROR')}"
+            if result.get('expected', False):
+                status_display += " (expected but failed)"
+            print(f"{status_display} - {result['error']}")
             failed += 1
+        
+        # Add small delay to respect rate limiting
+        time.sleep(0.5)
     
     print("=" * 60)
     print(f"📊 نتایج تست:")
